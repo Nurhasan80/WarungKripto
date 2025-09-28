@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- Tambahkan Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Warung Kripto - Platform Cryptocurrency</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo/icon.ico">
+
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="logo">
+        <!--<i class="fas fa-coins logo-icon"></i> -->
+       <img src="logo/logoHeader.png">
+      </div>
+    </div>
+    <!-- NAV untuk desktop - disembunyikan di mobile -->
+    <nav id="nav-desktop" class="nav-desktop">
+      <ul id="navbar">
+        <li><a href="#">Beranda</a></li>
+        <li><a href="pasar.html">Pasar</a></li>
+        <li><a href="trading.html">Perdagangan</a></li>
+        <li><a href="swap.html">Pertukaran</a></li>
+        <li><a href="wallet.html">Dompet</a></li>
+        <!-- <li><a href="#">Tentang</a></li>
+        <li><a href="#">Kontak</a></li>
+        <li><a href="#">Bantuan</a></li>
+        <li><a href="#">FAQ</a></li> -->
+      </ul>
+    </nav>
+
+    <div class="auth-buttons">
+              <button style="border:none; background: rgba(255, 255, 255, 0.0); cursor: pointer;" id="toggle-dark">Dark/Light</button>
+      <button class="btn-login" style="display:none ;">Masuk</button>
+      <button class="btn-daftar" style="display:none;">Daftar</button>
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- Panel Overlay (mobile) -->
+  <div class="overlay" id="overlay">
+    <div class="auth-buttons">
+      <button class="btn-login2">Masuk</button>
+      <button class="btn-daftar2">Daftar</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="pasar.html">Pasar</a></li>
+        <li><a href="trading.html">Perdagangan</a></li>
+        <li><a href="swap.html">Pertukaran</a></li>
+        <li><a href="wallet.html">Dompet</a></li>
+        <!-- <li><a href="#">Tentang</a></li>
+        <li><a href="#">Kontak</a></li>
+        <li><a href="#">Bantuan</a></li>
+        <li><a href="#">FAQ</a></li> -->
+      </ul>
+    </nav>
+  </div>
+  <!-- Konten halaman -->
+  <section id="hero" class="hero">
+    <div class="widget">
+      <script src="https://widget-harga.tokocrypto.com/widget/api" async></script>
+      <div class="tokocrypto-widget" data-pair="IDR" data-symbol="BTC_IDR,ETH_IDR,ADA_IDR,ARB_IDR,AVAX_IDR,BNB_IDR,DOGE_IDR,FLOKI_IDR,HBAR_IDR,SOL_IDR,USDT_IDR,XRP_IDR" data-type="3" data-theme="light" data-transparent="true" data-speed="1"></div>
+    </div>
+      
+      <div class="kiri">     
+        <div>
+          <h1>Selamat Datang Di<br></h1>
+      <div class="line">
+        <span>Platform Jual Beli Aset Crypto</span>
+        <div class="ticker-wrap" id="tickerWrap">
+          <div class="ticker" id="ticker"></div>
+        </div>
+      </div>
+      <p>Kami menghadirkan teknologi modern untuk transaksi digital Anda.</p>
+      <a href="Dompet.html" class="btn">Lihat Portofolio</a>
+      
+      <!-- Tombol App Store dan Google Play -->
+      <div class="app-buttons">
+        <a href="https://apps.apple.com/id/app/apple-store/id375380948" target="_blank" class="app-btn app-store">
+          <!-- SVG untuk App Store -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"/>
+            <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516.024.034 1.52.087 2.475-1.258.955-1.345.762-2.391.728-2.43Zm3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422.212-2.189 1.675-2.789 1.698-2.854.023-.065-.597-.79-1.254-1.157a3.692 3.692 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56.244.729.625 1.924 1.273 2.796.576.984 1.34 1.667 1.659 1.899.319.232 1.219.386 1.843.067.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758.347-.79.505-1.217.473-1.282Z"/>
+          </svg>
+          <span>
+            <span class="top-text">Download on the</span>
+            App Store
+          </span>
+        </a>      
+        <a href="https://play.google.com/store/games?hl=id&gl=US" target="_blank" class="app-btn">
+          <!-- SVG untuk Google Play -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M14.222 9.374c1.037-.61 1.037-2.137 0-2.748L11.528 5.04 8.32 8l3.207 2.96 2.694-1.586Zm-3.595 2.116L7.583 8.68 1.03 14.73c.201 1.029 1.36 1.61 2.303 1.055l7.294-4.295ZM1 13.396V2.603L6.846 8 1 13.396ZM1.03 1.27l6.553 6.05 3.044-2.81L3.333.215C2.39-.341 1.231.24 1.03 1.27Z"/>
+          </svg>
+          <span>
+            <span class="top-text">GET IT ON</span>
+            Google Play
+          </span>
+        </a>
+      </div>
+        </div>
+
+          <div class="kanan">
+      <div class="gif-animation">
+        <div class="gif-container">
+          <img src="trading.gif" alt="Animasi Cryptocurrency">
+        </div>
+      </div>
+          </div>    
+    </div>
+    <!-- Gambar animasi GIF dengan rasio 9:16 -->
+      <div id="gif2" class="gif-animation">
+        <div class="gif-container">
+          <img src="trading.gif" alt="Animasi Cryptocurrency">
+        </div>
+      </div> 
+        
+        <div class="slider"> 
+          <div class="slides">
+            <div class="slide"><img src="img/image1.png" alt="Gambar 1"></div>
+            <div class="slide"><img src="img/image2.png" alt="Gambar 2"></div>
+            <div class="slide"><img src="img/image3.png" alt="Gambar 3"></div>
+            <div class="slide"><img src="img/image4.png" alt="Gambar 4"></div>
+            <div class="slide"><img src="img/image5.png" alt="Gambar 5"></div>
+            <div class="slide"><img src="img/image6.png" alt="Gambar 6"></div>
+    
+          </div>
+          <button class="nav prev">❮</button>
+          <button class="nav next">❯</button>
+        </div>    
+        <div class="dots"></div>
+        
+        
+      <div class="container">
+      <div class="box">
+        <h3>Sejak 2025</h3>
+        <p>Pertama di Indonesia.</p>
+      </div>
+      <div class="box">
+        <h3>400+ Koin</h3>
+        <p>Aset kripto terdaptar.</p>
+      </div>
+      <div class="box">
+        <h3>100Juta+</h3>
+        <p>Pengguna terdaptar.</p>
+      </div>
+    </div>  
+      
+      <h2>Daftar Top 10 Cryptocurrency</h2>
+      <div class="real-time-indicator">
+        <div class="pulse-dot"></div>
+        <span>Data real-time - diperbarui setiap 10 detik</span>
+      </div>
+      <table id="crypto-table2">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Symbol</th>
+            <th>Harga (USD)</th>
+            <th>Perubahan 24h</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <!-- Modal -->
+      <div id="crypto-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="crypto-details"></div>
+          <!-- Tabs untuk memilih periode chart -->
+          <div class="chart-tabs">
+            <div class="chart-tab active" data-days="1">24 Jam</div>
+            <div class="chart-tab" data-days="7">7 Hari</div>
+            <div class="chart-tab" data-days="30">30 Hari</div>
+            <div class="chart-tab" data-days="365">1 Tahun</div>
+          </div>
+          <!-- Container untuk chart -->
+          <div class="chart-container">
+            <canvas id="price-chart"></canvas>
+          </div>
+        </div>
+      </div>
+      
+        <div class="hero-grid">
+    <div class="hero-item hidden">
+      <div class="service-icon"><i class="fa-solid fa-laptop"></i></div>
+      <h2 style="text-align:center;">Mudah Digunakan</h2>
+      <div class="service-desc">
+        Transaksi lebih mudah dan aman melalui website atau aplikasi dalam satu genggaman.
+      </div>
+    </div>
+
+    <div class="hero-item hidden">
+      <div class="service-icon">
+        <i class="fa-solid fa-gauge-high"></i>
+      </div>
+      <h2 style="text-align:center;">Transaksi Cepat</h2>
+      <div class="service-desc">
+        Kami memberikan proses pelayanan yang cepat dalam hal jual dan beli
+      </div>
+    </div>
+    <div class="hero-item hidden">
+      <div class="service-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <h2 style="text-align:center;">Aman & Terlindungi</h2>
+      <div class="service-desc">
+        WARUNG KRIPTO telah berizin dan diawasi oleh OJK, CFX, dan KOMDIGI.
+      </div>
+    </div>             
+      <div class="hero-item hidden">
+        <div class="service-icon"><i class="fa-solid fa-money-check-dollar"></i>
+        </div>
+        <h2 style="text-align:center;">Harga Terjangkau</h2>
+        <div class="service-desc">
+          Platform kripto terlengkap dengan biaya terjangkau. Jual beli Bitcoin, Ethereum, dan koin lainnya di sini.
+        </div>
+      </div>
+    </div>
+  </section> 
+  
+  <section id="market" class="market">
+    
+  </section>
+      
+    <div class="regulator"> 
+    <p>WARUNG KRIPTO berizin dan diawasi oleh Otoritas Jasa Keuangan (OJK) serta terdaftar dan tersertifikasi oleh:</p>     
+    <div class="container">
+      <div class="box">
+        <img src="img/kliring.png">
+      </div>
+      <div class="box">
+        <img src="img/komdigi.png">
+      </div>
+      <div class="box">
+        <img src="img/cfx.png">
+      </div>
+      <div class="box">
+        <img src="img/isoiec_27001.png">
+      </div>
+      <div class="box">
+        <img src="img/ojk.png">
+      </div>
+      <div class="box">
+        <img src="img/iso_9001.png">
+      </div>
+    </div>
+    <p>Aset kripto bersifat fluktuatif dengan potensi keuntungan dan risiko kerugian yang tinggi.<br>
+       Konsumen diimbau untuk memiliki pemahaman mendalam sebelum bertransaksi. Gunakan dana idle, prioritaskan dana darurat, dan lakukan diversifikasi untuk meminimalkan risiko.<br>
+       Seluruh keputusan atas transaksi merupakan tanggung jawab konsumen sepenuhnya. Tidak ada jaminan keuntungan dan tidak ada pihak yang bertanggung jawab atas kerugian yang terjadi</p> 
+    </div>
+        
+  <!-- Sectiin Footer Star-->
+  <footer>     
+      <div class="footer-container">
+        
+        <!-- KIRI: Media Sosial -->
+        <div class="footer-section social-icons">
+          <h4>Media Sosial :</h4>
+          <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+        </div>
+        <!-- TENGAH: Menu -->
+        <div class="footer-section">
+          <h4>Menu :</h4>
+          <a href="#">Beranda</a>
+          <a href="#">Tentang</a>
+          <a href="#">Bantuan</a>
+          <a href="#">FAQ</a>
+          <a href="#">Kontak</a>
+        </div>
+        <!-- KANAN: Alamat -->
+        <div class="footer-section alamat">
+          <h4>Kantor Pusat</h4>       
+          <p style="font-weight:bold;">Warung Kripto</p>
+          
+          <p>
+            Jl. Petir utama no. 50 rt 003 rw 03 Kel. Petir Kec. Cipondoh Kota
+            Tangerang 15147<br />
+            Banten, Indonesia<br />
+            Telp: 0877-8195-9341<br />
+            Email: achancomputer@gmail.com
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Section Footer End -->
+    
+      <!-- Section footer credit Star -->
+    <div class="footer-credit">
+      <div class="credit">
+        <p>Copyright &copy; 2025 Warung Kripto. All rights Reserved.</p>
+      </div>
+    </div>
+  
+  
+<div id="myWarning" class="warning-fixed" role="alert" hidden>
+  <div class="warning-icon">
+    <!-- Segitiga kuning dengan tanda ! -->
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="32,6 60,54 4,54" fill="#f6c94d" stroke="#b68612" stroke-width="2"/>
+      <rect x="30" y="20" width="4" height="18" rx="1.5" fill="#2b2b2b"/>
+      <circle cx="32" cy="46" r="3.6" fill="#2b2b2b"/>
+    </svg>
+  </div>
+  <div>
+    <div class="warning-title">Peringatan</div>
+    <div class="warning-text">
+      Ini adalahh website Exchange akun Demo, kami tidak melakukan transaksi secara nyata.<br>
+      Beberapa fitur mungkin berjalan lambat karena terkait jaringan.<br>
+      Silakan refresh atau coba lagi setelah 20 menit.
+    </div>
+  </div>
+  <button class="warning-close" aria-label="Tutup">✕</button>
+</div>
+
+  
+  
+<nav class="bottom-nav">
+    <div class="home">
+    <a href="#" class="nav-item active">     
+      <i class="fas fa-home"></i>
+      Beranda
+    </a>
+    </div>
+    
+<div class="pasar">
+    <a href="pasar.html" class="nav-item">
+      <i class="fa-solid fa-chart-simple"></i>
+      Pasar
+    </a>
+</div>
+    
+<div class="trading">
+    <a href="trading.html" class="nav-item">
+      <i class="fa-solid fa-money-bill-trend-up"></i>
+      Perdagangan
+    </a>
+</div>
+    
+<div class="swap">
+    <a href="swap.html" class="nav-item">
+      <i class="fas fa-exchange-alt"></i> 
+      Pertukaran
+    </a>
+</div>
+    
+<div class="dompet">
+    <a href="wallet.html" class="nav-item">
+      <i class="fa-solid fa-wallet"></i>
+      Dompet
+    </a>
+</div>
+</nav>
+
+  <script src="js/script.js"></script>
+  <script src="themes.js"></script>
+
+
+</body>
+</html>
