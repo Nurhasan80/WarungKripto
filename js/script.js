@@ -490,6 +490,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
+
 // navigadi bottom 
     const navItems = document.querySelectorAll(".nav-item");
 
@@ -531,3 +532,21 @@ document.addEventListener('DOMContentLoaded', function() {
   // tampil otomatis setelah halaman load
   window.addEventListener('load', showWarning);
 })();
+
+// ============ Tab Informasi ============ //
+document.addEventListener("DOMContentLoaded", function() {
+  const tabs = Array.from(document.querySelectorAll('.tab'));
+  const panels = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
+
+  function activate(index) {
+    tabs.forEach((t, i) => {
+      const selected = i === index;
+      t.setAttribute('aria-selected', selected ? 'true' : 'false');
+      panels[i].hidden = !selected;
+    });
+  }
+
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => activate(i));
+  });
+});
