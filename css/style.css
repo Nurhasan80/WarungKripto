@@ -929,7 +929,141 @@ img {
     object-position: center;
 }
 
+/* ====== Tab Informasi ====== */
+.tabs-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 20px auto;
+  background: transparent;
+}
 
+.tablist {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.tab {
+  background: transparent;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color:  #0099ff;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.tab[aria-selected="true"] {
+  color: green;
+}
+
+.tab:focus::after,
+.tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 2px;
+  background: #10b981;
+  border-radius: 1px;
+}
+
+.panel {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.img-link {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumb-img {
+  width: 100%;
+  height:auto;
+  object-fit: cover;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  text-decoration: none;
+  color: #111827;
+  transition: background 0.2s;
+}
+
+.news-item:hover {
+  background: #f3f4f6;
+}
+
+.news-thumb {
+  flex: 0 0 90px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.news-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.announce-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: #111;
+}
+
+.announce-link:hover {
+  background: #f1f5f9;
+}
+
+.announce-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: #ffeeba;
+}
+
+.announce-title {
+  font-size: 15px;
+  font-weight: 600;
+}
 
 /* section footer */
 footer {
@@ -1631,4 +1765,15 @@ color:grey;
         display: none;
     }
   
+      .tablist {
+        flex-wrap: wrap;   /* biar tab turun ke baris baru */
+        gap: 6px;
+        justify-content: center;
+      }
+      .tab {
+        flex: 1 1 45%;     /* setiap tab max 2 per baris */
+        font-size: 12px;
+        padding: 6px 8px;
+        text-align: center;
+      }
 }
