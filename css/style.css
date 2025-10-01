@@ -1809,5 +1809,13 @@ color:grey;
         padding: 6px 8px;
         text-align: center;
       }
+
+.tab:focus::after,
+.tab[aria-selected="true"]::after { 
+  width: 20%;
+  height: 2px;
 }
+      
+}
+
 
