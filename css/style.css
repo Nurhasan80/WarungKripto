@@ -3,12 +3,6 @@
     margin: 0;
     padding: 0;
 }
-
-body.dark tr:hover {
-  background:#0099ff;
-  color: white;
-}
-
   
 body {
     margin: 0;
@@ -24,6 +18,11 @@ body {
 /* Dark Mode */
 body.dark {
   background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark tr:hover {
+  background:#0099ff;
   color: white;
 }
 
@@ -1823,6 +1822,7 @@ color:grey;
 }
       
 }
+
 
 
 
