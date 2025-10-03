@@ -22,7 +22,8 @@
       color: #333;
     }  
   
-body.dark, body.dark header, body.dark .currency-selector select, body.dark .transaction-box, body.dark .transaction-tab, body.dark .balance-info, body.dark .deposit-coins, body.dark input, body.dark .bottom-nav, body.dark .modal-content, body.dark .chart-tab, body.dark .trade-tab, body.dark .trade-form, body.dark .percentage-btn, body.dark .current-price-info, body.dark .trade-result, body.dark .balance-label     {
+body.dark, body.dark header, body.dark .currency-selector select, body.dark .transaction-box, body.dark .transaction-tab, body.dark .balance-info, body.dark .deposit-coins, body.dark input, body.dark .bottom-nav, body.dark .modal-content, body.dark .chart-tab, body.dark .trade-tab, body.dark .trade-form, body.dark .percentage-btn, body.dark .current-price-info, body.dark .trade-result, body.dark .balance-label
+       {
   background:linear-gradient(180deg,#071228,#04101a);
   color: white;
 }  
@@ -342,6 +343,117 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
       font-size: 14px;
       opacity: 0.8;
     }
+
+      /* Tambahkan di bagian manapun dalam tag <style> */
+      #tarik-max-btn {
+      margin-top: 9px;
+      padding: 15px 16px;
+      background-color: #3b82f6;
+      text-align: center;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      width: 12%;
+      transition: background-color 0.2s;
+      
+    }
+
+    /* Styling untuk input dengan format angka - POSISI KIRI */
+.tarik-input {
+  text-align: right;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.5px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.tarik-input:focus {
+  outline: none;
+  border-color: #0099ff;
+  box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.1);
+}
+
+/* Untuk mode dark */
+body.dark .tarik-input {
+  background-color: #1e293b;
+  color: white;
+  border-color: #475569;
+}
+
+body.dark .tarik-input:focus {
+  border-color: #0099ff;
+  box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.2);
+}
+
+/* Untuk browser modern (Chrome, Firefox, Edge) */
+#tarik-jumlah::placeholder {
+    text-align: left;
+    color: #64748b; /* Warna placeholder */
+    opacity: 1; /* Pastikan tidak transparan */
+}
+
+/* Untuk Internet Explorer */
+#tarik-jumlah:-ms-input-placeholder {
+    text-align: left;
+    color: #64748b;
+}
+
+/* Untuk Microsoft Edge legacy */
+#tarik-jumlah::-ms-input-placeholder {
+    text-align: left;
+    color: #64748b;
+}
+
+    #tarik-max-btn:hover {
+      background-color: #2563eb;
+    }
+
+    /* Styling untuk input dengan format angka */
+#tarik-jumlah {
+  text-align: left;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+/* Untuk mode dark */
+body.dark #tarik-jumlah {
+  background-color: #1e293b;
+  color: white;
+  border-color: #475569;
+}
+
+/* Untuk mode dark */
+body.dark #tarik-max-btn {
+  background-color: #1e40af;
+}
+
+body.dark #tarik-max-btn:hover {
+  background-color: #1e3a8a;
+}
+
+
+/* Untuk meratakan teks Portofolio ke tengah */
+.portfolio-title {
+  text-align: center !important;
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Pastikan icon juga ikut tengah */
+.portfolio-title i {
+  margin-right: 8px;
+}
+
+/* Untuk mode dark */
+body.dark .portfolio-title {
+  color: white;
+}
     
     /* Modal untuk detail koin */
     .modal {
@@ -777,6 +889,31 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
 
   
   /* menu bawah mobile*/
+
+  /* Styling untuk profit/loss indicator */
+.profit-positive {
+  color: #10b981 !important;
+  font-weight: 600;
+}
+
+.profit-negative {
+  color: #ef4444 !important;
+  font-weight: 600;
+}
+
+/* Untuk mode dark */
+body.dark .profit-positive {
+  color: #34d399 !important;
+}
+
+body.dark .profit-negative {
+  color: #f87171 !important;
+}
+
+/* Animasi subtle untuk perubahan harga */
+.profit-loss {
+  transition: color 0.3s ease;
+}
   
 .bottom-nav {
       position: fixed;
@@ -1001,6 +1138,10 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
         padding: 8px 12px;
         font-size: 13px;
       }
+
+      #tarik-max-btn {
+        width: 25%;
+      }
     }
   </style>
 </head>
@@ -1083,7 +1224,9 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
         <!-- Koin Dimiliki -->
         <div class="deposit-coins">
           <div class="balance-item balance-coins" style="margin-top:10px;flex-direction:column;align-items:flex-start;width:100%;">
-            <span style="font-weight:bold; font-size:24px;"  class="balance-label">              <i class="fas fa-coins"></i> Portofolio:</span>
+            <span style="font-weight:bold; font-size:24px;" class="balance-label portfolio-title">
+              <i class="fas fa-coins"></i> Portofolio :
+            </span>
             <div id="main-balance-coins" style="margin-top:5px;width:100%;"></div>
           </div>
           
@@ -1115,7 +1258,8 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
         
         <div class="form-group">
           <label id="deposit-currency-label">Jumlah</label>
-          <input type="number" id="deposit-amount" placeholder="Masukkan jumlah" min="0">
+          <input type="text" id="deposit-amount" placeholder="Masukkan jumlah">
+
           <div class="error-message" id="deposit-error"></div>
         </div>
         
@@ -1127,6 +1271,7 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
     </div>
 
     <!-- Form Penarikan -->
+
     <div class="transaction-form" id="tarik-form" style="display:none;">
       <div class="form-group">
         <label>Nama</label>
@@ -1142,7 +1287,10 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
       </div>
       <div class="form-group">
         <label>Jumlah Penarikan (IDR)</label>
-        <input type="number" id="tarik-jumlah">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <input type="text" id="tarik-jumlah" class="tarik-input" inputmode="numeric" placeholder="0">
+          <button type="button" id="tarik-max-btn" class="max-button">MAX</button>
+        </div>
       </div>
       <div class="form-group">
         <label>Catatan (Opsional)</label>
@@ -1348,7 +1496,7 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
     // Saldo pengguna untuk masing-masing mata uang
     let userBalance = {
       usd: 0, // Saldo default USD
-      idr: 0 // Saldo default IDR (5 juta)
+      idr: 5000000 // Saldo default IDR (5 juta)
     };
     
     let userCoins = {}; // Menyimpan jumlah koin yang dimiliki pengguna
@@ -1358,7 +1506,8 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
   
     // Variabel untuk modal setoran
     let depositCurrency = '';
-  
+
+   
     // Fungsi untuk mendapatkan nilai tukar IDR ke USD
     async function getExchangeRate() {
       try {
@@ -1913,6 +2062,13 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
       }
     });
 
+// EVENT LISTENER BARU: Untuk tombol MAX penarikan
+document.getElementById('tarik-max-btn').addEventListener('click', function() {
+  // Bulatkan ke bilangan bulat tanpa desimal
+  const roundedBalance = Math.round(userBalance.idr);
+  document.getElementById('tarik-jumlah').value = roundedBalance;
+});
+
     // Event listener untuk tabs periode chart
     document.querySelectorAll('.chart-tab').forEach(tab => {
       tab.addEventListener('click', function() {
@@ -2205,7 +2361,7 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
       });
     });
 
-    // Bersihkan riwayat
+    // // Bersihkan riwayat
     document.getElementById("clear-riwayat").addEventListener("click",()=>{
       localStorage.removeItem("riwayatTransaksi");
       displayRiwayat();
@@ -2213,70 +2369,89 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
     
     // Tampilkan daftar koin yang dimiliki di halaman utama
     function updateMainCoinsDisplay() {
-      const container = document.getElementById('main-balance-coins');
-      container.innerHTML = '';
+  const container = document.getElementById('main-balance-coins');
+  container.innerHTML = '';
 
-      const owned = Object.keys(userCoins);
-      if (owned.length === 0) {
-        container.innerHTML = '<p style="color:#64748b;font-size:14px;">Belum ada koin dimiliki</p>';
-        return;
+  const owned = Object.keys(userCoins);
+  if (owned.length === 0) {
+    container.innerHTML = '<p style="color:#64748b;font-size:14px;">Belum ada koin dimiliki</p>';
+    return;
+  }
+
+  owned.forEach(coinId => {
+    const amount = userCoins[coinId];
+    if (amount > 0) {
+      const coin = cryptoData.find(c => c.id === coinId);
+      const name = coin ? coin.name : coinId;
+      const symbol = coin ? coin.symbol.toUpperCase() : coinId.toUpperCase();
+      const logo = coin ? coin.image : 'https://via.placeholder.com/24';
+
+      // ✅ cek currency saat ini
+      const selectedCurrency = document.getElementById("currency-select").value;
+      let priceConverted = "";
+      if (coin) {
+        if (selectedCurrency === "usd") {
+          priceConverted = (coin.current_price * amount).toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD"
+          });
+        } else {
+          priceConverted = (coin.current_price * amount).toLocaleString("id-ID", {
+            style: "currency",
+            currency: "IDR"
+          });
+        }
       }
 
-      owned.forEach(coinId => {
-        const amount = userCoins[coinId];
-        if (amount > 0) {
-          const coin = cryptoData.find(c => c.id === coinId);
-          const name = coin ? coin.name : coinId;
-          const symbol = coin ? coin.symbol.toUpperCase() : coinId.toUpperCase();
-          const logo = coin ? coin.image : 'https://via.placeholder.com/24';
-
-          // ✅ cek currency saat ini
-          const selectedCurrency = document.getElementById("currency-select").value;
-          let priceConverted = "";
-          if (coin) {
-            if (selectedCurrency === "usd") {
-              priceConverted = (coin.current_price * amount).toLocaleString("en-US", {
-                style: "currency",
-                currency: "USD"
-              });
-            } else {
-              priceConverted = (coin.current_price * amount).toLocaleString("id-ID", {
-                style: "currency",
-                currency: "IDR"
-              });
-            }
-          }
-
-          const div = document.createElement('div');
-          div.style.padding = '6px 0';
-          div.style.display = 'flex';
-          div.style.alignItems = 'center';
-          div.style.justifyContent = 'space-between';
-          div.style.borderBottom = '1px dashed #eee';
-          div.style.cursor = 'pointer'; // Tambahkan cursor pointer
-
-          div.innerHTML = `
-            <div style="display:flex;align-items:center;gap:8px;">
-              <img src="${logo}" alt="${name}" style="width:24px;height:24px;border-radius:50%;">
-              <span>${name} (${symbol})</span>
-            </div>
-            <div style="text-align:right;">
-              <div>${amount.toFixed(6)} ${symbol}</div>
-              <div style="font-size:12px;color:#64748b;">${priceConverted}</div>
-            </div>
-          `;
-
-          // Tambahkan event listener untuk menampilkan modal detail ketika koin diklik
-          if (coin) {
-            div.addEventListener('click', () => {
-              showDetails(coin);
-            });
-          }
-
-          container.appendChild(div);
+      // Hitung persentase perubahan 24h
+      let percentageChange = coin ? coin.price_change_percentage_24h : 0;
+      let percentageText = "";
+      let color = "#64748b"; // default gray
+      if (coin) {
+        if (percentageChange > 0) {
+          color = "#10b981"; // green
+          percentageText = `+${percentageChange.toFixed(2)}%`;
+        } else if (percentageChange < 0) {
+          color = "#ef4444"; // red
+          percentageText = `${percentageChange.toFixed(2)}%`;
+        } else {
+          percentageText = "0.00%";
         }
-      });
+      }
+
+      const div = document.createElement('div');
+      div.style.padding = '8px 0';
+      div.style.display = 'flex';
+      div.style.alignItems = 'center';
+      div.style.justifyContent = 'space-between';
+      div.style.borderBottom = '1px dashed #eee';
+      div.style.cursor = 'pointer';
+
+      div.innerHTML = `
+        <div style="display:flex; align-items:center; gap:8px; flex:1;">
+          <img src="${logo}" alt="${name}" style="width:24px;height:24px;border-radius:50%;">
+          <div>
+            <div style="font-weight:500;">${name} (${symbol})</div>
+            <div style="font-size:12px; color:${color};">${percentageText}</div>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div>${amount.toFixed(6)} ${symbol}</div>
+          <div style="font-size:12px;color:#64748b;">${priceConverted}</div>
+        </div>
+      `;
+
+      // Tambahkan event listener untuk menampilkan modal detail ketika koin diklik
+      if (coin) {
+        div.addEventListener('click', () => {
+          showDetails(coin);
+        });
+      }
+
+      container.appendChild(div);
     }
+  });
+}
     
     // Sinkronisasi saldo utama dengan saldo di modal
     function updateMainBalanceDisplay() {
@@ -2338,106 +2513,135 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
       document.getElementById('deposit-modal').style.display = 'none';
     }
 
-    // FUNGSI BARU: Memvalidasi dan memproses setoran
-    function processDeposit() {
-      const amountInput = document.getElementById('deposit-amount');
-      const errorElement = document.getElementById('deposit-error');
-      const amount = parseFloat(amountInput.value);
-      
-      // Validasi input
-      if (isNaN(amount) || amount <= 0) {
-        errorElement.textContent = 'Masukkan jumlah yang valid';
-        errorElement.style.display = 'block';
-        return;
-      }
-      
-      // Proses setoran berdasarkan mata uang
-      if (depositCurrency === 'idr') {
-        userBalance.idr += amount;
-        addTransactionRecord("setoran", `IDR ${amount.toLocaleString('id-ID')}`);
-      } else {
-        userBalance.usd += amount;
-        addTransactionRecord("setoran", `USD ${amount.toLocaleString('en-US', {minimumFractionDigits: 2})}`);
-      }
-      
-      // Simpan ke localStorage
-      saveToLocalStorage();
-      updateBalanceDisplay();
-      
-      // Tutup modal dan tampilkan konfirmasi
-      hideDepositModal();
-      showMessage('Sukses', 'Setoran berhasil ditambahkan!', 'success');
-     
-    }
+   // FUNGSI BARU: Memvalidasi dan memproses setoran
+function processDeposit() {
+  const amountInput = document.getElementById('deposit-amount');
+  const errorElement = document.getElementById('deposit-error');
+  const amount = removeFormatting(amountInput.value);
+
+  // Validasi input angka
+  if (isNaN(amount) || amount <= 0) {
+    errorElement.textContent = 'Masukkan jumlah yang valid';
+    errorElement.style.display = 'block';
+    return;
+  }
+
+  // ✅ Validasi minimal setoran
+  if (depositCurrency === 'idr' && amount < 10000) {
+    errorElement.textContent = 'Minimum setoran adalah Rp 10.000';
+    errorElement.style.display = 'block';
+    return;
+  }
+  if (depositCurrency === 'usd' && amount < 1) {
+    errorElement.textContent = 'Minimum setoran adalah $1';
+    errorElement.style.display = 'block';
+    return;
+  }
+
+  // Proses setoran
+  if (depositCurrency === 'idr') {
+    userBalance.idr += amount;
+    addTransactionRecord("setoran", `IDR ${amount.toLocaleString('id-ID')}`);
+  } else {
+    userBalance.usd += amount;
+    addTransactionRecord("setoran", `USD ${amount.toLocaleString('en-US', {minimumFractionDigits: 2})}`);
+  }
+
+  // Simpan ke localStorage
+  saveToLocalStorage();
+  updateBalanceDisplay();
+
+  // Tutup modal dan tampilkan konfirmasi
+  hideDepositModal();
+  showMessage('Sukses', 'Setoran berhasil ditambahkan!', 'success');
+}
+
 
     // FUNGSI BARU: Menampilkan daftar koin di tab setoran
     function updateDepositCoinsList() {
-      const container = document.getElementById('deposit-coins-list');
-      container.innerHTML = '';
-      
-      const owned = Object.keys(userCoins);
-      if (owned.length === 0) {
-        container.innerHTML = '<p style="color:#64748b;text-align:center;">Belum ada koin dimiliki</p>';
-        return;
-      }
-      
-      owned.forEach(coinId => {
-        const amount = userCoins[coinId];
-        if (amount > 0) {
-          const coin = cryptoData.find(c => c.id === coinId);
-          if (coin) {
-            const name = coin.name;
-            const symbol = coin.symbol.toUpperCase();
-            const logo = coin.image;
-            
-            // Hitung nilai dalam IDR
-            let coinValueIDR;
-            if (currentCurrency === 'idr') {
-              coinValueIDR = coin.current_price * amount;
-            } else {
-              coinValueIDR = coin.current_price * exchangeRate * amount;
-            }
-            
-            const valueFormatted = new Intl.NumberFormat('id-ID', {
-              style: 'currency',
-              currency: 'IDR',
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0
-            }).format(coinValueIDR);
-            
-            const coinElement = document.createElement('div');
-            coinElement.style.display = 'flex';
-            coinElement.style.alignItems = 'center';
-            coinElement.style.justifyContent = 'space-between';
-            coinElement.style.padding = '8px 0';
-            coinElement.style.borderBottom = '1px solid #e2e8f0';
-            coinElement.style.cursor = 'pointer'; // Tambahkan cursor pointer
-            
-            coinElement.innerHTML = `
-              <div style="display:flex;align-items:center;gap:8px;">
-                <img src="${logo}" alt="${name}" style="width:24px;height:24px;border-radius:50%;">
-                <div>
-                  <div style="font-weight:500;">${symbol}</div>
-                  <div style="font-size:12px;color:#64748b;">${name}</div>
-                </div>
-              </div>
-              <div style="text-align:right;">
-                <div>${amount.toFixed(4)}</div>
-                <div style="font-size:12px;color:#64748b;">${valueFormatted}</div>
-              </div>
-            `;
-            
-            // Tambahkan event listener untuk menampilkan modal detail ketika koin diklik
-            coinElement.addEventListener('click', () => {
-              showDetails(coin);
-            });
-            
-            container.appendChild(coinElement);
-          }
+  const container = document.getElementById('deposit-coins-list');
+  container.innerHTML = '';
+  
+  const owned = Object.keys(userCoins);
+  if (owned.length === 0) {
+    container.innerHTML = '<p style="color:#64748b;text-align:center;">Belum ada koin dimiliki</p>';
+    return;
+  }
+  
+  owned.forEach(coinId => {
+    const amount = userCoins[coinId];
+    if (amount > 0) {
+      const coin = cryptoData.find(c => c.id === coinId);
+      if (coin) {
+        const name = coin.name;
+        const symbol = coin.symbol.toUpperCase();
+        const logo = coin.image;
+        
+        // Hitung nilai dalam IDR
+        let coinValueIDR;
+        if (currentCurrency === 'idr') {
+          coinValueIDR = coin.current_price * amount;
+        } else {
+          coinValueIDR = coin.current_price * exchangeRate * amount;
         }
-      });
+        
+        const valueFormatted = new Intl.NumberFormat('id-ID', {
+          style: 'currency',
+          currency: 'IDR',
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
+        }).format(coinValueIDR);
+        
+        // Hitung profit/loss 24 jam
+        let profitLossPercentage = coin.price_change_percentage_24h || 0;
+        let totalProfitLoss = coinValueIDR * (profitLossPercentage / 100);
+        let profitLossClass = profitLossPercentage >= 0 ? "profit-positive" : "profit-negative";
+        
+        const coinElement = document.createElement('div');
+        coinElement.style.display = 'flex';
+        coinElement.style.alignItems = 'center';
+        coinElement.style.justifyContent = 'space-between';
+        coinElement.style.padding = '12px 0';
+        coinElement.style.borderBottom = '1px solid #e2e8f0';
+        coinElement.style.cursor = 'pointer';
+        
+        coinElement.innerHTML = `
+          <div style="display:flex; align-items:center; gap:8px; flex:1;">
+            <img src="${logo}" alt="${name}" style="width:32px;height:32px;border-radius:50%;">
+            <div style="flex:1;">
+              <div style="font-weight:500; font-size:14px;">${symbol}</div>
+              <div style="font-size:12px;color:#64748b;">${name}</div>
+              <div class="profit-loss ${profitLossClass}" style="font-size:11px; margin-top:4px;">
+                ${coin.price_change_percentage_24h ? 
+                  `${profitLossPercentage >= 0 ? '↗' : '↘'} ${Math.abs(profitLossPercentage).toFixed(2)}% (24j)` : 
+                  'Data tidak tersedia'}
+              </div>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-weight:600;">${amount.toFixed(4)}</div>
+            <div style="font-size:12px;color:#64748b; margin-top:4px;">${valueFormatted}</div>
+            ${coin.price_change_percentage_24h ? 
+              `<div class="profit-loss ${profitLossClass}" style="font-size:11px; margin-top:2px;">
+                ${totalProfitLoss >= 0 ? '+' : ''}${new Intl.NumberFormat('id-ID', {
+                  style: 'currency',
+                  currency: 'IDR',
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0
+                }).format(totalProfitLoss)}
+              </div>` : ''}
+          </div>
+        `;
+        
+        coinElement.addEventListener('click', () => {
+          showDetails(coin);
+        });
+        
+        container.appendChild(coinElement);
+      }
     }
-    
+  });
+}    
     // FUNGSI BARU: untuk menghitung total aset dalam IDR
     function calculateTotalAssetInIDR() {
       let totalInIDR = userBalance.idr; // Saldo IDR langsung
@@ -2553,11 +2757,36 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
       }
     });
 
+
+    // Event listener untuk navigasi keyboard yang lebih baik
+document.getElementById('tarik-jumlah').addEventListener('keydown', function(e) {
+  // Izinkan tombol navigasi (panah, delete, backspace, tab)
+  if ([8, 9, 37, 38, 39, 40, 46].includes(e.keyCode)) {
+    return;
+  }
+  
+  // Izinkan hanya angka
+  if ((e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105)) {
+    e.preventDefault();
+  }
+});
+
     // EVENT LISTENER BARU: Validasi input saat mengetik
-    document.getElementById('deposit-amount').addEventListener('input', function() {
-      const errorElement = document.getElementById('deposit-error');
-      errorElement.style.display = 'none';
-    });
+    document.getElementById('deposit-amount').addEventListener('input', function(e) {
+  const errorElement = document.getElementById('deposit-error');
+  errorElement.style.display = 'none';
+
+  // Ambil angka asli tanpa titik
+  let value = removeFormatting(e.target.value);
+
+  // Format kembali dengan titik ribuan
+  if (!isNaN(value) && value > 0) {
+    e.target.value = formatNumberWithCommas(value);
+  } else {
+    e.target.value = "";
+  }
+});
+
 
     // EVENT LISTENER BARU: Untuk tombol hapus riwayat
     document.getElementById('clear-history-btn').addEventListener('click', clearTransactionHistory);
@@ -2567,48 +2796,143 @@ body.dark, body.dark header, body.dark .currency-selector select, body.dark .tra
       processWithdrawal();
     });
 
-    // Fungsi untuk memproses penarikan
-    function processWithdrawal() {
-      const nama = document.getElementById('tarik-nama').value.trim();
-      const bank = document.getElementById('tarik-bank').value.trim();
-      const rekening = document.getElementById('tarik-rek').value.trim();
-      const jumlah = parseFloat(document.getElementById('tarik-jumlah').value);
-      const catatan = document.getElementById('tarik-catatan').value.trim();
-      
-      // Validasi input
-      if (!nama || !bank || !rekening || isNaN(jumlah) || jumlah <= 0) {
-        showMessage('Error', 'Harap isi semua field dengan benar', 'error');
-        return;
-      }
-      
-      // Validasi saldo mencukupi
-      if (jumlah > userBalance.idr) {
-        showMessage('Error', 'Saldo IDR tidak mencukupi', 'error');
-        return;
-      }
-      
-      // Proses penarikan
-      userBalance.idr -= jumlah;
-      
-      // Simpan ke localStorage
-      saveToLocalStorage();
-      
-      // Tambahkan ke riwayat transaksi
-      addTransactionRecord("penarikan", `Penarikan IDR ${jumlah.toLocaleString('id-ID')} ke ${bank} a.n ${nama}`);
-      
-      // Reset form
-      document.getElementById('tarik-nama').value = '';
-      document.getElementById('tarik-bank').value = '';
-      document.getElementById('tarik-rek').value = '';
-      document.getElementById('tarik-jumlah').value = '';
-      document.getElementById('tarik-catatan').value = '';
-      
-      // Perbarui tampilan saldo
-      updateBalanceDisplay();
-      
-      // Tampilkan pesan sukses
-      showMessage('Sukses', `Penarikan sebesar Rp ${jumlah.toLocaleString('id-ID')} berhasil diproses`, 'success');
-    }
+   // Fungsi untuk memproses penarikan (DIMODIFIKASI)
+function processWithdrawal() {
+  const nama = document.getElementById('tarik-nama').value.trim();
+  const bank = document.getElementById('tarik-bank').value.trim();
+  const rekening = document.getElementById('tarik-rek').value.trim();
+  
+  // Ambil nilai dari input yang sudah diformat dan hapus formatnya
+  const formattedJumlah = document.getElementById('tarik-jumlah').value;
+  const jumlah = removeFormatting(formattedJumlah);
+  
+  const catatan = document.getElementById('tarik-catatan').value.trim();
+  
+  // Validasi input
+  if (!nama || !bank || !rekening || jumlah <= 0) {
+    showMessage('Error', 'Harap isi semua field dengan benar', 'error');
+    return;
+  }
+  
+  // Validasi minimum penarikan Rp 100.000
+  if (jumlah < 100000) {
+    showMessage('Error', 'Minimum penarikan adalah Rp 100.000', 'error');
+    return;
+  }
+  
+  // Validasi saldo mencukupi
+  if (jumlah > userBalance.idr) {
+    showMessage('Error', 'Saldo IDR tidak mencukupi', 'error');
+    return;
+  }
+  
+  // Proses penarikan - bulatkan juga saat mengurangi saldo
+  userBalance.idr = Math.round(userBalance.idr - jumlah);
+  
+  // Simpan ke localStorage
+  saveToLocalStorage();
+  
+  // Tambahkan ke riwayat transaksi
+  addTransactionRecord("penarikan", `Penarikan IDR ${formatNumberWithCommas(jumlah)} ke ${bank} a.n ${nama}`);
+  
+  // Reset form
+  document.getElementById('tarik-nama').value = '';
+  document.getElementById('tarik-bank').value = '';
+  document.getElementById('tarik-rek').value = '';
+  document.getElementById('tarik-jumlah').value = '';
+  document.getElementById('tarik-catatan').value = '';
+  
+  // Perbarui tampilan saldo
+  updateBalanceDisplay();
+  
+  // Tampilkan pesan sukses
+  showMessage('Sukses', `Penarikan sebesar Rp ${formatNumberWithCommas(jumlah)} berhasil diproses`, 'success');
+}
+
+
+ // Fungsi untuk memformat angka dengan pemisah ribuan
+ function formatNumberWithCommas(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+// Fungsi untuk menghapus format dan mengembalikan angka murni
+function removeFormatting(formattedNumber) {
+  return parseInt(formattedNumber.toString().replace(/\./g, '')) || 0;
+}
+
+// Fungsi untuk memvalidasi input angka
+function validateNumberInput(input) {
+  // Hapus karakter selain angka
+  return input.replace(/[^\d]/g, '');
+}
+  
+
+// Event listener untuk input jumlah penarikan dengan format otomatis
+document.getElementById('tarik-jumlah').addEventListener('input', function(e) {
+  // Simpan posisi kursor
+  const cursorPosition = e.target.selectionStart;
+  const originalLength = e.target.value.length;
+  
+  // Dapatkan nilai input dan validasi
+  let rawValue = e.target.value;
+  let cleanedValue = validateNumberInput(rawValue);
+  
+  // Format angka dengan pemisah ribuan
+  let formattedValue = formatNumberWithCommas(cleanedValue);
+  
+  // Update nilai input
+  e.target.value = formattedValue;
+  
+  // Hitung posisi kursor baru
+  const addedChars = formattedValue.length - originalLength;
+  const newCursorPosition = cursorPosition + addedChars;
+  
+  // Set posisi kursor
+  e.target.setSelectionRange(newCursorPosition, newCursorPosition);
+});
+
+// Event listener untuk tombol MAX (diperbarui)
+document.getElementById('tarik-max-btn').addEventListener('click', function() {
+  // Bulatkan ke bilangan bulat tanpa desimal
+  const roundedBalance = Math.round(userBalance.idr);
+  const formattedBalance = formatNumberWithCommas(roundedBalance);
+  document.getElementById('tarik-jumlah').value = formattedBalance;
+});
+
+
+
+// angka format ribuan
+// Fungsi untuk memformat angka dengan pemisah ribuan
+function formatNumberWithCommas(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+// Fungsi untuk menghapus format agar kembali ke angka murni
+function removeFormatting(formattedNumber) {
+  return parseInt(formattedNumber.toString().replace(/\./g, '')) || 0;
+}
+
+function formatNumberWithCommas(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+function removeFormatting(value) {
+  return parseInt(value.replace(/\./g, '')) || 0;
+}
+
+const depositInput = document.getElementById('deposit-amount');
+
+depositInput.addEventListener('input', function(e) {
+  let value = e.target.value.replace(/\./g, ''); // buang titik lama
+  if (!isNaN(value) && value !== "") {
+    e.target.value = formatNumberWithCommas(value);
+  } else {
+    e.target.value = "";
+  }
+});
+
+
+
 
     // pesan notif
     let autoCloseTimeout;
