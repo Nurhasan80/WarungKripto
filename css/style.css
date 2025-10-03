@@ -3,6 +3,12 @@
     margin: 0;
     padding: 0;
 }
+
+body.dark tr:hover {
+  background:#0099ff;
+  color: white;
+}
+
   
 body {
     margin: 0;
@@ -1817,5 +1823,6 @@ color:grey;
 }
       
 }
+
 
 
