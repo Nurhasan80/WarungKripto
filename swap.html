@@ -118,7 +118,7 @@ body.dark #to-currency,  body.dark #from-currency {
       border: 1px solid #ddd;
       border-radius: 6px;
       font-size: 16px;
-      text-align: right;
+      text-align: left;
     }
     
     .conversion-rate {
@@ -389,19 +389,30 @@ body.dark #to-currency,  body.dark #from-currency {
   </style>
 </head>
 <body>
-<!-- Header fixed dengan RGBA -->
-  <header style="background-color: rgba(0, 123, 255, 1);" 
-          class="fixed top-0 left-0 w-full z-50 py-4 text-center text-xl font-semibold text-white shadow-md">
+<header style="background-color: rgba(0, 123, 255, 0.7);" 
+          class="hidden sm:flex fixed top-0 left-0 w-full z-50 py-3 shadow-md items-center justify-center">
 
-    <!-- Back Arrow muncul di tablet & desktop (≥640px) -->
+    <!-- Icon Home -->
     <a href="index.html" 
-       class="absolute top-1/2 left-4 -translate-y-1/2 items-center text-white hover:text-gray-200 hidden sm:flex">
+       class="absolute left-4 flex items-center text-white hover:text-gray-200">
       <svg xmlns="http://www.w3.org/2000/svg" 
            class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M3 9.75L12 3l9 6.75M4.5 10.5V21h6v-6h3v6h6V10.5" />
       </svg>
     </a>
-   <i class="fas fa-exchange-alt"></i> Pertukaran
+
+    <!-- Navbar -->
+    <nav class="flex space-x-6 text-lg font-semibold text-white">
+      <a href="pasar.html" class="hover:text-gray-200">
+        Pasar
+      </a>
+      
+      <a href="trading.html" class="hover:text-gray-200">Perdagangan</a>
+      <a href="swap.html" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Pertukaran</a>
+      <a href="wallet.html" class="hover:text-gray-200">Dompet</a>
+      <a href="#" class="hover:text-gray-200">Akademi</a>
+    </nav>
   </header>
  
 
@@ -527,7 +538,7 @@ body.dark #to-currency,  body.dark #from-currency {
   // Variabel global untuk menyimpan data cryptocurrency
   let cryptoData = [];
   let exchangeRate = 15000; // Nilai tukar default (akan diupdate via API)
-  
+  let currentConversionResult = 0;
   // Saldo pengguna untuk masing-masing mata uang
   let userBalance = {
     usd: 0, // Saldo default USD
@@ -693,57 +704,38 @@ body.dark #to-currency,  body.dark #from-currency {
   }
   
   // Fungsi untuk memperbarui tampilan saldo
-  function updateBalanceDisplay() {
-    const fromCurrency = document.getElementById('from-currency').value;
-    const toCurrency = document.getElementById('to-currency').value;
-    const fromBalanceElement = document.getElementById('from-balance');
-    const toBalanceElement = document.getElementById('to-balance');
-    
-    // Tampilkan saldo untuk mata uang asal
-    if (fromCurrency === 'idr') {
-      fromBalanceElement.textContent = new Intl.NumberFormat('id-ID', {
-        style: 'currency',
-        currency: 'IDR',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-      }).format(userBalance.idr);
-    } else if (fromCurrency === 'usd') {
-      fromBalanceElement.textContent = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }).format(userBalance.usd);
-    } else {
-      // Crypto currency
-      const coinAmount = userCoins[fromCurrency] || 0;
-      fromBalanceElement.textContent = `${coinAmount.toFixed(6)} ${getCurrencySymbol(fromCurrency)}`;
-    }
-    
-    // Tampilkan saldo untuk mata uang tujuan
-    if (toCurrency === 'idr') {
-      toBalanceElement.textContent = new Intl.NumberFormat('id-ID', {
-        style: 'currency',
-        currency: 'IDR',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-      }).format(userBalance.idr);
-    } else if (toCurrency === 'usd') {
-      toBalanceElement.textContent = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }).format(userBalance.usd);
-    } else {
-      // Crypto currency
-      const coinAmount = userCoins[toCurrency] || 0;
-      toBalanceElement.textContent = `${coinAmount.toFixed(6)} ${getCurrencySymbol(toCurrency)}`;
-    }
-    
-    // Periksa apakah konversi dimungkinkan
-    checkConversionPossible();
+// FUNGSI INI JUGA PERLU DIPERBAIKI UNTUK KONSISTENSI
+function updateBalanceDisplay() {
+  const fromCurrency = document.getElementById('from-currency').value;
+  const toCurrency = document.getElementById('to-currency').value;
+  const fromBalanceElement = document.getElementById('from-balance');
+  const toBalanceElement = document.getElementById('to-balance');
+  
+  // Tampilkan saldo untuk mata uang asal (DIPERBAIKI)
+  if (fromCurrency === 'idr') {
+    fromBalanceElement.textContent = `Rp ${Math.round(userBalance.idr).toLocaleString('id-ID')}`;
+  } else if (fromCurrency === 'usd') {
+    fromBalanceElement.textContent = `$${userBalance.usd.toFixed(2)}`;
+  } else {
+    // Crypto currency
+    const coinAmount = userCoins[fromCurrency] || 0;
+    fromBalanceElement.textContent = `${coinAmount.toFixed(6)} ${getCurrencySymbol(fromCurrency)}`;
   }
+  
+  // Tampilkan saldo untuk mata uang tujuan (DIPERBAIKI)
+  if (toCurrency === 'idr') {
+    toBalanceElement.textContent = `Rp ${Math.round(userBalance.idr).toLocaleString('id-ID')}`;
+  } else if (toCurrency === 'usd') {
+    toBalanceElement.textContent = `$${userBalance.usd.toFixed(2)}`;
+  } else {
+    // Crypto currency
+    const coinAmount = userCoins[toCurrency] || 0;
+    toBalanceElement.textContent = `${coinAmount.toFixed(6)} ${getCurrencySymbol(toCurrency)}`;
+  }
+  
+  // Periksa apakah konversi dimungkinkan
+  checkConversionPossible();
+}
   
   // Fungsi untuk memeriksa apakah konversi dimungkinkan
   function checkConversionPossible() {
@@ -876,73 +868,97 @@ body.dark #to-currency,  body.dark #from-currency {
     }
     
     // Tampilkan hasil
-    toAmountElement.value = result.toFixed(6);
+       // Tampilkan hasil dengan format yang sesuai
+       toAmountElement.value = formatCurrencyAmount(result, toCurrency);
     
     // Periksa apakah konversi dimungkinkan
     checkConversionPossible();
   }
+
+  // Fungsi pembantu untuk memformat angka berdasarkan mata uang
+// Fungsi pembantu untuk memformat angka berdasarkan mata uang (DIPERBAIKI)
+function formatCurrencyAmount(amount, currencyCode) {
+  if (currencyCode === 'idr') {
+    // Untuk IDR, tampilkan tanpa desimal dan tanpa pemisah ribuan
+    return Math.round(amount).toString();
+  } else if (currencyCode === 'usd') {
+    // Untuk USD, tampilkan 2 desimal
+    return amount.toFixed(2);
+  } else {
+    // Untuk cryptocurrency, tampilkan 6 desimal
+    return amount.toFixed(6);
+  }
+}
   
   // Fungsi untuk melakukan konversi
   function performConversion() {
-    const fromCurrency = document.getElementById('from-currency').value;
-    const toCurrency = document.getElementById('to-currency').value;
-    const fromAmount = parseFloat(document.getElementById('from-amount').value) || 0;
-    const toAmount = parseFloat(document.getElementById('to-amount').value) || 0;
-    
-    if (fromAmount <= 0) {
-      showMessage('Kesalahan', 'Terjadi error sistem!', 'error');
-      
-      return;
-    }
-    
-    // Kurangi saldo mata uang asal
-    if (fromCurrency === 'idr') {
-      userBalance.idr -= fromAmount;
-    } else if (fromCurrency === 'usd') {
-      userBalance.usd -= fromAmount;
-    } else {
-      // Kurangi saldo crypto
-      if (!userCoins[fromCurrency]) userCoins[fromCurrency] = 0;
-      userCoins[fromCurrency] -= fromAmount;
-      
-      // Hapus dari daftar jika saldo 0
-      if (userCoins[fromCurrency] <= 0) {
-        delete userCoins[fromCurrency];
-      }
-    }
-    
-    // Tambahkan saldo mata uang tujuan
-    if (toCurrency === 'idr') {
-      userBalance.idr += toAmount;
-    } else if (toCurrency === 'usd') {
-      userBalance.usd += toAmount;
-    } else {
-      // Tambahkan saldo crypto
-      if (!userCoins[toCurrency]) userCoins[toCurrency] = 0;
-      userCoins[toCurrency] += toAmount;
-    }
-    
-    // Tambahkan ke riwayat konversi
-    addToConversionHistory(fromCurrency, toCurrency, fromAmount, toAmount);
-    
-    // Simpan ke localStorage
-    saveToLocalStorage();
-    
-    // Perbarui tampilan saldo
-    updateBalanceDisplay();
-    
-    // Tampilkan pesan sukses
-    showMessage('Sukses', `Konversi berhasil! ${fromAmount} ${getCurrencyName(fromCurrency)} telah dikonversi menjadi ${toAmount.toFixed(6)} ${getCurrencyName(toCurrency)}`, 'success');
-    
-    // Reset form
-    document.getElementById('from-amount').value = '';
-    document.getElementById('to-amount').value = '';
-    document.getElementById('rate-info').textContent = 'Masukkan jumlah untuk melihat kurs';
-    
-    // Nonaktifkan tombol konversi
-    document.getElementById('convert-button').disabled = true;
+  const fromCurrency = document.getElementById('from-currency').value;
+  const toCurrency = document.getElementById('to-currency').value;
+  const fromAmount = parseFloat(document.getElementById('from-amount').value) || 0;
+  const toAmount = parseFloat(document.getElementById('to-amount').value) || 0;
+
+  if (fromAmount <= 0) {
+    showMessage('Kesalahan', 'Terjadi error sistem!', 'error');
+    return;
   }
-  
+
+  // 🔹 Validasi batas minimal konversi
+  if (fromCurrency === 'idr' && fromAmount < 10000) {
+    showMessage('Validasi Gagal', 'Minimal konversi IDR adalah Rp 10.000', 'warning');
+    return;
+  }
+
+  if (fromCurrency === 'usd' && fromAmount < 1) {
+    showMessage('Validasi Gagal', 'Minimal konversi USD adalah $1', 'warning');
+    return;
+  }
+
+  // Kurangi saldo mata uang asal
+  if (fromCurrency === 'idr') {
+    userBalance.idr -= fromAmount;
+  } else if (fromCurrency === 'usd') {
+    userBalance.usd -= fromAmount;
+  } else {
+    if (!userCoins[fromCurrency]) userCoins[fromCurrency] = 0;
+    userCoins[fromCurrency] -= fromAmount;
+    if (userCoins[fromCurrency] <= 0) {
+      delete userCoins[fromCurrency];
+    }
+  }
+
+  // Tambahkan saldo tujuan
+  if (toCurrency === 'idr') {
+    userBalance.idr += toAmount;
+  } else if (toCurrency === 'usd') {
+    userBalance.usd += toAmount;
+  } else {
+    if (!userCoins[toCurrency]) userCoins[toCurrency] = 0;
+    userCoins[toCurrency] += toAmount;
+  }
+
+  // Tambahkan ke riwayat konversi
+  addToConversionHistory(fromCurrency, toCurrency, fromAmount, toAmount);
+
+  // Simpan ke localStorage
+  saveToLocalStorage();
+
+  // Perbarui tampilan saldo
+  updateBalanceDisplay();
+
+    // Tampilkan pesan sukses dengan format yang sesuai
+    const formattedFromAmount = formatCurrencyAmount(fromAmount, fromCurrency);
+  const formattedToAmount = formatCurrencyAmount(toAmount, toCurrency);
+  showMessage('Sukses', `Konversi berhasil! ${formattedFromAmount} ${getCurrencyName(fromCurrency)} telah dikonversi menjadi ${formattedToAmount} ${getCurrencyName(toCurrency)}`, 'success');
+
+  // Reset form
+  document.getElementById('from-amount').value = '';
+  document.getElementById('to-amount').value = '';
+  document.getElementById('rate-info').textContent = 'Masukkan jumlah untuk melihat kurs';
+
+  // Nonaktifkan tombol konversi
+  document.getElementById('convert-button').disabled = true;
+}
+
   // Fungsi untuk menambahkan konversi ke riwayat
   function addToConversionHistory(fromCurrency, toCurrency, fromAmount, toAmount) {
     const conversion = {
@@ -967,37 +983,52 @@ body.dark #to-currency,  body.dark #from-currency {
   }
   
   // Fungsi untuk merender riwayat konversi
-  function renderConversionHistory() {
-    const historyList = document.getElementById('history-list');
-    
-    // Kosongkan daftar
-    historyList.innerHTML = '';
-    
-    if (conversionHistory.length === 0) {
-      historyList.innerHTML = '<div class="empty-history">Belum ada riwayat konversi</div>';
-      return;
-    }
-    
-    // Tambahkan setiap item riwayat
-    conversionHistory.forEach(item => {
-      const historyItem = document.createElement('div');
-      historyItem.className = 'history-item';
-      
-      const fromSymbol = getCurrencySymbol(item.fromCurrency);
-      const toSymbol = getCurrencySymbol(item.toCurrency);
-      
-      historyItem.innerHTML = `
-        <div class="history-details">
-          <div class="history-amount">
-            ${item.fromAmount.toFixed(6)} ${fromSymbol} → ${item.toAmount.toFixed(6)} ${toSymbol}
-          </div>
-          <div class="history-date">${item.date}</div>
-        </div>
-      `;
-      
-      historyList.appendChild(historyItem);
-    });
+  // 🔹 Fungsi bantu untuk memformat angka agar tidak muncul nol berlebih
+function formatNumber(value) {
+  // Jika angkanya bulat, tampilkan tanpa koma
+  if (Number.isInteger(value)) return value.toString();
+  // Jika desimal, tampilkan maksimal 6 angka di belakang koma tapi tanpa nol berlebih
+  return parseFloat(value.toFixed(6)).toString();
+}
+
+// 🔹 Fungsi untuk merender riwayat konversi (versi rapi)
+// 🔹 Fungsi untuk merender riwayat konversi (versi rapi)
+function renderConversionHistory() {
+  const historyList = document.getElementById('history-list');
+  
+  // Kosongkan daftar riwayat terlebih dahulu
+  historyList.innerHTML = '';
+  
+  if (conversionHistory.length === 0) {
+    historyList.innerHTML = '<div class="empty-history">Belum ada riwayat konversi</div>';
+    return;
   }
+
+  // Tambahkan setiap item riwayat
+  conversionHistory.forEach(item => {
+    const historyItem = document.createElement('div');
+    historyItem.className = 'history-item';
+    
+    const fromSymbol = getCurrencySymbol(item.fromCurrency);
+    const toSymbol = getCurrencySymbol(item.toCurrency);
+    
+    // Format jumlah dengan fungsi formatCurrencyAmount
+    const formattedFromAmount = formatCurrencyAmount(item.fromAmount, item.fromCurrency);
+    const formattedToAmount = formatCurrencyAmount(item.toAmount, item.toCurrency);
+    
+    historyItem.innerHTML = `
+      <div class="history-details">
+        <div class="history-amount">
+          ${formattedFromAmount} ${fromSymbol} → ${formattedToAmount} ${toSymbol}
+        </div>
+        <div class="history-date">${item.date}</div>
+      </div>
+    `;
+    
+    historyList.appendChild(historyItem);
+  });
+}
+
   
   // Fungsi untuk menghapus riwayat konversi
   function clearConversionHistory() {
@@ -1102,6 +1133,9 @@ body.dark #to-currency,  body.dark #from-currency {
       document.getElementById('overlayMsg').style.display = 'none';
     }
 
+
+    // fungsi validatasi konversi
+    
   </script>
 </body>
 </html>
