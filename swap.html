@@ -360,6 +360,45 @@ body.dark #to-currency,  body.dark #from-currency {
     .error { color: #dc3545; }
     .warning { color: #ffc107; }
     .info { color: #007bff; }
+
+    /* Style untuk container saldo dengan tombol max */
+.balance-max-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.max-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.max-button:hover {
+  background-color: #2563eb;
+}
+
+.max-button:active {
+  background-color: #1d4ed8;
+}
+
+/* Dark mode untuk tombol max */
+body.dark .max-button {
+  background-color: #1e40af;
+}
+
+body.dark .max-button:hover {
+  background-color: #1e3a8a;
+}
+
+/* Untuk tampilan mobile */
+
   
       @media (min-width: 768px) {
       .bottom-nav {
@@ -383,6 +422,15 @@ body.dark #to-currency,  body.dark #from-currency {
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
+
+    .amount-input ::placeholder {
+      font-size: 11px;
+    }
+
+    .max-button {
+    padding: 3px 6px;
+    font-size: 11px;
+  }
    
     }
   
@@ -419,11 +467,13 @@ body.dark #to-currency,  body.dark #from-currency {
           </select>
         </div>
         <div class="balance-info">
-          <span>Saldo: </span>
-          <span id="from-balance">Rp 0</span>
+          <div class="balance-max-container">
+            <span>Saldo: <span id="from-balance">Rp 0</span></span>
+            <button id="max-button" class="max-button">Max</button>
+          </div>
         </div>
         <div class="amount-input">
-          <input type="number" id="from-amount" placeholder="Masukan Jumlah saldo (Min Rp 10.000)" min="0" step="0.00000001">
+          <input type="number" id="from-amount" placeholder="Masukan Jumlah saldo mata uang" min="0" step="0.00000001">
         </div>
       </div>
       
@@ -684,13 +734,15 @@ body.dark #to-currency,  body.dark #from-currency {
     
     // Tukar amount jika ada nilai
     if (tempAmount) {
-      fromAmount.value = toAmount.value;
-      calculateConversion();
+        fromAmount.value = toAmount.value;
+        calculateConversion();
     }
     
     // Perbarui tampilan saldo
     updateBalanceDisplay();
-  }
+    updatePlaceholder();
+    updateMaxButton();
+}
   
   // Fungsi untuk memperbarui tampilan saldo
 // FUNGSI INI JUGA PERLU DIPERBAIKI UNTUK KONSISTENSI
@@ -722,8 +774,9 @@ function updateBalanceDisplay() {
     toBalanceElement.textContent = `${coinAmount.toFixed(6)} ${getCurrencySymbol(toCurrency)}`;
   }
   
-  // Periksa apakah konversi dimungkinkan
   checkConversionPossible();
+  updateMaxButton();
+  
 }
   
   // Fungsi untuk memeriksa apakah konversi dimungkinkan
@@ -1058,6 +1111,9 @@ function renderConversionHistory() {
     loadFromLocalStorage();
     await loadCryptoData();
     initConverter();
+    setupMaxButton();
+    updatePlaceholder();
+    updateMaxButton();
   }
   
   // Jalankan aplikasi
@@ -1123,7 +1179,68 @@ function renderConversionHistory() {
     }
 
 
-    // fungsi validatasi konversi
+   // Fungsi untuk memperbarui placeholder berdasarkan mata uang yang dipilih
+function updatePlaceholder() {
+    const fromCurrency = document.getElementById('from-currency').value;
+    const fromAmountInput = document.getElementById('from-amount');
+    const currencyName = getCurrencyName(fromCurrency);
+    
+    fromAmountInput.placeholder = `Masukkan jumlah saldo ${currencyName}`;
+    updateMaxButton();
+}
+
+// Panggil fungsi saat halaman dimuat dan setiap kali mata uang berubah
+// Event listener untuk perubahan mata uang
+document.getElementById('from-currency').addEventListener('change', function() {
+  updateBalanceDisplay();
+  updatePlaceholder(); // 🔄 Perbarui placeholder
+  calculateConversion();
+});
+
+document.getElementById('to-currency').addEventListener('change', function() {
+  updateBalanceDisplay();
+  calculateConversion();
+  // Tidak perlu update placeholder karena placeholder hanya untuk input "Dari"
+});
+
+
+// Fungsi untuk menangani klik tombol Max
+// Fungsi untuk menangani klik tombol Max
+function setupMaxButton() {
+  const maxButton = document.getElementById('max-button');
+  maxButton.addEventListener('click', setMaxAmount);
+}
+
+// Fungsi untuk mengisi jumlah maksimal
+function setMaxAmount() {
+  const fromCurrency = document.getElementById('from-currency').value;
+  let maxAmount = 0;
+
+  // Ambil saldo berdasarkan mata uang yang dipilih
+  if (fromCurrency === 'idr') {
+    maxAmount = userBalance.idr;
+  } else if (fromCurrency === 'usd') {
+    maxAmount = userBalance.usd;
+  } else {
+    // Untuk cryptocurrency
+    maxAmount = userCoins[fromCurrency] || 0;
+  }
+
+  // Set nilai input dengan saldo maksimal
+  document.getElementById('from-amount').value = formatCurrencyAmount(maxAmount, fromCurrency);
+  
+  // Trigger perhitungan konversi
+  calculateConversion();
+}
+
+// Fungsi untuk memperbarui tampilan tombol Max
+function updateMaxButton() {
+  const fromCurrency = document.getElementById('from-currency').value;
+  const maxButton = document.getElementById('max-button');
+  
+  // Ubah teks tombol berdasarkan mata uang
+  maxButton.textContent = `Max ${getCurrencyName(fromCurrency)}`;
+}
     
   </script>
 </body>
