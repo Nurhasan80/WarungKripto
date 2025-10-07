@@ -437,19 +437,30 @@ body.dark .max-button:hover {
   </style>
 </head>
 <body>
-<!-- Header fixed dengan RGBA -->
-  <header style="background-color: rgba(0, 123, 255, 1);" 
-          class="fixed top-0 left-0 w-full z-50 py-4 text-center text-xl font-semibold text-white shadow-md">
+<header style="background-color: rgba(0, 123, 255, 0.7);" 
+          class="hidden sm:flex fixed top-0 left-0 w-full z-50 py-3 shadow-md items-center justify-center">
 
-    <!-- Back Arrow muncul di tablet & desktop (≥640px) -->
+    <!-- Icon Home -->
     <a href="index.html" 
-       class="absolute top-1/2 left-4 -translate-y-1/2 items-center text-white hover:text-gray-200 hidden sm:flex">
+       class="absolute left-4 flex items-center text-white hover:text-gray-200">
       <svg xmlns="http://www.w3.org/2000/svg" 
            class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M3 9.75L12 3l9 6.75M4.5 10.5V21h6v-6h3v6h6V10.5" />
       </svg>
     </a>
-   <i class="fas fa-exchange-alt"></i> Pertukaran
+
+    <!-- Navbar -->
+    <nav class="flex space-x-6 text-lg font-semibold text-white">
+      <a href="pasar.html" class="hover:text-gray-200">
+        Pasar
+      </a>
+      
+      <a href="trading.html" class="hover:text-gray-200">Perdagangan</a>
+      <a href="swap.html" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Pertukaran</a>
+      <a href="wallet.html" class="hover:text-gray-200">Dompet</a>
+      <a href="#" class="hover:text-gray-200">Akademi</a>
+    </nav>
   </header>
  
 
