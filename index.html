@@ -4,7 +4,1836 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+  
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 60px;
+    background: #ffffff;
+    min-height: 100vh;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+
+/* Dark Mode */
+body.dark {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark tr:hover {
+  background:#0099ff;
+  color: white;
+}
+
+body.dark #panel-1 {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+body.dark #panel-2 {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark #panel-3 {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark #panel-4 {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark .news-item {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+body.dark  .announce-link{
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+body.dark  .announce-thumb{
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+
+body.dark .warning-icon svg {
+  background: #fff;
+    color:#fff;
+  
+}
+body.dark .warning-title {
+  color:red;
+}
+body.dark .warning-close{
+  color:red;
+}
+body.dark .warning-fixed {
+    background: #fff;
+  color:red;
+  
+}
+
+body.dark .gif-container {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark .chart-tab {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+
+
+body.dark .modal-content {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+
+body.dark #toggle-dark {
+background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark header {
+  background:linear-gradient(180deg,#071228,#04101a)
+  color: white;
+}
+body.dark .hero {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark .kiri {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+body.dark .kanan {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+body.dark h1 {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark span {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+body.dark .ticker-wrap{
+    background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+    
+}
+body.dark .widget {
+    background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+body.dark svg {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+body.dark .app-btn {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+  
+body.dark .box {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark th {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark .hero-item {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark footer {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark .bottom-nav {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: white;
+}
+
+body.dark .footer-credit {
+  background:#0099ff;
+  color: white;
+}
+
+body.dark .nav-desktop a {
+  background:#0099ff;
+  border-radius: 10px;
+  padding: 10px;
+
+  color: white;
+}
+body.dark .nav-desktop a:hover {
+  color: black;
+
+}
+
+
+
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.1); /* Latar belakang transparan */
+    backdrop-filter: blur(10px); /* Efek glass blur */
+    -webkit-backdrop-filter: blur(10px); /* Untuk browser Webkit */
+    transition: all 0.4s ease; /* Transisi halus untuk perubahan */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.logo img {
+    width: 100%;
+    height: 80px;
+  }
+
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.btn-login, .btn-login2 {
+    border: 1px solid #0099ff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    background: white;
+    color: #0099ff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+.btn-login:hover {
+    background: #0099ff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 153, 255, 0.2);
+}
+
+.btn-daftar, .btn-daftar2 {    
+    background-color: rgba(0, 123, 255, 0.7);
+    color: #fff;     
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #0099ff;    
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+.btn-daftar:hover {
+    background: #0077cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 153, 255, 0.3);
+}
+
+.btn-login2 {
+    display: none;
+}
+
+.btn-daftar2 {
+    display: none;
+}
+
+/* Tombol Hamburger */
+.hamburger-btn {
+    border: none;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    width: 44px;
+    height: 44px;
+    margin-left: 0.5rem;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-btn:hover {
+    background: #f0f8ff;
+    box-shadow: 0 2px 8px rgba(0, 153, 255, 0.2);
+}
+
+.hamburger {
+    width: 22px;
+    height: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background:#3498db;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* Animasi hamburger */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(3px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+transform: rotate(-45deg) translate(3px, -5px);
+}
+  
+/* Overlay Panel (mobile) */
+.overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background:#ffffff;
+    
+    transition: right 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 20px;
+}
+.overlay.active {
+    right: 0;
+}
+
+.overlay nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.overlay nav ul li {
+    margin: 0.5rem 0;
+}
+
+.overlay nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color:black;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: block;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    margin: 0 1;
+}
+
+.overlay nav ul li a:hover {
+    color: #0099ff;
+    background: #f0f8ff;
+    transform: translateY(-2px);
+}
+/* header End */
+
+/* content Hero */
+:root{
+    --bg:#0f172a;
+    --text:#e6eef8;
+    --speed:600ms;
+    --colors: #06b6d4, #f59e0b, #10b981;
+}
+
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+.hero{
+    text-align:center;
+    padding: 3rem 2rem;
+    background-color:#fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);   
+    width: 100%;
+}
+
+.hero h1{
+    font-size:clamp(1.8rem, 5vw, 3rem);
+    font-weight:900;
+    line-height:1.2;
+    margin-bottom:1rem;
+    color:black;
+}
+
+.hero p{
+    font-size:clamp(1rem, 2.5vw, 1.25rem);
+    margin-bottom:2rem;
+    color:#64748b;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.line{
+    font-size:clamp(1.3rem, 3vw, 2rem);
+    font-weight:600;
+    font-size:36px;
+    display:flex;
+    color:black;
+    justify-content:center;
+    align-items:center;
+    gap:0.2rem;
+    flex-wrap:wrap;
+    margin-bottom:2rem;
+}
+
+.ticker-wrap{
+    --h:1em;
+    overflow:hidden;      
+    height:var(--h);
+    display:inline-block;
+    position:relative;
+    padding-inline: 0.2rem;
+    
+}
+  
+.ticker{
+    display:block;
+    transition:transform var(--speed) ease;
+    will-change:transform;
+}
+
+.ticker .item{
+    height:var(--h);
+    line-height:var(--h);
+    font-weight:700;
+    font-size:clamp(1.3rem, 3vw, 2rem);
+    white-space:nowrap;
+    font-size:36px;
+}
+
+.hero .btn{
+    width:100%;
+    max-width: 300px;
+    display:inline-block;
+    padding:0.75rem 1.5rem;
+    font-size:1rem;
+    font-weight:600;
+    border-radius:8px;
+    background-color: rgba(0, 123, 255, 0.7);
+    color:white;
+    text-decoration:none;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(6, 182, 212, 0.2);
+}
+
+.hero .btn:hover{
+    background:#0891b2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(6, 182, 212, 0.3);
+}
+
+/* Container untuk tombol app store */
+.app-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    
+    
+}
+
+.app-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.4rem;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    min-width: 160px;
+}
+
+.app-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    background: #fff;
+    border-color: #cbd5e1;
+}
+
+.app-btn img {
+    height: 24px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.app-btn span {
+    font-size: 0.85rem;
+    color: #334155;
+    font-weight: 500;
+    text-align: left;
+}
+
+.app-btn .top-text {
+    display: block;
+    font-size: 0.65rem;
+    margin-bottom: 2px;
+    color: #64748b;
+}
+
+.app-store {
+    background: #f8fafc;
+        
+}
+
+.app-store span {
+    color: #334155;
+}
+
+.app-store .top-text {
+    color: #334155;
+    
+}
+
+
+/* Gambar slide */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-top:20px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 12px;
+}
+
+.slide {
+    flex: 0 0 calc(50% - 6px); /* 2 gambar dengan gap 12px */
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #3498db;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.nav:hover {
+    background: #3498db;
+    color: white;
+}
+
+.nav.prev {
+    left: 10px;
+}
+
+.nav.next {
+    right: 10px;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dots button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dots button.active {
+    background: #3498db;
+    transform: scale(1.2);
+}
+
+.controls-info {
+text-align: center;
+margin-top: 15px;
+color: #7f8c8d;
+font-size: 0.9rem;
+}
+
+
+/* container box */
+.container {
+    display: flex;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top:20px;
+    justify-content: center;
+}
+
+.box img {
+    width:300px;
+    height: 100px;
+}
+
+.box {
+    background: #fff;
+    padding: 0px;
+    border-radius: 12px;
+    text-align: center;
+
+}
+
+
+.box h3 {      
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color:black;
+}
+
+.box p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-top:3px; 
+    color:black;
+}
+
+/* Animasi GIF dengan rasio 9:16 untuk mobile */
+.gif-animation {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.gif-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Lebar maksimum untuk desktop */
+    border-radius: 16px;
+    overflow: hidden;
+    
+    
+}
+
+/* Rasio 9:16 untuk kontainer */
+.gif-container::before {
+    content: "";
+    display: block;
+    padding-top: 177.78%; /* 9/16 = 0.5625, 1/0.5625 = 1.7778 */
+}
+
+.gif-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+
+/* tabel crypto */
+.listCrypto {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin: 20px 0;
+}
+
+h2 { 
+    text-align: center; 
+    margin-bottom: 20px;
+    color: #333;
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+}
+
+th, td { 
+    padding: 10px 13px; 
+    text-align: left; 
+    border-bottom: 1px solid #ddd; 
+    cursor: pointer;     
+    font-size:14px;
+}
+
+th {
+    background-color: #f8fafc;
+    font-weight: bold;
+    color: #334155;
+    font-size:14px;
+}
+
+tr:hover { 
+    background: #f1f5f9; 
+}
+
+/* Efek real-time dengan background merah muda */
+tr.updating {
+    background-color: rgba(255, 192, 203, 0.5) !important; /* Pink background for real-time updates */
+    transition: background-color 0.5s ease;
+}
+
+.price-up {
+    color: #10b981;
+}
+
+.price-down {
+    color: #ef4444;
+}
+
+img { 
+    width: 24px; 
+    height: 24px; 
+    vertical-align: middle; 
+    margin-right: 6px; 
+}
+
+  
+/* Modal chart*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0,0,0,0.6);
+    justify-content: center; 
+    align-items: center;
+    overflow-y: auto;
+    padding: 20px 0;
+}
+
+.modal-content {
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px;
+    max-width: 800px; 
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header { 
+    font-size: 18px; 
+    margin-bottom: 10px; 
+    display: flex;
+    align-items: center;
+}
+
+.close { 
+    float: right; 
+    cursor: pointer; 
+    font-weight: bold; 
+    color: red; 
+    font-size: 24px;
+}
+  
+/* Styling untuk chart container */
+.chart-container {
+    margin-top: 20px;
+    height: 300px;
+    width: 100%;
+}
+  
+ /* Tabs untuk memilih periode chart */
+  .chart-tabs {
+    display: flex;
+    margin-top: 15px;
+    border-bottom: 1px solid #ddd;
+}
+  
+.chart-tab {
+    padding: 8px 15px;
+    cursor: pointer;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+}
+  
+.chart-tab.active {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+    font-weight: bold;
+    color: #0099ff;
+}
+  
+/* Real-time indicator */
+  .real-time-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #64748b;
+}
+  
+.pulse-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: pulse 1.5s infinite;
+}
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+    
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+    }
+    
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+/*section Box animasi*/  
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+  padding: 0px;
+ 
+}
+
+.hero-item {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-item.hidden {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.hero-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 40px;
+  color: #25a4ff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.service-desc {
+  text-align:center;
+  padding:10px;
+  font-size:16px;
+
+}
+
+
+.hero-desc {
+  font-size: 0.95em;
+  color: #666;
+  text-align: center;
+}
+
+.img-ratio {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* menjaga rasio */
+    overflow: hidden;
+    border-radius: 12px;   /* opsional */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    background: #eee;
+    margin-top:0px;
+}
+
+.img-ratio img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 150%;
+    object-fit: cover;     /* isi penuh, crop bila perlu */
+    object-position: center;
+}
+
+/* ====== Tab Informasi ====== */
+.tabs-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 20px auto;
+  background: transparent;
+}
+
+.tablist {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.tab {
+  background: transparent;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color:  #0099ff;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.tab[aria-selected="true"] {
+  color: green;
+}
+
+.tab:focus::after,
+.tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 2px;
+  background: #10b981;
+  border-radius: 1px;
+}
+
+.panel {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.img-link {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumb-img {
+  width: 100%;
+  height:auto;
+  object-fit: cover;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  text-decoration: none;
+  color: #111827;
+  transition: background 0.2s;
+}
+
+.news-item:hover {
+  background: #f3f4f6;
+}
+
+.news-thumb {
+  flex: 0 0 90px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.news-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.announce-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: #111;
+}
+
+.announce-link:hover {
+  background: #f1f5f9;
+}
+
+.announce-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: #ffeeba;
+}
+
+.announce-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* section footer */
+footer {
+    background-color: #fff;
+    color: white;
+    padding: 10px 10px;
+    margin-top:15px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Ini membuat semua bagian sejajar atas */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 220px;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+    font-weight: bold;
+    color:grey;
+}
+
+.footer-section a {
+    display: block;
+    color: grey;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #25a4ff;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color:grey;
+}
+
+.alamat {
+    line-height: 1.1;
+color:grey;
+}
+
+.footer-section img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.footer-credit {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: grey;
+    background-color: #fff;
+}
+
+.kiri, .kanan{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.kiri{
+    background:#fff;
+    padding:5px;
+}
+
+.kanan{
+    background:#fff;
+}
+.kanan img{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+/* kotak peringatan */
+.warning-fixed {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    left: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: flex-start; /* supaya teks multi baris sejajar atas icon */
+    gap: 12px;
+    max-width: 420px;
+    color:red;
+    background:linear-gradient(180deg,#071228,#04101a);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    padding: 12px 14px;
+    box-sizing: border-box;
+    transform: translateY(-12px);
+    opacity: 0;
+    transition: transform .28s, opacity .28s;
+    font-family: system-ui, sans-serif;
+  }
+  .warning-fixed.show { transform: translateY(0); opacity: 1; }
+  .warning-icon svg { width: 34px; height: 34px; }
+  .warning-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .warning-text {
+    font-size: 13px;
+    color: red;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+  .warning-close {
+    background: transparent; border: none; cursor: pointer;
+    font-size: 16px; padding: 4px; color: #fff;
+    margin-left: auto; /* dorong ke kanan */
+  }
+
+
+/* navigasi bottom mobile */
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid #ccc;
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 0;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+
+      z-index: 999;
+    }
+
+    .bottom-nav a {
+      flex: 1;
+      text-align: center;
+      color: #555;
+      font-size: 12px;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .bottom-nav a i {
+      font-size: 20px;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .bottom-nav a.active {
+      color: #3498db;
+    }
+
+.home i {
+    color:#3498db;
+}
+    .bottom-nav a.hovering {
+      color:#3498db !important;
+      transform: scale(1.1);
+    }
+
+.bottom-nav a:hover {
+      color:#3498db ;
+      transform: scale(1.1);
+    }
+
+
+
+/* Mobile First: Semua ukuran kecil (default) */
+.nav-desktop {
+    display: none;
+}
+
+
+
+/* media screen untuk slide */
+@media (min-width: 1024px) {
+
+    .slide {
+        flex: 0 0 calc(33.33% - 8px); /* 3 gambar dengan gap 12px */
+    }
+
+}
+
+/* Tablet - 2 gambar */
+@media (min-width: 681px) and (max-width: 1024px) {
+
+    .slide {
+        flex: 0 0 calc(50% - 6px); /* 2 gambar dengan gap 12px */
+    }
+
+    .nav {
+        width: 40px;
+    height: 40px;
+
+    }
+
+}
+
+@media (max-width: 680px) {
+  .nav {
+      width: 35px;
+    height: 35px;
+
+  }
+
+
+}
+  
+/* Mobile kecil - 1 gambar */
+@media (max-width: 480px) {
+    .slide {
+        flex: 0 0 calc(50% - 6px); /* 2 gambar dengan gap 12px */
+    }
+
+    .dots {
+        text-align: center;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .dots button {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        border: none;
+        background: #ccc;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .nav {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+
+
+
+}
+
+/* media screen untuk slide End */
+
+
+/* Layar besar (1200px ke atas) */
+@media (max-width: 1200px) {
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+
+    .service-desc {
+        font-size: 0.55rem;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .regulator p {
+        font-size: 0.55rem;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+   
+
+
+
+}
+
+@media (min-width: 1200px) {
+    header {
+      padding: 1rem 3rem;
+    }
+    
+    .nav-desktop ul {
+      gap: 2rem;
+    }
+    
+    .nav-desktop ul li a {
+      font-size: 1.05rem;
+    }
+    
+          .regulator p {
+      text-align:center; margin-top: 25px;
+      Margin-bottom:5px; font-weight: bold; 
+      font-size: 12px; 
+      color: grey;"
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 0.5rem;
+      color: #777;
+      font-size: 0.9rem;
+      padding:5px;
+    }
+
+     .box img {
+        width:100px;
+        height: 100px;
+     }
+
+     
+}
+
+
+  
+/* Desktop (992px ke atas) */
+@media (max-width: 992px) and (min-width: 768px) {
+
+  .service-desc {
+        font-size: 14px !important;
+    
+  }
+  
+  .regulator p {
+        font-size: 0.55rem !important;
+  }
+  
+
+}
+
+
+
+
+@media (max-width: 992px) {
+
+  .hero-item h2 {
+     font-size: 1.2rem;
+     }
+  
+  .regulator .container {
+        flex-wrap: wrap;
+        justify-content: center;
+     }
+  
+  .regulator .box {
+        min-width: 100px;
+        margin: 5px;
+    }
+  
+  .regulator .box img {
+        width: 60px;
+        height: 60px;
+    }
+
+  
+
+}
+
+
+@media (min-width: 992px) {
+    .hamburger-btn {
+      display: none;
+    }
+    
+    .overlay {
+      display: none;
+    }
+    
+    .nav-desktop {
+      display: block;
+      margin-left: 2rem;
+    }
+    
+    .nav-desktop ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 1.5rem;
+    }
+    
+    .nav-desktop ul li a {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s;
+      padding: 0.4rem 0;
+      position: relative;
+    }
+    
+    .nav-desktop ul li a:hover {
+      color: #0099ff;
+    }
+    
+    .nav-desktop ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #0099ff;
+      transition: width 0.3s;
+    }
+    
+    .nav-desktop ul li a:hover::after {
+      width: 100%;
+    }
+    
+    .auth-buttons {
+      margin-right: 0;
+    }
+    
+    /* Untuk desktop, GIF lebih besar */
+    .gif-container {
+      max-width: 400px;
+    }
+
+    .box img {
+        width:70px;
+        height: 50px;
+    }
+
+  
+     
+}
+
+
+/* Tablet (768px ke atas) */
+@media (min-width: 768px) {
+    header {
+      padding: 1rem 1.5rem;
+    }
+    
+
+    
+    .wallet-icon {
+      font-size: 1.7rem;
+      padding: 10px;
+    }
+    
+    .wallet-badge {
+      width: 22px;
+      height: 22px;
+      font-size: 0.75rem;
+    }
+    
+    .btn-login, .btn-daftar {
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+    }
+    
+    .overlay nav ul li a {
+      font-size: 1.1rem;
+    }
+
+    /* Untuk tablet, GIF lebih besar */
+    .gif-container {
+      max-width: 350px;
+    }
+    
+    .container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .box img {
+      width:100px;
+      height: 100px;
+    }
+
+    
+    #gif2 {
+      display:none;
+    }
+    
+    /* nav-botom*/
+          .bottom-nav {
+        display: none;
+      }
+
+      
+    
+    
+
+    
+}
+
+@media (max-width: 768px) {
+
+    .box img {
+        width:50px;
+        height: 50px;
+    }
+
+  .service-desc {
+    text-align:center;
+    padding:10px;
+    font-size:14px;
+
+    }
+           
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+      
+    }
+
+    .footer-section {
+      margin-bottom: 30px;
+    }
+
+    .footer-container {
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .footer-section {
+      margin-bottom: 30px;
+    }
+      
+      .footer-container h4 {
+      font-size: 0.8rem;
+    }
+
+    .credit p {
+      font-size: 0.5rem;
+    }
+
+    .hamburger-btn {
+      display: none;
+  }
+    
+
+  
+}
+  
+  
+  
+/* Layar sangat kecil (max 360px) */
+  @media (max-width: 360px) {
+    
+    .logo img {
+        width: 100%;
+        height: 40px;
+    }
+    
+    
+    .btn-login, .btn-daftar {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+    }
+         
+    .btn-login {
+      display: none;
+    }
+    
+    .btn-login2 {
+      display: block;
+    }
+    
+    .btn-daftar2 {
+      display: block;
+    }
+    
+    .hamburger-btn {
+      width: 38px;
+      height: 38px;
+    }
+    
+    .hamburger {
+      width: 18px;
+    }
+    
+    .overlay nav ul li {
+      margin: 0.8rem 0;
+    }     
+    
+    .overlay nav ul li a {
+      padding: 0.3rem 0.8rem;
+      margin: 0 0.5rem;
+    }
+    
+    .hero-grid,
+    .service-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .app-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .app-btn {
+      width: 200px;
+    }
+    
+    .hero {
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      display: flex;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top:20px;
+      justify-content: center;
+    }
+    .box img {
+        width:30px;
+        height: 30px;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 0.2rem;
+        color: #777;
+        font-size: 0.9rem;
+        padding:5px;
+    }
+    
+    .footer-section p {
+      font-size:11px;
+      
+    }
+    .footer-section a {
+      font-size:11px;
+    }
+    
+    .credit p {
+      font-size: 11px;
+    }
+
+    
+    /* Untuk mobile kecil, GIF lebih kecil */
+    .gif-container {
+      max-width: 280px;
+    }
+    
+    .box h3 {      
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .box p {
+        font-size: 0.65rem;
+        color: #555;
+        line-height: 1.4;
+        margin-top:3px;
+    }
+    
+     .service-desc {
+        text-align:center;
+        padding:10px;
+        font-size:12px;
+    }
+
+    h2 {
+        font-size:16px;
+    }
+  
+    .service-icon {
+        font-size:20px;
+    }
+
+    th, td { 
+        padding: 8px 11px; 
+        text-align: left; 
+        border-bottom: 1px solid #ddd; 
+        cursor: pointer; 
+        font-size:11px;
+    }
+    
+    th {
+        background-color: #f8fafc;
+        font-weight: bold;
+        color: #334155;
+        font-size:9px;
+    }
+    .regulator p {
+      text-align:center; margin-top: 25px;
+      Margin-bottom:5px; font-weight: bold; 
+      font-size: 9px; 
+      color: grey;"
+    }
+
+
+.hamburger-btn {
+        display: none;
+    }
+  
+      .tablist {
+        flex-wrap: wrap;   /* biar tab turun ke baris baru */
+        gap: 6px;
+        justify-content: center;
+      }
+      .tab {
+        flex: 1 1 45%;     /* setiap tab max 2 per baris */
+        font-size: 12px;
+        padding: 6px 8px;
+        text-align: center;
+      }
+
+.tab:focus::after,
+.tab[aria-selected="true"]::after { 
+  width: 20%;
+  height: 2px;
+}
+      
+}
+
+
+
+
+  </style>
   <!-- Tambahkan Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <title>Warung Kripto - Platform Cryptocurrency</title>
@@ -276,9 +2105,64 @@
       
         <!-- Panel Akademi -->
         <section id="panel-3" role="tabpanel" aria-labelledby="tab-3" class="panel" hidden>
+          
           <div class="news-grid">
-            <a href="#" class="news-item"><img src="img/image6.png" class="news-thumb"><div class="news-title">Menggali Potensi Cryptocurrency: Membuka Peluang Baru di Era Digital</div></a>
+            <a href="#" class="news-item"><img src="img/image1.png" class="news-thumb"><div class="news-title">Kata Pengantar</div></a>
           </div>
+         
+          <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image1.png" class="news-thumb"><div class="news-title">Bab 1: Pengenalan Cryptocurrency</div></a>
+          </div>
+          
+                    <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image2.png" class="news-thumb"><div class="news-title">Bab 2: Dasar-Dasar Bitcoin</div></a>
+          </div>
+          
+                              <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image3.png" class="news-thumb"><div class="news-title">Bab 3: Cara Kerja Bitcoin</div></a>
+          </div>
+       
+          <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image4.png" class="news-thumb"><div class="news-title">Bab 4: Wallet dan Keamanan</div></a>
+          </div>
+          
+                    <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image5.png" class="news-thumb"><div class="news-title">Bab 5: Membeli dan Menjual Bitcoin</div></a>
+          </div>
+                           <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image6.png" class="news-thumb"><div class="news-title">Bab 6: Investasi dan Trading</div></a>
+          </div>
+          
+     <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image1.png" class="news-thumb"><div class="news-title">Bab 7: Regulasi dan Legalitas</div></a>
+          </div>
+          
+       <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image2.png" class="news-thumb"><div class="news-title">Bab 8: Risiko dan Keamanan</div></a>
+          </div>
+          
+              
+       <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image3.png" class="news-thumb"><div class="news-title">Bab 9: Teknologi dan Inovasi</div></a>
+          </div>
+          
+          <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image4.png" class="news-thumb"><div class="news-title">Bab 10: Ekonomi Bitcoin</div></a>
+          </div>
+          
+          <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image5.png" class="news-thumb"><div class="news-title">Bab 11: Komunitas dan Ekosistem</div></a>
+          </div>
+          
+          <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image6.png" class="news-thumb"><div class="news-title">Bab 12: Bitcoin dan Masa Depan Keuangan</div></a>
+          </div>
+          
+          <div class="news-grid">
+            <a href="#" class="news-item"><img src="img/image1.png" class="news-thumb"><div class="news-title">Pentup</div></a>
+          </div>
+  
+          
         </section>
       
         <!-- Panel Pengumuman -->
@@ -419,9 +2303,586 @@
 </div>
 </nav>
 
-  <script src="js/script.js"></script>
-  <script src="themes.js"></script>
 
+        <script>
+// =================hamburger menu============================
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const hamburger = document.getElementById("hamburger");
+  const overlay = document.getElementById("overlay");
+
+  hamburgerBtn.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    overlay.classList.toggle("active");
+    
+    // Mencegah scrolling ketika menu terbuka
+    if (overlay.classList.contains("active")) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  });
+  
+  // Menutup menu ketika mengklik link di overlay
+  const overlayLinks = document.querySelectorAll(".overlay nav ul li a");
+  overlayLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      overlay.classList.remove("active");
+      document.body.style.overflow = "auto";
+    });
+  });
+  
+  
+  //=======================herro section=============================
+  
+  const words = ["Terbesar", "Terverifikasi", "Terdaftar"];
+    const colors = ["blue", "#f59e0b", "#10b981"];
+    const ticker = document.getElementById('ticker');
+    const tickerWrap = document.getElementById('tickerWrap');
+    let current = 0;
+    const speed = 2000;
+
+    function buildTicker(){
+      ticker.innerHTML = '';
+      words.forEach((txt, i) => {
+        const el = document.createElement('div');
+        el.className = 'item';
+        el.textContent = txt;
+        el.style.color = colors[i % colors.length];
+        ticker.appendChild(el);
+      });
+    }
+
+    function next(){
+      const itemHeight = ticker.querySelector('.item').getBoundingClientRect().height;
+      current = (current + 1) % words.length;
+      ticker.style.transform = `translateY(${-current * itemHeight}px)`;
+    }
+
+    buildTicker();
+    setInterval(next, speed);
+
+    window.addEventListener('resize', ()=>{
+      const item = ticker.querySelector('.item');
+      if(item){
+        tickerWrap.style.setProperty('--h', item.getBoundingClientRect().height + 'px');
+      }
+    });
+
+
+  
+  // ========================Variabel global untuk menyimpan data cryptocurrency=============================
+  let cryptoData = [];
+  let priceChart = null;
+  let currentCoinId = null;
+  let updateInterval = null;
+
+  // Fungsi untuk memuat data cryptocurrency
+  function loadCryptoData() {
+    const url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1";
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      cryptoData = data;
+      updateCryptoTable(data);
+    })
+    .catch(err => console.error('Error loading crypto data:', err));
+  }
+
+  // ================Fungsi untuk memperbarui tabel cryptocurrency==========================
+  function updateCryptoTable(data) {
+    const tbody = document.querySelector("#crypto-table2 tbody");
+    tbody.innerHTML = '';
+    
+    data.forEach(coin => {
+      const row = document.createElement("tr");
+      const priceChangeClass = coin.price_change_percentage_24h >= 0 ? 'price-up' : 'price-down';
+      
+      row.innerHTML = `
+        <td><img src="${coin.image}" alt="${coin.name}"> ${coin.name}</td>
+        <td>${coin.symbol.toUpperCase()}</td>
+        <td class="price-cell">$${coin.current_price.toLocaleString()}</td>
+        <td class="${priceChangeClass}">${coin.price_change_percentage_24h.toFixed(2)}%</td>
+      `;
+      row.setAttribute('data-id', coin.id);
+      row.addEventListener("click", () => showDetails(coin));
+      tbody.appendChild(row);
+    });
+  }
+
+  // Fungsi untuk memperbarui harga secara real-time
+  function updatePricesRealTime() {
+    // Tandai semua baris sebagai sedang diperbarui
+    const rows = document.querySelectorAll("#crypto-table2 tbody tr");
+    rows.forEach(row => {
+      row.classList.add('updating');
+    });
+
+    // Ambil data terbaru
+    fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1")
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(coin => {
+          const row = document.querySelector(`tr[data-id="${coin.id}"]`);
+          if (row) {
+            const priceCell = row.querySelector('.price-cell');
+            const changeCell = row.querySelector('td:nth-child(4)');
+            
+            // Periksa apakah harga berubah
+            const oldPrice = parseFloat(priceCell.textContent.replace('$', '').replace(',', ''));
+            const newPrice = coin.current_price;
+            
+            if (oldPrice !== newPrice) {
+              // Update harga
+              priceCell.textContent = `$${newPrice.toLocaleString()}`;
+              
+              // Update perubahan persentase
+              const priceChangeClass = coin.price_change_percentage_24h >= 0 ? 'price-up' : 'price-down';
+              changeCell.textContent = `${coin.price_change_percentage_24h.toFixed(2)}%`;
+              changeCell.className = priceChangeClass;
+              
+              // Tandai baris ini sedang diperbarui
+              row.classList.add('updating');
+              
+              // Hapus kelas updating setelah 1 detik
+              setTimeout(() => {
+                row.classList.remove('updating');
+              }, 1000);
+            } else {
+              // Hapus kelas updating jika harga tidak berubah
+              row.classList.remove('updating');
+            }
+          }
+        });
+        
+        // Perbarui data global
+        cryptoData = data;
+      })
+      .catch(err => console.error('Error updating prices:', err));
+  }
+
+  // ================Fungsi untuk menampilkan detail cryptocurrency=============================
+  function showDetails(coin) {
+    currentCoinId = coin.id;
+    
+    const details = `
+      <div class="modal-header">
+        <img src="${coin.image}" alt="${coin.name}" style="width:32px;height:32px;margin-right:6px;">
+        ${coin.name} (${coin.symbol.toUpperCase()})
+      </div>
+      <p><strong>Harga:</strong> $${coin.current_price.toLocaleString()}</p>
+      <p><strong>Market Cap:</strong> $${coin.market_cap.toLocaleString()}</p>
+      <p><strong>24h Volume:</strong> $${coin.total_volume.toLocaleString()}</p>
+      <p><strong>Perubahan 24h:</strong> <span style="color:${coin.price_change_percentage_24h >= 0 ? 'green' : 'red'}">${coin.price_change_percentage_24h.toFixed(2)}%</span></p>
+    `;
+    document.getElementById("crypto-details").innerHTML = details;
+    document.getElementById("crypto-modal").style.display = "flex";
+
+
+    
+    //============= Load chart data untuk 1 hari pertama kali=================
+    loadChartData(1);
+  }
+
+  // Fungsi untuk memuat data chart
+  function loadChartData(days) {
+    if (!currentCoinId) return;
+    
+    // Tampilkan loading state
+    const chartCanvas = document.getElementById('price-chart');
+    const ctx = chartCanvas.getContext('2d');
+    ctx.clearRect(0, 0, chartCanvas.width, chartCanvas.height);
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#ccc";
+    ctx.textAlign = "center";
+    ctx.fillText("Memuat data chart...", chartCanvas.width / 2, chartCanvas.height / 2);
+    
+    // Ambil data historis dari CoinGecko
+    fetch(`https://api.coingecko.com/api/v3/coins/${currentCoinId}/market_chart?vs_currency=usd&days=${days}`)
+      .then(response => response.json())
+      .then(data => {
+        const prices = data.prices;
+        const labels = [];
+        const chartData = [];
+        
+        // Format data untuk chart
+        prices.forEach(price => {
+          const date = new Date(price[0]);
+          let label;
+          
+          if (days === 1) {
+            // Format jam untuk data 24 jam
+            label = date.getHours() + ':00';
+          } else if (days <= 30) {
+            // Format tanggal untuk data 7-30 hari
+            label = date.getDate() + '/' + (date.getMonth() + 1);
+          } else {
+            // Format bulan/tahun untuk data tahunan
+            label = (date.getMonth() + 1) + '/' + date.getFullYear();
+          }
+          
+          labels.push(label);
+          chartData.push(price[1]);
+        });
+        
+        // Hancurkan chart sebelumnya jika ada
+        if (priceChart) {
+          priceChart.destroy();
+        }
+        
+        // Buat chart baru
+        const chartColor = chartData[0] <= chartData[chartData.length - 1] ? 'rgba(75, 192, 192, 0.5)' : 'rgba(255, 99, 132, 0.5)';
+        
+        priceChart = new Chart(chartCanvas, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: 'Harga (USD)',
+              data: chartData,
+              borderColor: chartColor,
+              backgroundColor: chartColor,
+              borderWidth: 2,
+              pointRadius: 0,
+              pointHoverRadius: 5,
+              fill: true,
+              tension: 0.1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: false,
+                grid: {
+                  color: 'rgba(0, 0, 0, 0.05)'
+                }
+              },
+              x: {
+                grid: {
+                  display: false
+                },
+                ticks: {
+                  maxTicksLimit: 10
+                }
+              }
+            },
+            plugins: {
+              tooltip: {
+                mode: 'index',
+                intersect: false,
+                callbacks: {
+                  label: function(context) {
+                    return '$' + context.parsed.y.toFixed(2);
+                  }
+                }
+              },
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+      })
+      .catch(err => {
+        console.error('Error loading chart data:', err);
+        ctx.clearRect(0, 0, chartCanvas.width, chartCanvas.height);
+        ctx.fillText("Gagal memuat data chart", chartCanvas.width / 2, chartCanvas.height / 2);
+      });
+  }
+
+  // Event listener untuk tabs periode chart
+  document.querySelectorAll('.chart-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      // Hapus kelas active dari semua tabs
+      document.querySelectorAll('.chart-tab').forEach(t => t.classList.remove('active'));
+      
+      // Tambahkan kelas active ke tab yang diklik
+      this.classList.add('active');
+      
+      // Muat data chart sesuai periode yang dipilih
+      const days = parseInt(this.getAttribute('data-days'));
+      loadChartData(days);
+    });
+  });
+
+  //====================== Tutup modal========================
+  document.querySelector(".close").onclick = () => {
+    document.getElementById("crypto-modal").style.display = "none";
+    if (priceChart) {
+      priceChart.destroy();
+      priceChart = null;
+    }
+  };
+
+  window.onclick = (event) => {
+    if (event.target == document.getElementById("crypto-modal")) {
+      document.getElementById("crypto-modal").style.display = "none";
+      if (priceChart) {
+        priceChart.destroy();
+        priceChart = null;
+      }
+    }
+  };
+
+  loadCryptoData();
+  
+  // Mulai pembaruan real-time setiap 10 detik
+  updateInterval = setInterval(updatePricesRealTime, 10000);
+  
+  //=========================animasi hero grid==============================
+  const service = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.service-item').forEach(wrapper => {
+  service.observe(wrapper);
+});
+
+const hero = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.hero-item').forEach(wrapper => {
+  hero.observe(wrapper);
+});
+
+const galery = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.gallery-item').forEach(wrapper => {
+  galery.observe(wrapper);
+});
+
+
+// ================slide========================================
+document.addEventListener('DOMContentLoaded', function() {
+      const slidesContainer = document.querySelector('.slides');
+      const slides = document.querySelectorAll('.slide');
+      const prevBtn = document.querySelector('.prev');
+      const nextBtn = document.querySelector('.next');
+      const dotsContainer = document.querySelector('.dots');
+      
+      let currentIndex = 0;
+      let slidesPerView = getSlidesPerView();
+      
+      // Setup dots
+      function setupDots() {
+        dotsContainer.innerHTML = '';
+        const dotCount = Math.ceil(slides.length / slidesPerView);
+        
+        for (let i = 0; i < dotCount; i++) {
+          const dot = document.createElement('button');
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => {
+            currentIndex = i;
+            updateSlider();
+          });
+          dotsContainer.appendChild(dot);
+        }
+      }
+      
+      // Get slides per view based on window width
+      function getSlidesPerView() {
+        if (window.innerWidth >= 1024) return 3;
+        if (window.innerWidth >= 681) return 2;
+        if (window.innerWidth <= 480) return 1;
+        return 2; // default untuk mobile
+      }
+      
+      // Update slider position
+      function updateSlider() {
+        slidesPerView = getSlidesPerView();
+        const slideWidth = slides[0].getBoundingClientRect().width + 12; // termasuk gap
+        const newPosition = -currentIndex * slideWidth * slidesPerView;
+        slidesContainer.style.transform = `translateX(${newPosition}px)`;
+        
+        // Update active dot
+        document.querySelectorAll('.dots button').forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+      
+      // Next slide
+      nextBtn.addEventListener('click', () => {
+        slidesPerView = getSlidesPerView();
+        const maxIndex = Math.ceil(slides.length / slidesPerView) - 1;
+        if (currentIndex < maxIndex) {
+          currentIndex++;
+          updateSlider();
+        }
+      });
+      
+      // Previous slide
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+        }
+      });
+      
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        const oldSlidesPerView = slidesPerView;
+        slidesPerView = getSlidesPerView();
+        
+        // Reset index jika perlu
+        const maxIndex = Math.ceil(slides.length / slidesPerView) - 1;
+        if (currentIndex > maxIndex) {
+          currentIndex = maxIndex;
+        }
+        
+        // Setup dots hanya jika slidesPerView berubah
+        if (oldSlidesPerView !== slidesPerView) {
+          setupDots();
+        }
+        
+        updateSlider();
+      });
+      
+      // Initialize slider
+      setupDots();
+      updateSlider();
+      
+      // Touch swipe support
+      let startX = 0;
+      let isDragging = false;
+      
+      slidesContainer.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      });
+      
+      slidesContainer.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const diff = e.changedTouches[0].clientX - startX;
+        
+        if (diff > 50) {
+          // Swipe right - go to previous slide
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+          }
+        } else if (diff < -50) {
+          // Swipe left - go to next slide
+          slidesPerView = getSlidesPerView();
+          const maxIndex = Math.ceil(slides.length / slidesPerView) - 1;
+          if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateSlider();
+          }
+        }
+      });
+    });
+
+
+// navigadi bottom 
+    const navItems = document.querySelectorAll(".nav-item");
+
+    navItems.forEach(item => {
+      item.addEventListener("mouseenter", () => {
+        navItems.forEach(i => i.classList.remove("hovering", "active"));
+        item.classList.add("hovering");
+      });
+
+      item.addEventListener("mouseleave", () => {
+        navItems.forEach(i => i.classList.remove("hovering"));
+        document.querySelector(".nav-item.home").classList.add("active");
+      });
+    });
+
+    // Tambahkan kelas pembeda agar tahu mana home
+    document.querySelector(".nav-item").classList.add("home");
+
+
+// ========== warning sistem ==========
+(function(){
+  const panel = document.getElementById('myWarning');
+  const closeBtn = panel.querySelector('.warning-close');
+
+  function showWarning() {
+    panel.hidden = false;
+    requestAnimationFrame(() => panel.classList.add('show'));
+  }
+  function hideWarning() {
+    panel.classList.remove('show');
+    panel.addEventListener('transitionend', function h(){
+      panel.hidden = true;
+      panel.removeEventListener('transitionend', h);
+    });
+  }
+
+  closeBtn.addEventListener('click', hideWarning);
+
+  // tampil otomatis setelah halaman load
+  window.addEventListener('load', showWarning);
+})();
+
+// ============ Tab Informasi ============ //
+document.addEventListener("DOMContentLoaded", function() {
+  const tabs = Array.from(document.querySelectorAll('.tab'));
+  const panels = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
+
+  function activate(index) {
+    tabs.forEach((t, i) => {
+      const selected = i === index;
+      t.setAttribute('aria-selected', selected ? 'true' : 'false');
+      panels[i].hidden = !selected;
+    });
+  }
+
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => activate(i));
+  });
+});
+
+
+// mode gelap
+// Saat halaman dimuat, cek localStorage
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
+
+// Fungsi untuk toggle dark mode
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+}
+
+// Kalau ada tombol dengan id="toggle-dark", pasang event
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("toggle-dark");
+  if (btn) {
+    btn.addEventListener("click", toggleDarkMode);
+  }
+});
+        </script>
 
 </body>
 </html>
