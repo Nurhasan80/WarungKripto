@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+<title>Bab 2 - Sejarah Lahirnya Bitcoin</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #222;
+    line-height: 1.7;
+  }
+  /*Dark Mode */
+body.dark {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: #ffffff;
+}
+  body.dark h2{
+  color: #ffffff;
+}
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  h1, h2 {
+    color: #333;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .section {
+    margin-bottom: 50px;
+  }
+  .section img {
+    width: 220px;
+    float: left;
+    margin: 8px 20px 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+      footer {
+      text-align: center;
+      background: #f9fafb;
+      color: #444;
+      padding: 25px;
+      font-size: 0.9em;
+      border-top: 1px solid #ddd;
+    }
+  p {
+    text-align: justify;
+  }
+
+  /* Responsif */
+  @media (max-width: 768px) {
+    .section img {
+      float: none;
+      display: block;
+      margin: 0 auto 20px;
+      width: 100%;
+      max-width: 350px;
+    }
+    h2 {
+      padding-bottom:10px;
+    }
+    .judul {
+        padding-left:30px;
+        text-align:center;
+        font-size:16px;
+      }
+  }
+</style>
+</head>
+<body>
+      <!-- Header dengan RGBA -->
+  <header style="background-color: rgba(0, 123, 255, 0.7);" 
+          class="relative py-4 text-center text-xl font-semibold text-white shadow-md">
+
+    <!-- Back Arrow hanya muncul di mobile -->
+    <a href="index.html" 
+       class="absolute top-1/2 left-4 -translate-y-1/2 flex items-center text-white hover:text-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+    <p class="judul">Bab 2 <br> Sejarah dan Konsep Dasar Bitcoin</p>
+  </header>
+
+<div class="container">
+
+  <div class="section" id="A">
+    <h2><strong>A. Sejarah Lahirnya Bitcoin</strong></h2>
+    <img src="img/image1.png" alt="Logo Bitcoin">
+    <p>
+      Bitcoin lahir pada tahun 2009 sebagai jawaban atas krisis finansial global 2008. Diciptakan oleh seseorang (atau kelompok) dengan nama samaran <b>Satoshi Nakamoto</b>, Bitcoin dirancang sebagai mata uang digital yang tidak bergantung pada lembaga keuangan atau pemerintah. Tujuan utamanya adalah menciptakan sistem pembayaran yang transparan, aman, dan bebas dari manipulasi pihak ketiga.
+    </p>
+    <p>
+      Dalam makalah berjudul <i>Bitcoin: A Peer-to-Peer Electronic Cash System</i>, Satoshi menjelaskan konsep dasar bagaimana transaksi bisa dilakukan langsung antar individu tanpa perantara bank. Ide ini menjadi revolusioner karena memungkinkan sistem keuangan berjalan tanpa otoritas pusat — sebuah terobosan besar dalam dunia ekonomi digital.
+    </p>
+  </div>
+
+  <div class="section" id="B">
+    <h2><strong>B. Ide Dasar di Balik Bitcoin</strong></h2>
+    <img src="img/image2.png" alt="Blockchain Concept">
+    <p>
+      Inti dari ide Bitcoin adalah kepercayaan terdistribusi. Selama ini, kepercayaan dalam transaksi finansial bergantung pada bank dan institusi besar. Namun Bitcoin menggantinya dengan jaringan komputer global (node) yang saling memverifikasi transaksi melalui sistem kriptografi. Setiap transaksi dicatat dalam rantai blok yang disebut <b>blockchain</b>.
+    </p>
+    <p>
+      Dengan konsep ini, Bitcoin berfungsi seperti buku besar digital terbuka yang tidak bisa dimanipulasi. Semua orang dapat melihat transaksi yang terjadi tanpa perlu tahu identitas pribadi pihak yang terlibat. Transparansi ini menjadi dasar kepercayaan baru dalam dunia digital modern.
+    </p>
+  </div>
+
+  <div class="section" id="C">
+    <h2><strong>C. Bagaimana Bitcoin Bekerja</strong></h2>
+    <img src="img/image3.png" alt="Bitcoin Mining Farm">
+    <p>
+      Bitcoin bekerja dengan cara mencatat semua transaksi ke dalam blockchain, yang dikelola oleh ribuan komputer di seluruh dunia. Ketika seseorang mengirim Bitcoin ke orang lain, transaksi tersebut diverifikasi oleh para <b>penambang (miners)</b> menggunakan kekuatan komputasi untuk memecahkan teka-teki kriptografi. Setelah diverifikasi, transaksi ditambahkan ke dalam blok baru di blockchain.
+    </p>
+    <p>
+      Penambang yang berhasil memverifikasi blok mendapat hadiah berupa Bitcoin baru, yang disebut proses <b>mining</b>. Mekanisme ini memastikan keamanan jaringan dan mengontrol suplai Bitcoin agar tetap langka. Total Bitcoin yang bisa beredar hanya 21 juta unit, menjadikannya aset digital yang terbatas seperti emas di dunia nyata.
+    </p>
+  </div>
+
+</div>
+  <footer>
+    &copy; 2025 — Bab 2 | Sejarah dan Konsep Dasar Bitcoin | Nurhasan
+  </footer>
+<script src="themes.js"></script>
+<script>
+  // Tambahan kecil: animasi scroll halus saat klik ke bagian tertentu
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
