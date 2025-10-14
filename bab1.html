@@ -29,6 +29,10 @@ body.dark {
   body.dark h2 {
   color: #ffffff;
 }
+  
+ body.dark .nav-titles {
+   color:#ffffff;
+ }
 
     header {
       padding: 40px 15px;
@@ -71,6 +75,35 @@ body.dark {
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
+  
+  /* Tombol navigasi */
+  .nav-buttons {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  .nav-buttons a {
+    text-decoration: none;
+    color: white;
+    background: #1e88e5;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  .nav-buttons a:hover {
+    background: #0d47a1;
+  }
+  .nav-titles {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
 
     footer {
       text-align: center;
@@ -97,6 +130,16 @@ body.dark {
         text-align:center;
         font-size:16px;
       }
+              .nav-buttons {
+      flex-direction: flex;
+      gap: 10px;
+    }
+    .nav-titles {
+      flex-direction: flex;
+      gap: 4px;
+      text-align: left;
+      font-size:9px;
+    }
     }
   </style>
 </head>
@@ -160,8 +203,17 @@ body.dark {
         Teknologi <strong>Blockchain</strong> memiliki banyak manfaat, antara lain meningkatkan transparansi, mengurangi biaya transaksi, mempercepat proses keuangan lintas negara, dan melindungi data dari manipulasi. Namun, di sisi lain, tantangan seperti regulasi yang belum jelas, konsumsi energi tinggi, serta potensi penyalahgunaan juga perlu diwaspadai. Oleh karena itu, pemahaman yang baik tentang cara kerja dan batasan teknologi ini menjadi kunci agar kita dapat memanfaatkannya secara bijak dan berkelanjutan.
       </p>
     </section>
-
   </div>
+  
+  <div class="nav-buttons">
+    <a href="pengantar.html" class="back">← Back</a>
+    <a href="bab2.html" class="next">Next →</a>
+  </div>
+
+  <div class="nav-titles"><b>Kata Pengantar</b>
+    <b>Sejarah dan Konsep Dasar Bitcoin</b>
+  </div>
+</div>
 
   <footer>
     &copy; 2025 — Bab 1 | Apa Itu Cryptocurrency dan Blockchain | Nurhasan
