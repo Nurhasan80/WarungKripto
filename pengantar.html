@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kata Pengantar - Buku Bitcoin untuk Pemula</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <title>Kata Pengantar - Buku Bitcoin untuk Pemula</title>
   <style>
-
     body {
       font-family: 'Georgia', serif;
       background-color: #ffffff;
@@ -15,12 +14,20 @@
       padding: 0;
       line-height: 1.7;
     }
+  
+   /*Dark Mode */
+body.dark {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: black;
+}
 
-    /* Dark Mode */
-    body.dark {
-      background:linear-gradient(180deg,#071228,#04101a);
-      color:black;
-    }
+body.dark .container {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: #ffffff;
+}
+  body.dark .nav-titles {
+   color:#ffffff;
+ }
     .container {
       max-width: 900px;
       margin: 40px auto;
@@ -38,7 +45,6 @@
       text-align: justify;
       margin-bottom: 20px;
     }
-    
     img.left-img {
       float: left;
       width: 200px;
@@ -47,8 +53,41 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
-    
-    footer {
+  
+  /* Tombol navigasi */
+  .nav-buttons {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  .nav-buttons a {
+    text-decoration: none;
+    color: white;
+    background: #1e88e5;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  .nav-buttons a:hover {
+    background: #0d47a1;
+  }
+  .nav-titles {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+  }
+        .judul {
+        padding-left:30px;
+        text-align:center;
+        font-size:16px;
+      }
+  
+          footer {
       text-align: center;
       background: #f9fafb;
       color: #444;
@@ -56,7 +95,7 @@
       font-size: 0.9em;
       border-top: 1px solid #ddd;
     }
-    
+  
     @media (max-width: 600px) {
       img.left-img {
         float: none;
@@ -64,27 +103,41 @@
         margin: 0 auto 15px;
         width: 100%;
       }
+      .judul {
+        padding-left:30px;
+        text-align:center;
+        font-size:16px;
+      }
+      
+                    .nav-buttons {
+      flex-direction: flex;
+      gap: 10px;
+    }
+    .nav-titles {
+      flex-direction: flex;
+      gap: 4px;
+      text-align: left;
+      font-size:9px;
+    }
     }
   </style>
 </head>
 <body>
+      <!-- Header dengan RGBA -->
+  <header style="background-color: rgba(0, 123, 255, 0.7);" 
+          class="relative py-4 text-center text-xl font-semibold text-white shadow-md">
+
+    <!-- Back Arrow hanya muncul di mobile -->
+    <a href="index.html" 
+       class="absolute top-1/2 left-4 -translate-y-1/2 flex items-center text-white hover:text-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+    <p class="judul">Kata Pengantar</p>
+  </header>
+
   <div class="container">
-    
- <!-- Header fixed dengan RGBA -->
-  <header style="background-color: rgba(0, 123, 255, 1);" 
-  class="fixed top-0 left-0 w-full z-50 py-4 text-center text-xl font-semibold text-white shadow-md">
-
-<!-- Back Arrow muncul di tablet & desktop (≥640px) -->
-<a href="index.html" 
-class="absolute top-1/2 left-4 -translate-y-1/2 items-center text-white hover:text-gray-200">
-<svg xmlns="http://www.w3.org/2000/svg" 
-   class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-</svg>
-</a>
-<i class="fa-solid fa-chart-simple"></i> KATA PENGANTAR
-</header>
-
     <p>
       <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Bitcoin Illustration" class="left-img">
       Dunia keuangan telah berubah secara drastis sejak kemunculan <strong>Bitcoin</strong> pada tahun 2009. Sebuah ide sederhana dari seseorang (atau sekelompok orang) bernama <em>Satoshi Nakamoto</em> menjadi titik awal revolusi keuangan global yang mengguncang cara kita memahami uang. Bitcoin tidak hanya memperkenalkan mata uang digital pertama yang benar-benar terdesentralisasi, tetapi juga membuka jalan bagi sistem keuangan yang bebas dari kendali lembaga tradisional seperti bank dan pemerintah. Bagi sebagian orang, Bitcoin hanyalah bentuk aset spekulatif. Namun bagi banyak lainnya, ini adalah simbol kebebasan finansial dan teknologi masa depan yang menantang paradigma lama tentang bagaimana nilai dipertukarkan di dunia digital.
@@ -117,12 +170,21 @@ class="absolute top-1/2 left-4 -translate-y-1/2 items-center text-white hover:te
     <p>
       Harapan saya sebagai penulis sederhana — semoga setelah membaca buku ini, pembaca mampu memahami konsep dasar Bitcoin dan teknologi blockchain di baliknya, sehingga dapat berpartisipasi secara cerdas dalam dunia keuangan digital. Dunia sedang berubah, dan mereka yang memahami arah perubahan itu akan memiliki keunggulan besar di masa depan. Mari belajar bersama, mengenal Bitcoin bukan sebagai tren sesaat, tetapi sebagai bagian dari perjalanan panjang manusia dalam mencari sistem ekonomi yang lebih adil, terbuka, dan efisien.
     </p>
-
-    <p><em>Penulis,</em><br><strong>Nur Hasan</strong></p>
-      <footer>
-    &copy; 2025 — Kata Pengantar | Belajar Bitcoin untuk Pemula | Nurhasan
-      </footer>
+<p><em>Penulis,</em><br><strong>Nurhasan</strong></p>
   </div>
+  
+    <div class="nav-buttons">
+    <a href="index.html" class="back">← Home</a>
+    <a href="bab1.html" class="next">Next →</a>
+  </div>
+
+  <div class="nav-titles"><b>Beranda</b>
+    <b>Apa Itu Cryptocurrency dan Blockchain</b>
+  </div>
+</div>
+  <footer>
+    &copy; 2025 — Kata Pengantar | Belajar Bitcoin untuk pemula | Nurhasan
+  </footer>
   <script src="themes.js"></script>
   <script>
     // Efek fade in saat halaman dimuat
