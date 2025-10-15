@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+<title>Bab 3 - Cara Kerja Bitcoin Secara Sederhana</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #222;
+    line-height: 1.6;
+  }
+  /*Dark Mode */
+body.dark {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: #ffffff;
+}
+  body.dark h2{
+  color: #ffffff;
+}
+    body.dark .nav-titles {
+   color:#ffffff;
+ }
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  h1, h2 {
+    color: #333;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .section {
+    margin-bottom: 50px;
+  }
+  .section img {
+    width: 220px;
+    float: left;
+    margin: 8px 20px 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  p {
+    text-align: justify;
+  }
+  
+      .judul {
+        padding-left:30px;
+        text-align:center;
+        font-size:16px;
+      }
+
+  /* Tombol navigasi */
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  .nav-buttons a {
+    text-decoration: none;
+    color: white;
+    background: #1e88e5;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  .nav-buttons a:hover {
+    background: #0d47a1;
+  }
+  .nav-titles {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+        footer {
+      text-align: center;
+      background: #f9fafb;
+      color: #444;
+      padding: 25px;
+      font-size: 0.9em;
+      border-top: 1px solid #ddd;
+    }
+
+  /* Responsif */
+  @media (max-width: 768px) {
+    .section img {
+      float: none;
+      display: block;
+      margin: 0 auto 20px;
+      width: 100%;
+      max-width: 350px;
+    }
+    .nav-buttons {
+      flex-direction: flex;
+      gap: 10px;
+    }
+    .nav-titles {
+      flex-direction: flex;
+      gap: 4px;
+      text-align: left;
+      font-size:9px;
+    }
+    h2 {
+      padding-bottom:10px;
+    }
+    .judul {
+        padding-left:30px;
+        text-align:center;
+        font-size:16px;
+      }
+  }
+</style>
+</head>
+<body>
+        <!-- Header dengan RGBA -->
+  <header style="background-color: rgba(0, 123, 255, 0.7);" 
+          class="relative py-4 text-center text-xl font-semibold text-white shadow-md">
+
+    <!-- Back Arrow hanya muncul di mobile -->
+    <a href="index.html" 
+       class="absolute top-1/2 left-4 -translate-y-1/2 flex items-center text-white hover:text-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+    <p class="judul">Bab 3 <br> Cara Kerja Bitcoin Secara Sederhana</p>
+  </header>
+
+<div class="container">
+  <div class="section" id="A">
+    <h2><strong>A. Bagaimana Transaksi Bitcoin Terjadi</strong></h2>
+    <img src="img/image1.png" alt="Proses Transaksi Bitcoin">
+    <p>
+      Setiap kali seseorang mengirim Bitcoin ke orang lain, transaksi tersebut tidak langsung berpindah seperti uang fisik. Sebaliknya, data transaksi dicatat dalam jaringan komputer global yang saling terhubung. Informasi yang dicatat meliputi alamat pengirim, penerima, dan jumlah Bitcoin yang dikirim. Data ini kemudian disiarkan ke seluruh jaringan node (komputer yang menjalankan sistem Bitcoin) untuk diverifikasi.
+    </p>
+    <p>
+      Tidak ada bank atau pihak ketiga yang memproses transaksi — semua terjadi melalui mekanisme kriptografi dan konfirmasi publik, sehingga transparansi dan keamanan tetap terjaga.
+    </p>
+  </div>
+
+  <div class="section" id="B">
+    <h2><strong>B. Fungsi Private Key & Public Key</strong></h2>
+    <img src="img/image2.png" alt="Kunci Privat dan Publik Bitcoin">
+    <p>
+      Dalam sistem Bitcoin, setiap pengguna memiliki dua kunci: <b>public key</b> dan <b>private key</b>. Public key berfungsi seperti nomor rekening bank — bisa dibagikan kepada siapa saja agar mereka dapat mengirim Bitcoin kepada kita. Sedangkan private key adalah kunci rahasia yang digunakan untuk menandatangani transaksi dan membuktikan kepemilikan aset digital tersebut.
+    </p>
+    <p>
+      Jika seseorang kehilangan private key-nya, maka Bitcoin di dalam alamat tersebut tidak dapat diakses selamanya. Karena itu, menjaga keamanan private key adalah hal paling penting bagi setiap pemilik Bitcoin.
+    </p>
+  </div>
+
+  <div class="section" id="C">
+    <h2><strong>C. Bagaimana Transaksi Diverifikasi</strong></h2>
+    <img src="img/image3.png" alt="Verifikasi Jaringan Bitcoin">
+    <p>
+      Setelah transaksi disiarkan ke jaringan, para node memverifikasi keabsahan transaksi. Mereka memastikan bahwa pengirim benar-benar memiliki saldo Bitcoin yang cukup dan belum mengirimkannya ke pihak lain sebelumnya. Proses ini menggunakan algoritma kriptografi dan sistem konsensus untuk mencapai kesepakatan antar komputer di jaringan.
+    </p>
+    <p>
+      Jika mayoritas node menyetujui transaksi tersebut valid, maka transaksi dimasukkan ke dalam blok baru yang siap untuk ditambahkan ke blockchain.
+    </p>
+  </div>
+
+  <div class="section" id="D">
+    <h2><strong>D. Penjelasan Sederhana Tentang “Mining”</strong></h2>
+    <img src="img/image4.png" alt="Bitcoin Mining Farm">
+    <p>
+      Mining adalah proses memverifikasi transaksi dan menambahkannya ke blockchain. Penambang menggunakan komputer dengan daya tinggi untuk memecahkan teka-teki matematika kompleks. Siapa pun yang berhasil menyelesaikannya lebih dulu, berhak menambahkan blok baru dan menerima hadiah berupa Bitcoin baru.
+    </p>
+    <p>
+      Selain sebagai sistem validasi, mining juga berfungsi untuk menciptakan Bitcoin baru dalam jumlah terbatas. Proses ini menjaga jaringan tetap aman dari serangan dan kecurangan.
+    </p>
+  </div>
+
+  <div class="section" id="E">
+    <h2>E. Reward, Fee, dan Keamanan Jaringan</h2>
+    <img src="img/image5.png" alt="Jaringan Keamanan Bitcoin">
+    <p>
+      Penambang tidak hanya mendapatkan reward dari blok baru, tetapi juga <b>fee transaksi</b> dari pengguna yang mengirim Bitcoin. Fee ini mendorong penambang untuk terus menjaga jaringan tetap aktif dan efisien.  
+    </p>
+    <p>
+      Keamanan jaringan Bitcoin bergantung pada jumlah penambang dan kekuatan komputasi mereka. Semakin banyak penambang, semakin sulit bagi pihak jahat untuk mengubah data transaksi. Inilah sebabnya mengapa Bitcoin dianggap sangat aman dan sulit diretas.
+    </p>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="bab2.html" class="back">← Back</a>
+    <a href="bab4.html" class="next">Next →</a>
+  </div>
+
+  <div class="nav-titles"> <b>Sejarah dan Konsep Dasar Bitcoin</b>
+    <b>Ekosistem Bitcoin dan Jaringannya</b>
+  </div>
+</div>
+  
+  <footer>
+    &copy; 2025 — Bab 3 | Cara Kerja Bitcoin Secara Sederhana | Nurhasan
+  </footer>
+<script src="themes.js"></script>
+
+<script>
+  // Scroll halus jika ada tautan internal
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
