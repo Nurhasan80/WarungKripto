@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+<title>Bab 7 - Keamanan dalam Dunia Crypto</title>
+<style>
+  :root{
+    --bg: #ffffff;
+    --text: #222;
+    --muted: #555;
+    --accent: #1e88e5;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+  }
+    /*Dark Mode */
+body.dark {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: black;
+}
+  body.dark .nav-titles {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: #ffffff;
+}
+  body.dark .container {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: #ffffff;
+}
+   body.dark h2 {
+  color: #ffffff;
+}
+
+  .container{
+    max-width:900px;
+    margin:40px auto;
+    padding:20px;
+  }
+
+  h1{
+    text-align:center;
+    margin-bottom:36px;
+    color:#111;
+  }
+
+  .section{
+    margin-bottom:44px;
+  }
+
+  .section h2{
+    color:#111;
+    margin-bottom:10px;
+    border-left:5px solid #fbbf24;
+    padding-left:10px;
+  }
+
+  .section img{
+    width:200px;
+    float:left;
+    margin:6px 18px 12px 0;
+    border-radius:8px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.12);
+    display:block;
+  }
+
+  .section::after{content:"";display:table;clear:both}
+
+  p{
+    margin:0 0 12px 0;
+    text-align:justify;
+  }
+
+  ul{
+    margin:8px 0 12px 20px;
+  }
+
+  /* nav */
+  .nav-buttons{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    margin-top:30px;
+    padding-top:20px;
+    border-top:1px solid #eee;
+  }
+
+  .btn{
+    display:inline-block;
+    padding:10px 16px;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:background .18s;
+  }
+  .btn:hover{background:#0b63b8}
+
+  .nav-titles{
+    display:flex;
+    justify-content:space-between;
+    color:var(--muted);
+    margin-top:10px;
+    font-size:0.95rem;
+  }
+  
+  footer {
+      text-align: center;
+      background: #f9fafb;
+      color: #444;
+      padding: 25px;
+      font-size: 0.9em;
+      border-top: 1px solid #ddd;
+    }
+
+  @media (max-width:768px){
+    .section img{
+      float:none;
+      margin:0 auto 14px;
+      width:100%;
+      max-width:320px;
+    }
+     .nav-buttons {
+      flex-direction: flex;
+      gap: 10px;
+    }
+    .nav-titles {
+      flex-direction: flex;
+      gap: 4px;
+      text-align: left;
+      font-size:9px;
+    }
+    .judul {
+        padding-left:30px;
+        text-align:center;
+        font-size:16px;
+      }
+  }
+</style>
+</head>
+<body>
+  <!-- Header dengan RGBA -->
+  <header style="background-color: rgba(0, 123, 255, 0.7);" 
+          class="relative py-4 text-center text-xl font-semibold text-white shadow-md">
+
+    <!-- Back Arrow hanya muncul di mobile -->
+    <a href="index.html" 
+       class="absolute top-1/2 left-4 -translate-y-1/2 flex items-center text-white hover:text-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+    <p class="judul">Bab 7 <br> Keamanan Dalam Dunia Crypto</p>
+  </header>
+
+
+  <div class="container">
+    <section class="section" id="A">
+      <h2><strong>A. Ancaman Umum (phishing, scam, rug pull, malware)</strong></h2>
+      <img src="img/image4.png" alt="Ilustrasi ancaman phishing dan scam">
+      <p>
+        Dunia crypto menarik perhatian pelaku jahat karena nilai aset yang tinggi dan sifat transaksi digitalnya. Ancaman umum meliputi:
+      </p>
+      <ul>
+        <li><strong>Phishing:</strong> Upaya menipu pengguna agar menyerahkan private key, seed phrase, atau kredensial melalui situs palsu, email, atau chat.</li>
+        <li><strong>Scam & Rug Pull:</strong> Proyek palsu atau tim pengembang yang meninggalkan investor setelah mengumpulkan dana, terutama di token baru dan DeFi.</li>
+        <li><strong>Malware:</strong> Perangkat lunak jahat yang mencuri kunci, memonitor clipboard, atau memberi akses jarak jauh ke perangkat korban.</li>
+      </ul>
+      <p>
+        Waspadai link mencurigakan, tawaran “jaminan profit”, dan kanal komunikasi yang tidak terverifikasi. Jika sesuatu terdengar terlalu bagus untuk dipercaya, kemungkinan besar penipuan.
+      </p>
+    </section>
+
+    <section class="section" id="B">
+      <h2><strong>B. Tips Menjaga Keamanan Aset</strong></h2>
+      <img src="img/image1.png" alt="Ilustrasi tips keamanan">
+      <p>
+        Beberapa praktik sederhana namun efektif untuk menjaga aset:
+      </p>
+      <ul>
+        <li>Gunakan <strong>cold wallet</strong> untuk penyimpanan jangka panjang dan hanya simpan jumlah kecil di hot wallet untuk kebutuhan transaksi.</li>
+        <li>Aktifkan <strong>2FA</strong> (autentikasi dua faktor) pada semua akun exchange dan layanan terkait.</li>
+        <li>Selalu periksa URL situs (sertifikat HTTPS) sebelum memasukkan kredensial atau mengotorisasi transaksi.</li>
+        <li>Gunakan manajer kata sandi untuk membuat dan menyimpan password kuat; jangan gunakan password yang sama di banyak layanan.</li>
+        <li>Perbarui perangkat lunak dan sistem operasi untuk menutup celah keamanan.</li>
+      </ul>
+      <p>
+        Keamanan dimulai dari kebiasaan sehari-hari — disiplin kecil dapat mencegah kehilangan besar.
+      </p>
+    </section>
+
+    <section class="section" id="C">
+      <h2><strong>C. Mengenal Seed Phrase dan Pentingnya Backup</strong></h2>
+      <img src="img/image2.png" alt="Ilustrasi seed phrase dan backup">
+      <p>
+        <em>Seed phrase</em> (biasanya 12/18/24 kata acak) adalah cadangan utama untuk memulihkan wallet. Siapa pun yang memiliki seed phrase berhak mengakses dana, sehingga penyimpanan dan backup-nya sangat krusial.
+      </p>
+      <ul>
+        <li>Catat seed phrase secara fisik (kertas atau alat tahan api), jangan simpan dalam bentuk digital di perangkat yang terhubung internet.</li>
+        <li>Buat beberapa salinan cadangan dan simpan di lokasi terpisah (mis. brankas, deposit box, atau tempat aman keluarga terpercaya).</li>
+        <li>Pertimbangkan penggunaan <strong>multisig</strong> (multi-signature) untuk menambah lapisan keamanan atau pembagian tanggung jawab.</li>
+      </ul>
+      <p>
+        Kehilangan seed phrase tanpa backup berarti kehilangan akses permanen — tidak ada otoritas yang bisa memulihkannya untukmu.
+      </p>
+    </section>
+
+    <section class="section" id="D">
+      <h2><strong>D. Bagaimana Mengenali Proyek atau Exchange yang Aman</strong></h2>
+      <img src="img/image3.png" alt="Ilustrasi evaluasi proyek dan exchange">
+      <p>
+        Memilih proyek atau exchange yang dapat dipercaya memerlukan pemeriksaan (due diligence). Hal yang perlu diperhatikan:
+      </p>
+      <ul>
+        <li><strong>Rekam jejak & tim:</strong> Tim yang transparan dan memiliki riwayat di industri menambah kredibilitas.</li>
+        <li><strong>Audit keamanan:</strong> Proyek yang diaudit oleh firma keamanan independen menunjukkan perhatian pada keselamatan dana pengguna.</li>
+        <li><strong>Likuiditas & volume:</strong> Exchange dengan volume perdagangan besar umumnya lebih likuid dan lebih dapat diandalkan.</li>
+        <li><strong>Legalitas & regulasi:</strong> Periksa apakah exchange mematuhi aturan lokal (KYC/AML) dan memiliki mekanisme perlindungan pengguna.</li>
+        <li><strong>Open source & transparansi:</strong> Proyek open-source yang aktif dikembangkan dan didiskusikan publik lebih mudah diaudit komunitas.</li>
+      </ul>
+      <p>
+        Jangan tergesa-gesa bergabung di proyek hanya karena FOMO; luangkan waktu untuk menilai sumber informasi dan tanda-tanda peringatan.
+      </p>
+    </section>
+
+    <div class="nav-buttons" role="navigation" aria-label="Navigasi Bab">
+      <a class="btn" href="bab6.html">← Back</a>
+      <a class="btn" href="bab8.html">Next→</a>
+    </div>
+
+    <div class="nav-titles" aria-hidden="false">
+      <div>Strategi Dasar Investasi Bitcoin untuk Pemula</div>
+      <div>Regulasi dan Legalitas Bitcoin di Indonesia</div>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 — Bab 7 | Keamanan Dalam Dunia Crypto | Nurhasan
+  </footer>
+  
+  <script src="themes.js"></script>
+<script>
+  // Scroll halus untuk tautan internal (jika ada)
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      e.preventDefault();
+      const id = a.getAttribute('href');
+      if(document.querySelector(id)){
+        document.querySelector(id).scrollIntoView({behavior:'smooth'});
+      }
+    });
+  });
+</script>
+</body>
+</html>
