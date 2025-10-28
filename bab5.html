@@ -13,33 +13,35 @@
     color: #222;
     line-height: 1.6;
   }
-    /*Dark Mode */
-body.dark {
-  background:linear-gradient(180deg,#071228,#04101a);
-  color: #ffffff;
-}
-  body.dark .nav-titles {
-  background:linear-gradient(180deg,#071228,#04101a);
-  color: #ffffff;
-}
-  body.dark h1, body.dark h2 {
-  color: #ffffff;
-}
+  /*Dark Mode */
+  body.dark {
+    background:linear-gradient(180deg,#071228,#04101a);
+    color: #ffffff;
+  }
     body.dark .nav-titles {
-   color:#ffffff;
- }
+    background:linear-gradient(180deg,#071228,#04101a);
+    color: #ffffff;
+  }
+    body.dark h1, body.dark h2 {
+    color: #ffffff;
+  }
+      body.dark .nav-titles {
+    color:#ffffff;
+  }
   .container {
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
   }
-  h1, h2 {
+  h2 {
     color: #333;
     padding-bottom:10px;
   }
-  h1 {
-    text-align: center;
-    margin-bottom: 40px;
+  .section h2 {
+    color: #111;
+    margin-bottom: 10px;
+    border-left: 4px solid #fbbf24;
+    padding-left: 10px;
   }
   .section {
     margin-bottom: 50px;
@@ -68,6 +70,7 @@ body.dark {
     margin-top: 40px;
     border-top: 1px solid #ddd;
     padding-top: 20px;
+    font-size:11px;
   }
   .nav-buttons a {
     text-decoration: none;
@@ -87,19 +90,19 @@ body.dark {
     color: #555;
     margin-top: 10px;
   }
-      .judul {
-        padding-left:30px;
-        text-align:center;
-        font-size:16px;
-      }
-          footer {
-      text-align: center;
-      background: #f9fafb;
-      color: #444;
-      padding: 25px;
-      font-size: 0.9em;
-      border-top: 1px solid #ddd;
-    }
+  .judul {
+    padding-left:30px;
+    text-align:center;
+    font-size:16px;
+  }
+  footer {
+  text-align: center;
+  background: #f9fafb;
+  color: #444;
+  padding: 25px;
+  font-size: 0.9em;
+  border-top: 1px solid #ddd;
+  }
   /* Responsif */
   @media (max-width: 768px) {
     .section img {
@@ -112,6 +115,7 @@ body.dark {
     .nav-buttons {
       flex-direction: flex;
       gap: 10px;
+      font-size:10px;
     }
     .nav-titles {
       flex-direction: flex;
@@ -119,11 +123,22 @@ body.dark {
       text-align: left;
       font-size:9px;
     }
-        .judul {
+    .judul {
         padding-left:30px;
         text-align:center;
         font-size:16px;
-      }
+    }
+  }
+
+  /* Layar sangat kecil (max 360px) */
+  @media (max-width: 360px) {
+    .container p {
+      font-size: 11px;
+    }
+    footer {
+      padding: 10px;
+      font-size: 10px;
+    }
   }
 </style>
 </head>
@@ -200,10 +215,11 @@ body.dark {
     </p>
   </div>
 
-  <div class="nav-buttons">
-    <a href="bab4.html" class="back">← Back</a>
-    <a href="bab6.html" class="next">next →</a>
-  </div>
+<div class="nav-buttons">
+      <a href="bab4.html" class="back">← Back</a>
+      <a href="index.html" class="home">Home</a>
+      <a href="bab6.html" class="next">Next →</a>
+    </div>
 
   <div class="nav-titles">
     <b>Cara Memiliki dan Menyimpan Bitcoin</b>
