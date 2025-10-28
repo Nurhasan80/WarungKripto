@@ -14,27 +14,29 @@
     line-height: 1.6;
   }
   /*Dark Mode */
-body.dark {
-  background:linear-gradient(180deg,#071228,#04101a);
-  color: #ffffff;
-}
-  body.dark h2{
-  color: #ffffff;
-}
-    body.dark .nav-titles {
-   color:#ffffff;
- }
+  body.dark {
+    background:linear-gradient(180deg,#071228,#04101a);
+    color: #ffffff;
+  }
+    body.dark h2{
+    color: #ffffff;
+  }
+      body.dark .nav-titles {
+    color:#ffffff;
+  }
   .container {
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
   }
-  h1, h2 {
+  h2 {
     color: #333;
   }
-  h1 {
-    text-align: center;
-    margin-bottom: 40px;
+  .section h2 {
+    color: #111;
+    margin-bottom: 10px;
+    border-left: 4px solid #fbbf24;
+    padding-left: 10px;
   }
   .section {
     margin-bottom: 50px;
@@ -89,14 +91,14 @@ body.dark {
     margin-top: 10px;
   }
   
-        footer {
-      text-align: center;
-      background: #f9fafb;
-      color: #444;
-      padding: 25px;
-      font-size: 0.9em;
-      border-top: 1px solid #ddd;
-    }
+  footer {
+    text-align: center;
+    background: #f9fafb;
+    color: #444;
+    padding: 25px;
+    font-size: 0.9em;
+    border-top: 1px solid #ddd;
+  }
 
   /* Responsif */
   @media (max-width: 768px) {
@@ -110,6 +112,7 @@ body.dark {
     .nav-buttons {
       flex-direction: flex;
       gap: 10px;
+      font-size:10px;
     }
     .nav-titles {
       flex-direction: flex;
@@ -125,6 +128,19 @@ body.dark {
         text-align:center;
         font-size:16px;
       }
+  }
+
+  @media (max-width: 360px) {
+    .container p {
+      font-size: 11px;
+    }
+    .nav-titles {
+      font-size: 9px;
+    }
+    footer {
+      padding: 10px;
+      font-size: 10px;
+    }
   }
 </style>
 </head>
@@ -200,10 +216,11 @@ body.dark {
   </div>
 
   <div class="nav-buttons">
-    <a href="bab2.html" class="back">← Back</a>
-    <a href="bab4.html" class="next">Next →</a>
-  </div>
-
+      <a href="bab2.html" class="back">← Back</a>
+      <a href="index.html" class="home">Home</a>
+      <a href="bab4.html" class="next">Next →</a>
+    </div>
+  
   <div class="nav-titles"> <b>Sejarah dan Konsep Dasar Bitcoin</b>
     <b>Cara Memiliki dan Menyimpan Bitcoin</b>
   </div>
