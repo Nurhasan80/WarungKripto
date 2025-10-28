@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+<title>Bab 8 - Regulasi dan Legalitas Bitcoin di Indonesia</title>
+<style>
+  :root{
+    --bg: #ffffff;
+    --text: #222;
+    --muted: #555;
+    --accent: #1e88e5;
+    --highlight: #fbbf24;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  /*Dark Mode */
+body.dark {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: black;
+}
+  
+  body.dark .container {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color: #ffffff;
+}
+  
+  body.dark h2 {
+  color: #ffffff;
+}
+  
+ body.dark .nav-titles {
+   color:#ffffff;
+ }
+
+
+  .container{
+    max-width:900px;
+    margin:40px auto;
+    padding:20px;
+  }
+
+  .section{
+    margin-bottom:36px;
+  }
+
+  .section h2{
+    color:#111;
+    margin-bottom:10px;
+    border-left:5px solid var(--highlight);
+    padding-left:10px;
+  }
+
+  .section img{
+    width:200px;
+    float:left;
+    margin:6px 18px 12px 0;
+    border-radius:8px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.12);
+    display:block;
+  }
+
+  .section::after{content:"";display:table;clear:both}
+
+  p{
+    margin:0 0 12px 0;
+    text-align:justify;
+  }
+
+  ul{ margin:8px 0 12px 20px; }
+
+  /* nav */
+  .nav-buttons{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    margin-top:30px;
+    padding-top:20px;
+    border-top:1px solid #eee;
+  }
+
+  .btn{
+    display:inline-block;
+    padding:10px 16px;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:background .18s;
+  }
+  .btn:hover{background:#0b63b8}
+
+  .nav-titles{
+    display:flex;
+    justify-content:space-between;
+    color:var(--muted);
+    margin-top:10px;
+    font-size:0.95rem;
+  }
+          .judul {
+        padding-left:30px;
+        text-align:center;
+        font-size:16px;
+      }
+  footer {
+      text-align: center;
+      background: #f9fafb;
+      color: #444;
+      padding: 25px;
+      font-size: 0.9em;
+      border-top: 1px solid #ddd;
+    }
+
+  /* responsive */
+  @media (max-width:768px){
+    .section img{
+      float:left;
+      padding: 5px;
+      margin:0 auto 14px;
+      width:100%;
+      max-width:320px;
+    }
+    .judul {
+        padding-left:30px;
+        text-align:center;
+        font-size:16px;
+      }
+    .nav-buttons{flex-direction:flex; font-size:11px;font-size:10px;}
+    .nav-titles{flex-direction:flex;gap:6px;text-align:center; font-size:9px;}
+  }
+
+    /* Layar sangat kecil (max 360px) */
+    @media (max-width: 360px) {
+    .container p {
+      font-size: 11px;
+    }
+    footer {
+      padding: 10px;
+      font-size: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- Header dengan RGBA -->
+  <header style="background-color: rgba(0, 123, 255, 0.7);" 
+          class="relative py-4 text-center text-xl font-semibold text-white shadow-md">
+
+    <!-- Back Arrow hanya muncul di mobile -->
+    <a href="index.html" 
+       class="absolute top-1/2 left-4 -translate-y-1/2 flex items-center text-white hover:text-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+    <p class="judul">Bab 8 <br> Regulasi dan Legalitas Bitcoin di Indonesia</p>
+  </header>
+  <div class="container">
+    <section class="section" id="A">
+      <h2><strong>A. Status Hukum Bitcoin di Indonesia</strong></h2>
+      <img src="img/image1.png" alt="Regulasi Indonesia & Crypto">
+      <p>
+        Di Indonesia, posisi hukum Bitcoin dan sebagian besar aset kripto bukan sebagai alat pembayaran yang sah. Bank Indonesia (BI) menegaskan bahwa rupiah tetap menjadi satu-satunya alat pembayaran yang sah di wilayah negara. Namun, pemerintah Indonesia menerima perdagangan aset kripto sebagai komoditas investasi yang dapat diperdagangkan, dengan pengaturan tertentu.
+      </p>
+      <p>
+        Artinya: masyarakat boleh membeli, menjual, dan memegang aset kripto sebagai investasi, tetapi tidak boleh dijadikan alat pembayaran umum untuk transaksi komersial yang menggantikan rupiah.
+      </p>
+    </section>
+
+    <section class="section" id="B">
+      <h2><strong>B. Aturan Bappebti dan OJK</strong></h2>
+      <img src="img/image2.png" alt="Regulasi Bappebti & OJK">
+      <p>
+        Pengawasan perdagangan aset kripto di Indonesia sebagian besar berada di bawah <strong>Bappebti</strong> (Badan Pengawas Perdagangan Berjangka Komoditi) yang mengatur penyelenggaraan perdagangan aset kripto sebagai komoditas. Bappebti menetapkan ketentuan pendaftaran, persyaratan penjaminan teknologi, dan daftar aset kripto yang boleh diperdagangkan.
+      </p>
+      <p>
+        Sementara itu, OJK (Otoritas Jasa Keuangan) fokus pada perlindungan konsumen dan aspek keuangan yang lebih luas — misalnya bila ada produk investasi terstruktur yang memanfaatkan aset kripto, OJK dapat terlibat untuk mengatur unsur kegiatan usaha dan perlindungan investor.
+      </p>
+    </section>
+
+    <section class="section" id="C">
+      <h2><strong>C. Perpajakan Aset Kripto</strong></h2>
+      <img src="img/image3.png" alt="Ilustrasi Pajak dan Crypto">
+      <p>
+        Perdagangan aset kripto umumnya memiliki implikasi pajak. Di Indonesia, keuntungan dari perdagangan aset kripto dapat dikenai pajak penghasilan sesuai ketentuan yang berlaku (misalnya PPh untuk individu atau badan) dan potensi pemajakan lain seperti PPN atas layanan tertentu. Ketentuan pajak dapat berubah, sehingga wajib pajak dan pelaku pasar disarankan berkonsultasi dengan konsultan pajak atau memantau aturan resmi Direktorat Jenderal Pajak.
+      </p>
+      <p>
+        Penting untuk mencatat transaksi dengan rapi (tanggal, harga beli/jual, fee) agar perhitungan pajak transparan dan sesuai ketentuan.
+      </p>
+    </section>
+
+    <section class="section" id="D">
+      <h2><strong>D. Perbedaan Crypto sebagai Aset vs Alat Pembayaran</strong></h2>
+      <img src="img/image4.png" alt="Crypto sebagai Aset vs Alat Pembayaran">
+      <p>
+        Perbedaan utama: <strong>aset</strong> berarti crypto diperlakukan sebagai barang investasi (mirip saham atau komoditas), sedangkan <strong>alat pembayaran</strong> berarti digunakan sehari-hari untuk membeli barang/jasa. Di Indonesia, crypto diakui & diperdagangkan sebagai aset/komoditas, bukan alat pembayaran yang sah.
+      </p>
+      <p>
+        Konsekuensinya termasuk perlindungan konsumen, kewajiban pelaporan, dan batasan penggunaan. Meski beberapa pedagang global menerima Bitcoin sebagai pembayaran, di Indonesia praktik ini terbatas dan berisiko terkait kepatuhan hukum.
+      </p>
+    </section>
+
+    <div class="nav-buttons" role="navigation" aria-label="Navigasi Bab">
+      <a class="btn" href="bab7.html">← Back</a>
+      <a class="btn" href="index.html">Home</a>
+      <a class="btn" href="bab9.html">Next →</a>
+    </div>
+
+    <div class="nav-titles" aria-hidden="false">
+      <div> <strong>Keamanan Dalam Dunia Crypto</strong></div>
+      <div><strong>Masa Depan Bitcoin dan Ekosistemnya</strong></div>
+    </div>
+  </div>
+    <footer>
+    &copy; 2025 — Bab 8 | Regulasi dan Legalitas Bitcoin di Indonesia | Nurhasan
+  </footer>
+<script src="themes.js"></script>
+<script>
+  // Jika ingin: simpan posisi scroll, atau konfirmasi sebelum pindah jika ada perubahan (placeholder)
+  // (saat ini tombol hanya sebagai tautan biasa)
+</script>
+</body>
+</html>
