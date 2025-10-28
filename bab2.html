@@ -14,60 +14,65 @@
     line-height: 1.7;
   }
   /*Dark Mode */
-body.dark {
-  background:linear-gradient(180deg,#071228,#04101a);
-  color: #ffffff;
-}
-  body.dark h2{
-  color: #ffffff;
-}
-    body.dark .nav-titles {
-   color:#ffffff;
- }
-  .container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+  body.dark {
+    background:linear-gradient(180deg,#071228,#04101a);
+    color: #ffffff;
   }
-  h1, h2 {
-    color: #333;
+    body.dark h2{
+    color: #ffffff;
   }
-  h1 {
-    text-align: center;
-    margin-bottom: 40px;
+      body.dark .nav-titles {
+    color:#ffffff;
   }
-  .section {
-    margin-bottom: 50px;
-  }
-  .section img {
-    width: 220px;
-    float: left;
-    margin: 8px 20px 10px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  }
-  .section::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-      .judul {
-        padding-left:30px;
-        text-align:center;
-        font-size:16px;
-      }
-      footer {
-      text-align: center;
-      background: #f9fafb;
-      color: #444;
-      padding: 25px;
-      font-size: 0.9em;
-      border-top: 1px solid #ddd;
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
     }
+    h2 {
+      color: #333;
+    }
+  .section h2 {
+      color: #111;
+      margin-bottom: 10px;
+      border-left: 4px solid #fbbf24;
+      padding-left: 10px;
+    }
+    .section {
+      margin-bottom: 50px;
+    }
+    .section img {
+      width: 220px;
+      float: left;
+      margin: 8px 20px 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+    .judul {
+      padding-left:30px;
+      text-align:center;
+      font-size:16px;
+    }
+
+    footer {
+    text-align: center;
+    background: #f9fafb;
+    color: #444;
+    padding: 25px;
+    font-size: 0.9em;
+    border-top: 1px solid #ddd;
+  }
+
   p {
     text-align: justify;
   }
+  
   /* Tombol navigasi */
   .nav-buttons {
     display: flex;
@@ -116,6 +121,7 @@ body.dark {
         .nav-buttons {
       flex-direction: flex;
       gap: 10px;
+          font-size:10px;
     }
     .nav-titles {
       flex-direction: flex;
@@ -176,9 +182,10 @@ body.dark {
   </div>
   
     <div class="nav-buttons">
-    <a href="bab1.html" class="back">← Back</a>
-    <a href="bab3.html" class="next">Next →</a>
-  </div>
+      <a href="bab1.html" class="back">← Back</a>
+      <a href="index.html" class="home">Home</a>
+      <a href="bab3.html" class="next">Next →</a>
+    </div>
 
   <div class="nav-titles"> <b>Apa Itu Cryptocurrency dan Blockchain</b>
     <b>Cara Kerja Bitcoin Secara Sederhana</b>
