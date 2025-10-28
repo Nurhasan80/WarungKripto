@@ -16,7 +16,7 @@
     }
   
    /*Dark Mode */
-body.dark {
+  body.dark {
   background:linear-gradient(180deg,#071228,#04101a);
   color: black;
 }
@@ -25,103 +25,134 @@ body.dark .container {
   background:linear-gradient(180deg,#071228,#04101a);
   color: #ffffff;
 }
-  body.dark .nav-titles {
-   color:#ffffff;
- }
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      border-radius: 10px;
-    }
-    h1 {
-      text-align: center;
-      color: #1a1a1a;
-      margin-bottom: 20px;
-    }
-    p {
-      text-align: justify;
-      margin-bottom: 20px;
-    }
-    img.left-img {
-      float: left;
-      width: 200px;
-      height: auto;
-      margin: 5px 20px 10px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
+body.dark .nav-titles {
+  color:#ffffff;
+}
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+h1 {
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+p {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+img.left-img {
+  float: left;
+  width: 200px;
+  height: auto;
+  margin: 5px 20px 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
   
-  /* Tombol navigasi */
+/* Tombol navigasi */
+.nav-buttons {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+  padding: 20px 50px 20px 50px;
+}
+.nav-buttons a {
+  text-decoration: none;
+  color: white;
+  background: #1e88e5;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.nav-buttons a:hover {
+  background: #0d47a1;
+}
+.nav-titles {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #555;
+  margin-top: -20px;
+  padding: 5px 50px 5px 50px;
+}
+.judul {
+padding-left:30px;
+text-align:center;
+font-size:16px;
+}
+  
+footer {
+  text-align: center;
+  background: #f9fafb;
+  color: #444;
+  padding: 25px;
+  font-size: 0.9em;
+  border-top: 1px solid #ddd;
+}
+
+@media (max-width: 600px) {
+  img.left-img {
+    float: none;
+    display: block;
+    margin: 0 auto 15px;
+    width: 100%;
+  }
+  .judul {
+    padding-left:30px;
+    text-align:center;
+    font-size:16px;
+  }
+      
   .nav-buttons {
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    margin-top: 40px;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-  }
-  .nav-buttons a {
-    text-decoration: none;
-    color: white;
-    background: #1e88e5;
-    padding: 10px 18px;
-    border-radius: 8px;
-    transition: background 0.3s;
-  }
-  .nav-buttons a:hover {
-    background: #0d47a1;
+  flex-direction: flex;
+  gap: 10px;
+  font-size:11px;
   }
   .nav-titles {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #555;
-    margin-top: 10px;
+    flex-direction: flex;
+    gap: 4px;
+    text-align: left;
+    font-size:11px;
   }
-        .judul {
-        padding-left:30px;
-        text-align:center;
-        font-size:16px;
-      }
-  
-          footer {
-      text-align: center;
-      background: #f9fafb;
-      color: #444;
-      padding: 25px;
-      font-size: 0.9em;
-      border-top: 1px solid #ddd;
-    }
-  
-    @media (max-width: 600px) {
-      img.left-img {
-        float: none;
-        display: block;
-        margin: 0 auto 15px;
-        width: 100%;
-      }
-      .judul {
-        padding-left:30px;
-        text-align:center;
-        font-size:16px;
-      }
-      
-                    .nav-buttons {
-      flex-direction: flex;
-      gap: 10px;
-    }
-    .nav-titles {
-      flex-direction: flex;
-      gap: 4px;
-      text-align: left;
-      font-size:9px;
-    }
-    }
-  </style>
+
+  footer {
+    padding: 10px;
+  }
+}
+
+/* Layar sangat kecil (max 360px) */
+@media (max-width: 360px) {
+  .nav-buttons {
+  flex-direction: flex;
+  gap: 10px;
+  font-size:11px;
+  padding: 20px 20px 20px 20px;
+  }
+.nav-titles {
+  flex-direction: flex;
+  gap: 50px;
+  text-align: left;
+  font-size:8px;
+}
+
+.container p {
+  font-size: 11px;
+}
+footer {
+  padding: 10px;
+  font-size: 10px;
+}
+}
+</style>
 </head>
+
 <body>
       <!-- Header dengan RGBA -->
   <header style="background-color: rgba(0, 123, 255, 0.7);" 
