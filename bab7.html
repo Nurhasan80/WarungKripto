@@ -20,22 +20,22 @@
     color:var(--text);
     line-height:1.7;
   }
-    /*Dark Mode */
-body.dark {
-  background:linear-gradient(180deg,#071228,#04101a);
-  color: black;
-}
-  body.dark .nav-titles {
-  background:linear-gradient(180deg,#071228,#04101a);
-  color: #ffffff;
-}
-  body.dark .container {
-  background:linear-gradient(180deg,#071228,#04101a);
-  color: #ffffff;
-}
-   body.dark h2 {
-  color: #ffffff;
-}
+  /*Dark Mode */
+  body.dark {
+    background:linear-gradient(180deg,#071228,#04101a);
+    color: black;
+  }
+    body.dark .nav-titles {
+    background:linear-gradient(180deg,#071228,#04101a);
+    color: #ffffff;
+  }
+    body.dark .container {
+    background:linear-gradient(180deg,#071228,#04101a);
+    color: #ffffff;
+  }
+    body.dark h2 {
+    color: #ffffff;
+  }
 
   .container{
     max-width:900px;
@@ -43,12 +43,12 @@ body.dark {
     padding:20px;
   }
 
-  h1{
-    text-align:center;
-    margin-bottom:36px;
-    color:#111;
+  .section h2 {
+    color: #111;
+    margin-bottom: 10px;
+    border-left: 4px solid #fbbf24;
+    padding-left: 10px;
   }
-
   .section{
     margin-bottom:44px;
   }
@@ -69,7 +69,10 @@ body.dark {
     display:block;
   }
 
-  .section::after{content:"";display:table;clear:both}
+  .section::after{content:"";
+    display:table;
+    clear:both;
+  }
 
   p{
     margin:0 0 12px 0;
@@ -109,6 +112,11 @@ body.dark {
     margin-top:10px;
     font-size:0.95rem;
   }
+  .judul {
+    padding-left:30px;
+    text-align:center;
+    font-size:16px;
+  }
   
   footer {
       text-align: center;
@@ -129,6 +137,7 @@ body.dark {
      .nav-buttons {
       flex-direction: flex;
       gap: 10px;
+       font-size:10px;
     }
     .nav-titles {
       flex-direction: flex;
@@ -141,6 +150,17 @@ body.dark {
         text-align:center;
         font-size:16px;
       }
+  }
+
+  /* Layar sangat kecil (max 360px) */
+  @media (max-width: 360px) {
+ body {
+  font-size: 11px;
+ }
+  footer {
+    padding: 10px;
+    font-size: 10px;
+  }
   }
 </style>
 </head>
@@ -231,6 +251,7 @@ body.dark {
 
     <div class="nav-buttons" role="navigation" aria-label="Navigasi Bab">
       <a class="btn" href="bab6.html">← Back</a>
+            <a class="btn" href="index.html">Home</a>
       <a class="btn" href="bab8.html">Next→</a>
     </div>
 
