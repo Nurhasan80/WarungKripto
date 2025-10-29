@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Bab 9 - Masa Depan Bitcoin dan Ekosistemnya</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #222;
+        --muted: #555;
+        --accent: #1e88e5;
+        --highlight: #fbbf24;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Georgia", serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.75;
+      }
+      /*Dark Mode */
+      body.dark {
+        background: linear-gradient(180deg, #071228, #04101a);
+        color: black;
+      }
+
+      body.dark .container {
+        background: linear-gradient(180deg, #071228, #04101a);
+        color: #ffffff;
+      }
+
+      body.dark h2 {
+        color: #ffffff;
+      }
+
+      body.dark .nav-titles {
+        color: #ffffff;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 22px;
+        background: #fff;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 28px;
+        color: #111;
+      }
+
+      .section {
+        margin-bottom: 38px;
+      }
+
+      .section h2 {
+        color: #111;
+        margin-bottom: 10px;
+        border-left: 4px solid var(--highlight);
+        padding-left: 10px;
+      }
+
+      /* gambar menjorok kiri seperti kata pengantar */
+      .section img {
+        width: 200px;
+        float: left;
+        padding: 10px;
+        margin: 6px 18px 12px 0;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+        display: block;
+      }
+
+      .section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      p {
+        margin: 0 0 12px 0;
+        text-align: justify;
+      }
+
+      ul {
+        margin: 8px 0 12px 20px;
+      }
+
+      /* nav */
+      .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-top: 30px;
+        padding-top: 18px;
+        border-top: 1px solid #eee;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.18s;
+      }
+      .btn:hover {
+        background: #0b63b8;
+      }
+
+      .nav-titles {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        margin-top: 10px;
+        font-size: 0.95rem;
+      }
+      .judul {
+        padding-left: 30px;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      footer {
+        text-align: center;
+        background: #f9fafb;
+        color: #444;
+        padding: 25px;
+        font-size: 0.9em;
+        border-top: 1px solid #ddd;
+      }
+
+      @media (max-width: 768px) {
+        .section img {
+          float: left;
+          margin: 0 auto 14px;
+          width: 100%;
+          max-width: 320px;
+        }
+        .judul {
+          padding-left: 30px;
+          text-align: center;
+          font-size: 16px;
+        }
+        .nav-buttons {
+          flex-direction: flex;
+          font-size: 10px;
+        }
+        .nav-titles {
+          flex-direction: flex;
+          gap: 6px;
+          text-align: left;
+          font-size: 8px;
+        }
+      }
+
+      /* Layar sangat kecil (max 360px) */
+      @media (max-width: 360px) {
+        .container p {
+          font-size: 11px;
+        }
+
+        footer {
+          padding: 10px;
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header dengan RGBA -->
+    <header
+      style="background-color: rgba(0, 123, 255, 0.7)"
+      class="relative py-4 text-center text-xl font-semibold text-white shadow-md"
+    >
+      <!-- Back Arrow hanya muncul di mobile -->
+      <a
+        href="index.html"
+        class="absolute top-1/2 left-4 -translate-y-1/2 flex items-center text-white hover:text-gray-200"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </a>
+      <p class="judul">
+        Bab 9 <br />
+        Masa Depan Bitcoin dan Ekosistemnya
+      </p>
+    </header>
+    <div class="container">
+      <section class="section" id="A">
+        <h2><strong>A. Halving dan Dampaknya terhadap Harga</strong></h2>
+        <img src="img/image1.png" alt="Ilustrasi Halving Bitcoin" />
+        <p>
+          <strong>Halving</strong> adalah peristiwa berkala pada jaringan
+          Bitcoin di mana reward (imbalan) untuk penambang dipotong setengah.
+          Terjadi kira-kira setiap 210.000 blok (±4 tahun). Tujuan halving
+          adalah menjaga kelangkaan dengan membatasi laju penciptaan Bitcoin
+          baru hingga total maksimum 21 juta unit.
+        </p>
+        <p>
+          Secara historis, halving sering dikaitkan dengan periode kenaikan
+          harga dalam jangka menengah-panjang karena pasokan baru melambat
+          sementara permintaan dapat naik. Namun efeknya tidak instan dan
+          dipengaruhi faktor lain seperti sentimen pasar, adopsi, dan kondisi
+          makroekonomi. Investor harus memahami bahwa halving bukan jaminan
+          kenaikan harga — melainkan salah satu faktor ekonomi yang mempengaruhi
+          penawaran.
+        </p>
+      </section>
+
+      <section class="section" id="B">
+        <h2><strong>B. Lightning Network</strong></h2>
+        <img src="img/image2.png" alt="Skema Lightning Network" />
+        <p>
+          <strong>Lightning Network</strong> adalah solusi lapis kedua (layer-2)
+          untuk meningkatkan skalabilitas Bitcoin. Tujuannya memungkinkan
+          transaksi mikro cepat dan murah dengan membuka saluran pembayaran
+          off-chain antar pengguna, lalu menyelesaikan ringkasan akhir ke
+          blockchain utama.
+        </p>
+        <p>
+          Jika diadopsi luas, Lightning dapat membuat Bitcoin lebih fungsional
+          untuk pembayaran sehari-hari (mis. kopi, tip), mengurangi biaya dan
+          waktu konfirmasi. Namun pengembangan dan adopsinya masih berjalan,
+          termasuk peningkatan antarmuka pengguna dan likuiditas saluran untuk
+          pengalaman yang mulus.
+        </p>
+      </section>
+
+      <section class="section" id="C">
+        <h2>
+          <strong
+            >C. Bitcoin vs Altcoin: Perbandingan dan Pandangan Umum</strong
+          >
+        </h2>
+        <img src="img/image3.png" alt="Bitcoin vs Altcoin" />
+        <p>
+          <strong>Bitcoin</strong> sering disebut sebagai "emas digital" karena
+          pasokannya terbatas dan fokusnya pada penyimpanan nilai. Sementara
+          <strong>altcoin</strong> (koin selain Bitcoin) biasanya menawarkan
+          fitur tambahan seperti kontrak pintar, privasi, atau kecepatan
+          transaksi yang lebih tinggi.
+        </p>
+        <p>
+          Perbandingan umum: Bitcoin unggul sebagai penyimpan nilai dan jaringan
+          paling aman; altcoin menawarkan eksperimen teknologi yang beragam
+          tetapi membawa risiko proyek baru (teknis, tim, dan adopsi). Investor
+          yang bijak memahami perbedaan tujuan tiap aset sebelum memilih alokasi
+          portofolio.
+        </p>
+      </section>
+
+      <section class="section" id="D">
+        <h2>
+          <strong>D. Adopsi Global Bitcoin oleh Perusahaan dan Negara</strong>
+        </h2>
+        <img src="img/image4.png" alt="Adopsi Bitcoin Global" />
+        <p>
+          Dalam beberapa tahun terakhir, sejumlah perusahaan besar mulai
+          menerima Bitcoin sebagai bagian dari kas atau metode pembayaran, dan
+          beberapa negara mengeksplorasi atau mengadopsi kebijakan yang ramah
+          terhadap kripto. Adopsi ini meningkatkan legitimasi dan eksposur
+          Bitcoin di panggung global.
+        </p>
+        <p>
+          Namun adopsi institusional membawa dinamika baru: regulasi, akuntansi,
+          dan pertimbangan tata kelola yang berbeda dibanding adopsi ritel.
+          Dampak jangka panjang tergantung pada kebijakan publik, infrastruktur
+          pembayaran, dan persepsi investor institusional.
+        </p>
+      </section>
+
+      <section class="section" id="E">
+        <h2><strong>E. Potensi Masa Depan Teknologi Blockchain</strong></h2>
+        <img src="img/image5.png" alt="Potensi Blockchain ke Depan" />
+        <p>
+          Teknologi blockchain berpotensi melampaui peran mata uang digital:
+          mulai dari sistem identitas digital, rantai pasok yang transparan,
+          kontrak pintar otomatis, hingga sistem tata kelola terdesentralisasi.
+          Integrasi blockchain dengan teknologi lain (IoT, AI) membuka peluang
+          inovasi lintas sektor.
+        </p>
+        <p>
+          Tantangan masa depan termasuk interoperabilitas antar jaringan,
+          penggunaan energi, regulasi, dan pengalaman pengguna. Jika tantangan
+          ini dapat diatasi, blockchain dapat menjadi infrastruktur penting bagi
+          ekonomi digital yang lebih transparan dan efisien.
+        </p>
+      </section>
+
+      <div class="nav-buttons" role="navigation" aria-label="Navigasi Bab">
+        <a class="btn" href="bab8.html">← Back</a>
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="bab10.html">Next →</a>
+      </div>
+
+      <div class="nav-titles" aria-hidden="false">
+        <div><strong>Regulasi dan Legalitas Bitcoin di Indonesia</strong></div>
+        <div>
+          <strong>Kesalahan Umum Pemula dan Cara Menghindarinya</strong>
+        </div>
+      </div>
+    </div>
+    <footer>
+      &copy; 2025 — Bab 9 | Masa Depan Bitcoin dan Ekosistemnya | Nurhasan
+    </footer>
+    <script src="themes.js"></script>
+    <script>
+      // placeholder: smooth scroll for internal links (ke depan bisa dihubungkan ke daftar isi)
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const id = a.getAttribute("href");
+          if (document.querySelector(id)) {
+            document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
