@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  <title>Bab 12 — Sumber Belajar dan Komunitas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    h1, h2 {
+      color: #1a202c;
+    }
+  /*Dark Mode */
+body.dark {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color:#ffffff;
+}
+  body.dark h2 {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color:#ffffff;
+}
+  body.dark .nav-titles {
+  background:linear-gradient(180deg,#071228,#04101a);
+  color:#ffffff;
+}
+    .content {
+      max-width: 800px;
+      margin: auto;
+      padding: 1rem;
+    }
+    .post-image {
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      width: 150px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .nav-button {
+      background-color: #f1f1f1;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .nav-button:hover {
+      background-color: #e2e8f0;
+    }
+  /* Tombol navigasi */
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 18px;
+    border-top: 1px solid #eee;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #1e88e5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .btn:hover {
+    background: #0b63b8;
+  }
+    .nav-titles {
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    margin-top: 10px;
+    font-size: 0.95rem;
+  }
+  .judul {
+        padding-left:30px;
+        text-align:center;
+        font-size:16px;
+      }
+    footer {
+      text-align: center;
+      background: #f9fafb;
+      color: #444;
+      padding: 25px;
+      font-size: 0.9em;
+      border-top: 1px solid #ddd;
+    }
+
+  
+     /* Responsif */
+  @media (max-width: 768px) {
+    .section img {
+      float: none;
+      display: block;
+      margin: 0 auto 14px;
+      width: 100%;
+      max-width: 320px;
+    }
+    .nav-buttons {
+      flex-direction: flex;
+      font-size:10px;
+    }
+    .nav-titles {
+      flex-direction: flex;
+      text-align: left;
+      gap: 6px;
+      font-size:9px;
+      
+    }
+            .judul {
+        padding-left:30px;
+        text-align:center;
+        font-size:16px;
+      }
+  }
+
+   /* Layar sangat kecil (max 360px) */
+   @media (max-width: 360px) {
+    body {
+      font-size: 12px;
+      
+    }
+    .content h2 {
+      font-size: 12px;
+    }
+    .container p {
+      font-size: 11px;
+    }
+
+    .judul {
+      font-size: 14px;
+      padding-left: 25px;
+    }
+
+    footer {
+      padding: 10px;
+      font-size: 10px;
+    }
+  }
+  </style>
+</head>
+<body>
+    <!-- Header dengan RGBA -->
+  <header style="background-color: rgba(0, 123, 255, 0.7);" 
+          class="relative py-4 text-center text-xl font-semibold text-white shadow-md">
+
+    <!-- Back Arrow hanya muncul di mobile -->
+    <a href="index.html" 
+       class="absolute top-1/2 left-4 -translate-y-1/2 flex items-center text-white hover:text-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+    <p class="judul">Bab 12 <br> Sumber Belajar dan Komunitas</p>
+  </header>
+
+
+  <div class="content">
+
+    <p class="mb-6">
+      <img src="img/image1.png" alt="Belajar Crypto" class="post-image">
+      Dunia cryptocurrency terus berkembang dengan sangat cepat. Agar bisa memahami dan mengikuti perubahannya, penting bagi setiap pemula untuk memiliki sumber belajar yang terpercaya serta bergabung dengan komunitas yang aktif. Bab ini akan membantu kamu menemukan arah belajar dan tempat berinteraksi dengan sesama penggemar crypto, baik di Indonesia maupun secara global.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">A. Rekomendasi Website, Channel YouTube, dan Buku</h2>
+    <p class="mb-4">Untuk memperdalam pengetahuan seputar Bitcoin dan teknologi blockchain, berikut beberapa sumber belajar yang direkomendasikan:</p>
+    <ul class="list-disc ml-6 mb-6">
+      <li><strong>Website:</strong> 
+        <a href="https://www.coinmarketcap.com" target="_blank" class="text-blue-600 hover:underline">CoinMarketCap</a>, 
+        <a href="https://www.coindesk.com" target="_blank" class="text-blue-600 hover:underline">Indodax</a>,
+  <a href="https://www.coindesk.com" target="_blank" class="text-blue-600 hover:underline">Warung Kripto</a>,     
+        dan 
+        <a href="https://academy.binance.com" target="_blank" class="text-blue-600 hover:underline">Toko Crypto</a> 
+        yang menyajikan artikel edukatif dari dasar hingga lanjutan.
+      </li>
+      <li><strong>YouTube:</strong> Channel seperti <em>Coin Bureau</em>, <em>Andreas M. Antonopoulos</em>, dan <em>Crypto Indonesia</em> membahas topik seputar blockchain, investasi, hingga analisis pasar.</li>
+      <li><strong>Buku:</strong> “The Bitcoin Standard” karya Saifedean Ammous dan “Mastering Bitcoin” oleh Andreas M. Antonopoulos direkomendasikan untuk memahami konsep ekonomi dan teknis Bitcoin secara mendalam.</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">B. Komunitas Crypto di Indonesia dan Internasional</h2>
+    <p class="mb-4">Belajar bersama komunitas akan mempercepat pemahaman dan memperluas jaringan. Beberapa komunitas crypto aktif di Indonesia dan luar negeri antara lain:</p>
+    <ul class="list-disc ml-6 mb-6">
+      <li><strong>Komunitas Indonesia:</strong> <em>Indodax Community</em>, <em>Binance Indonesia Telegram Group</em>, dan <em>CryptoTalk Indonesia</em> adalah tempat diskusi, tanya jawab, dan berbagi wawasan seputar aset digital.</li>
+      <li><strong>Komunitas Internasional:</strong> Platform seperti <a href="https://reddit.com/r/Bitcoin" target="_blank" class="text-blue-600 hover:underline">Reddit r/Bitcoin</a> dan <em>BitcoinTalk Forum</em> menjadi sumber diskusi global yang sangat berpengaruh sejak awal munculnya Bitcoin.</li>
+    </ul>
+    <p>Aktif di komunitas tidak hanya membantu kamu memahami tren terbaru, tetapi juga membangun reputasi dan koneksi dengan pelaku industri kripto dari berbagai negara.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">C. Cara Tetap Update Informasi Crypto</h2>
+    <p class="mb-6">Karena dunia crypto bergerak cepat, penting untuk selalu update terhadap berita, perubahan regulasi, dan tren pasar. Berikut beberapa cara untuk melakukannya:</p>
+    <ul class="list-disc ml-6 mb-6">
+      <li>Berlangganan newsletter seperti <em>The Daily Gwei</em> atau <em>CoinDesk Update</em>.</li>
+      <li>Mengikuti akun Twitter atau X dari influencer dan analis terpercaya di bidang blockchain.</li>
+      <li>Bergabung dalam grup Telegram atau Discord komunitas aset kripto.</li>
+      <li>Menonton podcast crypto seperti “Unchained” oleh Laura Shin untuk memahami perkembangan ekosistem blockchain global.</li>
+    </ul>
+    <p>Dengan disiplin dalam belajar dan tetap terhubung dengan komunitas, kamu akan lebih siap menghadapi dinamika dunia kripto dan mampu mengambil keputusan investasi yang lebih matang.</p>
+
+<!-- Navigasi antar bab -->
+  <div class="nav-buttons" role="navigation" aria-label="Navigasi Bab">
+      <a class="btn" href="bab11.html">← Back</a>
+      <a class="btn" href="index.html">Home</a>
+      <a class="btn" href="penutup.html">Next →</a>
+    </div>
+<div class="nav-titles">
+    <div><strong> Istilah Istilah Dalam Dunia Crypto</strong></div>
+    <div><strong>Penutup</strong></div>
+  </div>
+</div>
+  </div>
+<footer>
+    &copy; 2025 — Bab 12 | Sumber Belajar dan Komunitas | Nurhasan
+  </footer>
+<script src="themes.js"></script>
+</body>
+</html>
