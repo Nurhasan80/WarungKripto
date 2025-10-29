@@ -40,8 +40,7 @@
     padding-left: 10px;
   }
   .section {
-  
-    padding-top:30px;
+    padding-top:20px;
   }
   .section img {
     width: 220px;
@@ -134,9 +133,15 @@
 
   /* Layar sangat kecil (max 360px) */
   @media (max-width: 360px) {
+    body {
+      font-size: 14px;
+    }
     .container p {
       font-size: 11px;
     }
+    .section {
+    padding-top:10px;
+  }
     footer {
       padding: 10px;
       font-size: 10px;
@@ -164,27 +169,23 @@
 
   <div class="section" id="A">
     <h2><strong>A. Apa Itu Wallet dan Jenis-jenisnya</strong></h2>
-    <img src="img/image4.png" alt="Dompet Digital Bitcoin">
-    <p style="height:200px ;">
+    
       Untuk memiliki dan menyimpan Bitcoin, seseorang memerlukan dompet digital yang disebut <b>wallet</b>. Wallet berfungsi seperti rekening bank pribadi di dunia kripto, tempat kamu bisa menyimpan, mengirim, dan menerima Bitcoin. Wallet menyimpan kunci privat dan publik yang digunakan untuk mengakses dan mengontrol asetmu.
     </p><br>
     <h3><strong>1. Hot Wallet (Aplikasi/Web)</strong></h3>
-    <p style="height:200px ;">
-      <img src="img/metamask.jpeg" alt="Dompet Digital Bitcoin">
+     
       Hot wallet adalah jenis dompet yang selalu terhubung ke internet. Contohnya seperti <i>Trust Wallet</i>, <i>Blockchain.com</i>, dan <i>Exodus</i>. Kelebihannya adalah mudah diakses dan praktis untuk transaksi cepat. Namun, karena selalu online, hot wallet lebih rentan terhadap serangan hacker.
     </p><br>
 
     <h3><strong>2. Cold Wallet (Hardware/Paper)</strong></h3>
-    <p style="height:200px ;">
-    <img src="img/trezor.jpeg" alt="Dompet Digital Bitcoin">
+    
       Cold wallet disimpan secara offline, baik dalam bentuk perangkat keras (seperti <i>Ledger</i> atau <i>Trezor</i>) maupun kertas cetak yang berisi kunci privat dan alamat publik. Keunggulannya adalah keamanan yang jauh lebih tinggi, karena tidak terhubung ke internet. Kekurangannya, aksesnya tidak sepraktis hot wallet.
     </p>
   </div>
 
   <div class="section" id="B">
     <h2><strong>B. Cara Membuat Wallet Pertama</strong></h2>
-    <img src="img/wallet.jpeg" alt="Aplikasi Wallet Bitcoin">
-    <p style="height:200px ;">
+   
       Membuat wallet Bitcoin sangat mudah. Pengguna dapat mengunduh aplikasi wallet resmi dari toko aplikasi atau situs terpercaya. Setelah instalasi, aplikasi akan membuat sepasang kunci privat dan publik untukmu. Pastikan kamu menyimpan <b>recovery phrase</b> (biasanya 12 atau 24 kata acak) dengan aman, karena itu adalah satu-satunya cara memulihkan wallet jika perangkat hilang.
     </p>
     <p>
@@ -194,7 +195,7 @@
 
   <div class="section" id="C">
     <h2><strong>C. Menjaga Keamanan Wallet</strong></h2>
-    <img src="img/image4.png" alt="Keamanan Wallet Bitcoin">
+    
     <p>
       Keamanan wallet adalah prioritas utama. Selalu aktifkan fitur keamanan tambahan seperti autentikasi dua faktor (2FA) dan jangan pernah membagikan private key kepada siapa pun. Simpan cadangan <i>recovery phrase</i> di tempat yang aman dan terpisah dari perangkat utama.
     </p>
@@ -205,7 +206,7 @@
 
   <div class="section" id="D">
     <h2><strong>D. Kesalahan Umum Pengguna Baru</strong></h2>
-    <img src="img/image1.png" alt="Kesalahan Umum Pengguna Baru Bitcoin">
+    
     <p>
       Pengguna baru sering kali melakukan kesalahan seperti membagikan private key, tidak mencadangkan <i>recovery phrase</i>, atau menyimpan Bitcoin di bursa tanpa kendali penuh atas wallet-nya. Kesalahan lain adalah mengirim Bitcoin ke alamat yang salah, karena transaksi di blockchain bersifat permanen dan tidak dapat dibatalkan.
     </p>
