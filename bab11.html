@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Bab 11 — Glosarium Istilah Crypto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    /*Dark Mode */
+    body.dark {
+      background:linear-gradient(180deg,#071228,#04101a);
+      color:#ffffff;
+    }
+      body.dark .nav-titles {
+      background:linear-gradient(180deg,#071228,#04101a);
+      color:#ffffff;
+    }
+    body.dark h2 {
+      color: #ffffff;
+    }
+
+    h1, h2, h3 {
+      color: #1a202c;
+    }
+    .content {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+/* Tombol navigasi */
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 18px;
+    border-top: 1px solid #eee;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #1e88e5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .btn:hover {
+    background: #0b63b8;
+  }
+    .nav-titles {
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    margin-top: 10px;
+    font-size: 0.95rem;
+  }
+  .judul {
+    padding-left:30px;
+    text-align:center;
+    font-size:16px;
+  }
+  footer {
+    text-align: center;
+    background: #f9fafb;
+    color: #444;
+    padding: 25px;
+    font-size: 0.9em;
+    border-top: 1px solid #ddd;
+  }
+   /* Responsif */
+  @media (max-width: 768px) {
+    .section img {
+      float: none;
+      display: block;
+      margin: 0 auto 14px;
+      width: 100%;
+      max-width: 320px;
+    }
+    .nav-buttons {
+      flex-direction: flex;
+      font-size:10px;
+    }
+    .nav-titles {
+      flex-direction: flex;
+      text-align: left;
+      gap: 6px;
+      font-size:8px;
+    }
+
+    .judul {
+      padding-left:30px;
+      text-align:center;
+      font-size:16px;
+    }
+  }
+
+   /* Layar sangat kecil (max 360px) */
+   @media (max-width: 360px) {
+    body {
+      font-size: 12px;
+      
+    }
+    .content h2 {
+      font-size: 12px;
+    }
+    .container p {
+      font-size: 11px;
+    }
+
+    .judul {
+      font-size: 14px;
+      padding-left: 25px;
+    }
+
+    footer {
+      padding: 10px;
+      font-size: 10px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <!-- Header dengan RGBA -->
+  <header style="background-color: rgba(0, 123, 255, 0.7);" 
+          class="relative py-4 text-center text-xl font-semibold text-white shadow-md">
+
+    <!-- Back Arrow hanya muncul di mobile -->
+    <a href="index.html" 
+       class="absolute top-1/2 left-4 -translate-y-1/2 flex items-center text-white hover:text-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+    <p class="judul">Bab 11 <br> Istilah Istilah Dalam Dunia Crypto</p>
+  </header>
+
+  <div class="content">
+    
+    <p class="mb-6">Dalam dunia cryptocurrency, banyak istilah teknis dan singkatan yang sering muncul. Bab ini akan membantu kamu memahami arti dari istilah-istilah penting yang sering digunakan agar tidak bingung saat membaca berita atau berdiskusi di komunitas crypto.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">A. Blockchain</h2>
+    <p>Teknologi dasar di balik Bitcoin dan aset kripto lainnya. Blockchain adalah sistem pencatatan digital yang terdistribusi (tersebar di banyak komputer), di mana setiap transaksi dicatat dalam blok yang saling terhubung dan tidak bisa diubah tanpa persetujuan jaringan.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">B. Halving</h2>
+    <p>Peristiwa yang terjadi setiap empat tahun sekali di jaringan Bitcoin, di mana hadiah (reward) untuk para penambang berkurang setengah. Tujuannya untuk mengendalikan inflasi Bitcoin dan menjaga kelangkaannya.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">C. HODL</h2>
+    <p>Awalnya berasal dari salah ketik kata <em>“hold”</em>, namun kini menjadi istilah populer yang berarti menyimpan Bitcoin atau aset kripto dalam jangka panjang tanpa menjualnya, meskipun harga sedang turun.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">D. Mining (Penambangan)</h2>
+    <p>Proses memvalidasi transaksi di jaringan blockchain menggunakan daya komputasi. Penambang (miner) yang berhasil memecahkan teka-teki kriptografi akan mendapat reward berupa Bitcoin baru.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">E. Altcoin</h2>
+    <p>Singkatan dari <em>“alternative coin”</em>, yaitu semua aset kripto selain Bitcoin. Contohnya: Ethereum, Binance Coin, Solana, Cardano, dan lainnya.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">F. DEX (Decentralized Exchange)</h2>
+    <p>Bursa kripto yang tidak dikelola oleh pihak terpusat. Pengguna dapat menukar aset langsung dari wallet mereka menggunakan smart contract tanpa perlu menyerahkan kontrol aset ke pihak ketiga.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">G. NFT (Non-Fungible Token)</h2>
+    <p>Token unik berbasis blockchain yang mewakili kepemilikan atas aset digital seperti karya seni, musik, video, atau barang koleksi. Setiap NFT memiliki identitas yang tidak dapat ditukar satu sama lain.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">H. Private Key</h2>
+    <p>Kunci rahasia yang digunakan untuk mengakses dan mengontrol aset kripto di dalam wallet. Jika seseorang memiliki private key kamu, maka ia dapat mengakses semua asetmu — jadi harus disimpan dengan sangat aman.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">I. Public Key / Alamat Wallet</h2>
+    <p>Alamat publik yang digunakan untuk menerima aset kripto. Fungsinya mirip seperti nomor rekening bank, sedangkan private key adalah kata sandinya.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">J. Gas Fee</h2>
+    <p>Biaya transaksi yang dibayar pengguna untuk memproses transaksi di blockchain (terutama di jaringan seperti Ethereum). Biaya ini diberikan kepada para validator atau penambang.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">K. Stablecoin</h2>
+    <p>Aset kripto yang nilainya dipatok (dijaga stabil) terhadap mata uang tertentu, seperti USD. Contohnya USDT, USDC, dan BUSD.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">L. Smart Contract</h2>
+    <p>Program otomatis di blockchain yang menjalankan perintah sesuai kondisi tertentu tanpa perlu perantara. Banyak digunakan di DeFi, NFT, dan DEX.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">M. DeFi (Decentralized Finance)</h2>
+    <p>Sistem keuangan yang berjalan di atas blockchain tanpa perantara (seperti bank). Meliputi aktivitas seperti pinjam-meminjam, staking, yield farming, dan lainnya.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">N. Seed Phrase</h2>
+    <p>Kumpulan kata (biasanya 12–24 kata) yang menjadi backup dari private key wallet. Jika wallet hilang, kamu bisa memulihkannya menggunakan seed phrase.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">O. Whale</h2>
+    <p>Istilah untuk individu atau entitas yang memiliki aset kripto dalam jumlah besar, dan bisa mempengaruhi harga pasar dengan transaksi besar.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">P. Rug Pull</h2>
+    <p>Penipuan di mana pengembang proyek kripto tiba-tiba menarik semua dana investor dan meninggalkan proyek tanpa jejak.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">Q. FOMO (Fear of Missing Out)</h2>
+    <p>Ketakutan akan ketinggalan peluang, yang sering membuat investor membeli aset di harga tinggi tanpa riset mendalam.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">R. DYOR (Do Your Own Research)</h2>
+    <p>Prinsip penting di dunia crypto — lakukan riset sendiri sebelum berinvestasi, jangan hanya ikut-ikutan orang lain.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">S. ATH (All Time High)</h2>
+    <p>Harga tertinggi yang pernah dicapai suatu aset kripto sepanjang sejarahnya.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">T. Bear Market & Bull Market</h2>
+    <p><strong>Bear Market:</strong> Kondisi pasar sedang turun (harga aset banyak yang menurun).<br>
+       <strong>Bull Market:</strong> Kondisi pasar sedang naik (harga aset banyak yang meningkat).</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">U. Wallet Address (Alamat Dompet)</h2>
+    <p>Rangkaian huruf dan angka unik yang digunakan untuk mengirim atau menerima aset kripto di jaringan blockchain tertentu.</p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-2">V. Tokenomics</h2>
+    <p>Gabungan kata <em>“token”</em> dan <em>“economics”</em>, yaitu studi tentang ekonomi di balik suatu aset kripto — termasuk jumlah pasokan, distribusi, inflasi, dan mekanisme pembakarannya.</p>
+
+  <!-- Navigasi antar bab -->
+  <div class="nav-buttons" role="navigation" aria-label="Navigasi Bab">
+      <a class="btn" href="bab10.html">← Back</a>
+      <a class="btn" href="index.html">Home</a>
+      <a class="btn" href="bab12.html">Next →</a>
+    </div>
+<div class="nav-titles">
+    <div><strong> Kesalahan Umum Pemula dan Cara Menghindarinya</strong></div>
+    <div><strong>Sumber Belajar dan Komunitas</strong></div>
+  </div>
+</div>
+  </div>
+<footer>
+    &copy; 2025 — Bab 11 | Istilah Istilah Dalam Dunia Crypto | Nurhasan
+  </footer>
+<script src="themes.js"></script>
+
+</body>
+</html>
