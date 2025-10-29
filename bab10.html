@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Bab 10 - Kesalahan Umum Pemula dan Cara Menghindarinya</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Georgia", serif;
+        background: #fff;
+        color: #222;
+        line-height: 1.75;
+      }
+      /*Dark Mode */
+      body.dark {
+        background: linear-gradient(180deg, #071228, #04101a);
+        color: black;
+      }
+
+      body.dark .container {
+        background: linear-gradient(180deg, #071228, #04101a);
+        color: #ffffff;
+      }
+
+      body.dark h2 {
+        color: #ffffff;
+      }
+
+      body.dark .nav-titles {
+        color: #ffffff;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 22px;
+      }
+
+      .section {
+        margin-bottom: 42px;
+      }
+
+      .section h2 {
+        color: #111;
+        margin-bottom: 10px;
+        border-left: 4px solid #fbbf24;
+        padding-left: 10px;
+      }
+
+      .section img {
+        width: 200px;
+        float: left;
+        padding: 10px;
+        margin: 6px 18px 12px 0;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+      }
+
+      .section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      p {
+        text-align: justify;
+        margin-bottom: 12px;
+      }
+
+      /* Tombol navigasi */
+      .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-top: 30px;
+        padding-top: 18px;
+        border-top: 1px solid #eee;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        background: #1e88e5;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.2s;
+      }
+      .btn:hover {
+        background: #0b63b8;
+      }
+
+      .nav-titles {
+        display: flex;
+        justify-content: space-between;
+        color: #555;
+        margin-top: 10px;
+        font-size: 0.95rem;
+      }
+
+      .judul {
+        padding-left: 30px;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      footer {
+        text-align: center;
+        background: #f9fafb;
+        color: #444;
+        padding: 25px;
+        font-size: 0.9em;
+        border-top: 1px solid #ddd;
+      }
+
+      /* Responsif */
+      @media (max-width: 768px) {
+        .section img {
+          float: left;
+          display: block;
+          margin: 0 auto 14px;
+          width: 100%;
+          max-width: 320px;
+        }
+        .nav-buttons {
+          flex-direction: flex;
+          font-size: 10px;
+        }
+        .nav-titles {
+          flex-direction: flex;
+          text-align: left;
+          gap: 6px;
+          font-size: 8px;
+        }
+
+        .judul {
+          padding-left: 35px;
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+
+      /* Layar sangat kecil (max 360px) */
+      @media (max-width: 360px) {
+        .container p {
+          font-size: 11px;
+        }
+
+        .judul {
+          font-size: 14px;
+        }
+
+        footer {
+          padding: 10px;
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header dengan RGBA -->
+    <header
+      style="background-color: rgba(0, 123, 255, 0.7)"
+      class="relative py-4 text-center text-xl font-semibold text-white shadow-md"
+    >
+      <!-- Back Arrow hanya muncul di mobile -->
+      <a
+        href="index.html"
+        class="absolute top-1/2 left-4 -translate-y-1/2 flex items-center text-white hover:text-gray-200"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </a>
+      <p class="judul">
+        Bab 10 <br />
+        Kesalahan Umum Pemula dan Cara Menghindarinya
+      </p>
+    </header>
+
+    <div class="container">
+      <section class="section" id="A">
+        <h2><strong>A. FOMO dan Panik Jual</strong></h2>
+        <img src="img/image1.png" alt="FOMO dalam trading crypto" />
+        <p>
+          Salah satu kesalahan paling umum yang dilakukan pemula adalah
+          <b>FOMO (Fear of Missing Out)</b> — ketakutan ketinggalan momen harga
+          naik. Akibatnya, banyak investor membeli di puncak harga tanpa riset,
+          lalu menjual panik ketika harga turun. Pola ini berulang dan membuat
+          kerugian besar.
+        </p>
+        <p>
+          Cara menghindarinya adalah dengan memiliki rencana investasi jangka
+          panjang dan memahami bahwa volatilitas adalah hal wajar dalam pasar
+          crypto. Belajar membaca tren dan gunakan strategi seperti
+          <i>dollar cost averaging</i> agar keputusan investasi tidak emosional.
+        </p>
+      </section>
+
+      <section class="section" id="B">
+        <h2><strong>B. Menyimpan Aset di Exchange Tanpa Proteksi</strong></h2>
+        <img src="img/image2.png" alt="Keamanan exchange crypto" />
+        <p>
+          Menyimpan aset dalam jangka panjang di exchange (bursa) sangat
+          berisiko karena pengguna tidak memiliki kendali atas private key. Jika
+          exchange diretas atau ditutup, aset bisa hilang selamanya. Prinsip
+          dasar dalam dunia crypto: <b>“Not your keys, not your coins.”</b>
+        </p>
+        <p>
+          Gunakan wallet pribadi (software atau hardware) untuk penyimpanan
+          jangka panjang. Aktifkan fitur keamanan seperti 2FA (Two-Factor
+          Authentication) dan hindari menggunakan password yang sama di banyak
+          platform.
+        </p>
+      </section>
+
+      <section class="section" id="C">
+        <h2><strong>C. Tidak Paham Konsep Private Key</strong></h2>
+        <img src="img/image3.png" alt="Ilustrasi private dan public key" />
+        <p>
+          <b>Private key</b> adalah kunci utama untuk mengakses aset crypto
+          Anda. Jika hilang atau jatuh ke tangan orang lain, aset bisa dicuri
+          tanpa bisa dikembalikan. Sayangnya, banyak pemula tidak menyadari
+          pentingnya menjaga private key dengan aman.
+        </p>
+        <p>
+          Simpan private key dan seed phrase di tempat aman dan offline,
+          misalnya di media fisik seperti kertas atau perangkat khusus. Jangan
+          pernah membagikannya kepada siapa pun, termasuk situs atau orang yang
+          mengaku dari “dukungan pelanggan”.
+        </p>
+      </section>
+
+      <section class="section" id="D">
+        <h2><strong>D. Percaya pada Janji Profit Instan</strong></h2>
+        <img src="img/image4.png" alt="Peringatan scam crypto" />
+        <p>
+          Banyak penipuan di dunia crypto menggunakan iming-iming profit cepat
+          dan tinggi. Skema seperti ini biasanya berbentuk <b>ponzi</b> atau
+          <b>rug pull</b> di mana investor awal dibayar menggunakan uang
+          investor baru. Ketika arus dana berhenti, proyek runtuh dan dana
+          hilang.
+        </p>
+        <p>
+          Ingatlah bahwa tidak ada investasi yang menjanjikan keuntungan pasti.
+          Selalu lakukan riset mendalam, hindari proyek tanpa transparansi, dan
+          jangan mudah tergoda oleh janji “cuan kilat”.
+        </p>
+      </section>
+
+      <section class="section" id="E">
+        <h2><strong>E. Tidak Belajar Sebelum Berinvestasi</strong></h2>
+        <img src="img/image5.png" alt="Belajar tentang Bitcoin" />
+        <p>
+          Banyak pemula langsung membeli crypto tanpa memahami dasar teknologi
+          dan risiko yang ada. Padahal, edukasi adalah kunci utama agar tidak
+          salah langkah. Dengan memahami konsep dasar seperti blockchain,
+          wallet, dan keamanan, seseorang bisa membuat keputusan yang lebih
+          bijak.
+        </p>
+        <p>
+          Sebelum berinvestasi, bacalah buku, artikel, dan sumber tepercaya.
+          Ikuti komunitas edukatif dan hindari sumber yang hanya menonjolkan
+          keuntungan tanpa menjelaskan risiko. Belajar lebih dahulu berarti
+          melindungi aset sendiri dari kesalahan fatal.
+        </p>
+      </section>
+
+      <!-- Navigasi antar bab -->
+      <div class="nav-buttons" role="navigation" aria-label="Navigasi Bab">
+        <a class="btn" href="bab9.html">← Back</a>
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="bab11.html">Next →</a>
+      </div>
+
+      <div class="nav-titles">
+        <div><strong>Masa Depan Bitcoin dan Ekosistemnya</strong></div>
+        <div><strong>Istilah Penting dalam Dunia Crypto</strong></div>
+      </div>
+    </div>
+    <footer>
+      &copy; 2025 — Bab 10 | Kesalahan Umum Pemula dan Cara Menghindarinya |
+      Nurhasan
+    </footer>
+    <script src="themes.js"></script>
+
+    <script>
+      // Scroll halus untuk navigasi internal
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = document.querySelector(a.getAttribute("href"));
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    </script>
+  </body>
+</html>
