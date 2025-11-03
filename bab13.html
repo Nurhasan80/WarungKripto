@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+<title>Bab 4 - Cara Memiliki dan Menyimpan Bitcoin</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #222;
+    line-height: 1.6;
+  }
+  /*Dark Mode */
+  body.dark {
+    background:linear-gradient(180deg,#071228,#04101a);
+    color: #ffffff;
+  }
+    body.dark h2, body.dark h3 {
+    color: #ffffff;
+  }
+      body.dark .nav-titles {
+    color:#ffffff;
+  }
+    
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  h2, h3 {
+    color: #333;
+  
+  }
+  .section h2 {
+    font-size: 26px;
+  }
+  .section h2 {
+    color: #111;
+    margin-bottom: 10px;
+    border-left: 4px solid #fbbf24;
+    padding-left: 10px;
+  }
+  .section {
+    padding-top:20px;
+  }
+
+  img {
+    padding: 20px;
+  }
+
+  .section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  p {
+    text-align: justify;
+  }
+
+  /* Tombol navigasi */
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  .nav-buttons a {
+    text-decoration: none;
+    color: white;
+    background: #1e88e5;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+  .nav-buttons a:hover {
+    background: #0d47a1;
+  }
+  .nav-titles {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+  }
+  .judul {
+    padding-left:30px;
+    text-align:center;
+    font-size:16px;
+  }
+  
+  h2 {
+      padding-bottom:10px;
+    }
+  
+  footer {
+    text-align: center;
+    background: #f9fafb;
+    color: #444;
+    padding: 25px;
+    font-size: 0.9em;
+    border-top: 1px solid #ddd;
+  }
+
+  /* Responsif */
+  @media (max-width: 768px) {
+    .section img {
+      float: none;
+      display: block;
+      margin: 0 auto 20px;
+      width: 100%;
+      max-width: 350px;
+    }
+    .nav-buttons {
+      flex-direction: flex;
+      gap: 10px;
+      font-size:10px;
+    }
+    .nav-titles {
+      flex-direction: flex;
+      gap: 4px;
+      text-align: left;
+      font-size:9px;
+    }
+    .judul {
+        padding-left:30px;
+        text-align:center;
+        font-size:16px;
+      }
+  }
+
+  /* Layar sangat kecil (max 360px) */
+  @media (max-width: 360px) {
+    body {
+      font-size: 14px;
+    }
+    .container p {
+      font-size: 11px;
+    }
+    .section {
+    padding-top:10px;
+  }
+    footer {
+      padding: 10px;
+      font-size: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+    <!-- Header dengan RGBA -->
+  <header style="background-color: rgba(0, 123, 255, 0.7);" 
+          class="relative py-4 text-center text-xl font-semibold text-white shadow-md">
+
+    <!-- Back Arrow hanya muncul di mobile -->
+    <a href="index.html" 
+       class="absolute top-1/2 left-4 -translate-y-1/2 flex items-center text-white hover:text-gray-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+  
+    <p class="judul">Bab 13 <br> Cara Beli dan Jual Bitcoin di Warung Kripto</p>
+  </header>
+  
+<div class="container">
+
+  <div class="section" id="A">
+    <h2><strong>A. Cara Membeli Bitcoin</strong></h2>
+    
+    <p>Untuk membeli atau menjual Bitcoin, kita perlu sebuah layanan aplikasi atau website yang menyediakan layanan tersebut atau yang dikenal dengan exchange, sebelum menjual atau membeli pastikan exchange yang sudah terpercaya dan terdaftar di instansi terkait misalnya OJK jika di indonesia.
+     </p><br>
+    <p>Dalam menjual dan membeli bitcoin kali ini saya akan memberikan tutorialnya disebuah website Demo di Warung Kripto, sekali lagi ini hanya website Demo alias bukan jual beli Bitcoin yang resmi, ini hanya untuk menambah wawasan saja.
+    </p><br>
+    <p>Untuk membeli dan menjual Bitcoin di Warung Kripto saya membagi ada 2 cara yaitu dari <b>mekanisme Pasar</b> dan <b>mekanisme Perdagangan</b>.
+    </p><br>
+
+  </div>
+
+  <div class="section" id="B">
+    <h1><strong>1. Cara Membeli Bitcoin dengan Mekanisme Pasar</strong></h1><br>
+   
+     <p> 1. Kunjungi Website <a href="https://nurhasan80.github.io/WarungKripto/" target="_blank" class="text-blue-600 hover:underline">Warung Kripto</a></p>
+     <p> 2. Pilih Tab <strong>Dompet</strong> pada Tab Header untuk mengisi saldo</p>
+     <img src="img/image7.PNG" alt="pasar">
+     <p> 3. Isikan saldo Anda dalam bentuk <strong>IDR</strong> atau <strong>USD</strong> boleh kedua-duanya untuk di isi saldo</p>
+     <img src="img/image8.PNG" alt="pasar">
+     <p> 4. Klik tombol <b>Setor IDR atau USD</b> dan isikan saldo yang akan di setor, penyetoran minimal Rp.10.000 untuk IDR dan $1 untuk USD, kemudian tekan tombol <strong>Setor</strong>. Dana akan masuk ke Dompet dalam bentuk saldo IDR atau saldo USD</p>
+     <img src="img/image9.PNG" alt="pasar">
+     <p> 5. Sekarang kita sudah mempunyai Saldo, langkah selanjutnya kita akan membeli Bitcoin atau Crypto lainnya, caranya kembali ke <strong>Beranda atau Home</strong> dengan menekan <strong>Tombol <</strong> (versi Desktop) pada taskbar diatas atau icon <b>Home</b> (vesrsi mobile)</p>
+     <p> 6. Setelah kita berada di <strong>Beranda atau Home</strong>, klik Tab <strong>Pasar</strong> maka akan muncul tabel crypto, kemudian pilih mata uang yang ingin diperdagangkan (IDR atau USD) setelah menentukan mata uang, pilih crypto yang akan di beli dalam hal ini Bitcoin dengan menekan <strong>tombol Beli</strong>, setelah itu muncul Chart dan harga Bitcoin lalu scroll kebawah hingga menemukan tab Transaksi jual-Beli</p>
+     <img src="img/image14.PNG" alt="pasar"><br>
+     
+     <p> 7. Masukan harga pembelian pada bagian Jumlah Saldo. mimimum pembelian Rp 10.000 atau $1, Anda bisa menggunakan tombol persentase dari saldo Anda untuk membelinya. Setelah selesai memasukan harga pembelian tekan tombol <strong>Beli Sekarang</strong></p>
+     <img src="img/image11.PNG" alt="pasar">
+
+     <p> 8. Klik Tab <strong>Riwayat</strong> untuk memastikan transaksi Anda atau klik Tab <strong>Dompet</strong> untuk melihat Portofolio Anda</p>
+
+     <p>9. Selesai</p>
+
+  </div>
+
+  <div class="section" id="C">
+    <h1><strong>2. Cara Membeli bitcoin dengan mekanisme Perdagangan</strong></h1>
+    
+    <p>
+      Keamanan wallet adalah prioritas utama. Selalu aktifkan fitur keamanan tambahan seperti autentikasi dua faktor (2FA) dan jangan pernah membagikan private key kepada siapa pun. Simpan cadangan <i>recovery phrase</i> di tempat yang aman dan terpisah dari perangkat utama.
+    </p>
+    <p>
+      Hindari menggunakan jaringan Wi-Fi publik saat mengakses wallet dan pastikan perangkatmu terlindungi dari virus atau malware. Sedikit kelalaian dapat menyebabkan kehilangan seluruh asetmu secara permanen.
+    </p>
+  </div>
+  <br><br>
+  <div class="section" id="D">
+    <h2><strong>B. Cara Menjual Bitcoin</strong></h2>
+    
+    <p>
+      Untuk menjual Bitcoin caranya sama dengan cara membeli Bitcoin dengan mekanisme Pasar atau Perdagangan, bedanya kita harus memilih dan mengklik Tab Jual. Sebelum menjual pastikan untuk memilih mata uangnya terlebih dahulu yaitu IDR atau USD .
+      <img src="img/image15.PNG" alt="jual">
+    </p>
+    <p>
+      Caranya masukan jumlah koin yang akan dijual, agar lebih mudah menghitungnya pilih tombol persentase misalnya 100% artinya akan menjual semua koinnya, setelah menentukan jumlah koin yang akan dijual klik tombol Jual Sekarang maka akan muncul notifikasi penjualan berhasil, hasil penjualan bisa di lihat di Riwayat atau cek Dompet, saldo akan masuk di Dompet dalam bentuk Saldo IDR atau Saldo USD tergantung anda menjualnya dengan mata uang apa
+    </p>
+  </div>
+
+  <div class="nav-buttons">
+      <a href="bab12.html" class="back">← Back</a>
+      <a href="index.html" class="home">Home</a>
+      <a href="penutup.html" class="next">Next →</a>
+    </div>
+  
+
+  <div class="nav-titles">
+    <strong> Belajar dan Komunitas</strong>
+    <strong>Penutup</strong>
+  </div>
+</div>
+  
+    <footer>
+    &copy; 2025 — Bab 4 | Cara Beli dan Jual Bitcoin di Warung Kripto | Nurhasan
+  </footer>
+<script src="themes.js"></script>
+
+<script>
+  // Efek scroll halus
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
